@@ -416,7 +416,7 @@ body.lang-switching{ opacity:0; }
 }
 .stat{ display:flex; flex-direction:column; gap:8px; }
 /* Modifier: each metric on its own tile (used in case-page "Результаты" blocks) */
-.stat-row.tiles{ gap:16px; flex-wrap:nowrap; }
+.stat-row.tiles{ gap:8px; flex-wrap:nowrap; width:100%; }
 .stat-row.tiles .stat{
   background: var(--surface);
   border-radius: var(--radius-md);
@@ -424,11 +424,9 @@ body.lang-switching{ opacity:0; }
   flex:1 1 0;
 }
 .shot-card.metrics{ background: var(--bg); padding-bottom:16px; }
-.stat-row.tiles{ width:100%; }
 .stat b{ font-weight:900; font-size:32px; letter-spacing:-.03em; display:flex; align-items:center; gap:6px; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
-.ba-stat .val .mini-arrow-img{ width:18px; height:18px; }
 .stat span{ color:var(--muted); font-size:18px; }
 
 .showcase{
@@ -828,22 +826,6 @@ body.lang-switching{ opacity:0; }
 @media (max-width:720px){ .idea-card{ min-height:160px; flex:0 0 76%; } }
 
 /* ==========================================================================
-   BEFORE/AFTER STAT ROW
-   ========================================================================== */
-.ba-stat-row{ display:flex; gap:8px; }
-.ba-stat{
-  flex:1;
-  background:#fff;
-  border-radius: var(--radius-lg);
-  padding:24px;
-  display:flex; flex-direction:column; justify-content:center; gap:8px;
-  min-height:128px;
-}
-.ba-stat .val{ display:flex; align-items:center; gap:8px; font-weight:900; font-size:32px; letter-spacing:-.03em; }
-.ba-stat .val .arrow{ font-size:18px; color:var(--muted); }
-.ba-stat .lbl{ color:var(--muted); font-size:16px; }
-
-/* ==========================================================================
    COMPARE ROW (dark screenshot comparisons)
    ========================================================================== */
 .compare-row{ display:flex; gap:8px; }
@@ -1008,8 +990,6 @@ body.lang-switching{ opacity:0; }
   .img-grid{ height:380px; }
   .footer-nav{ grid-template-columns: repeat(2, 1fr); }
   .footer-nav a:nth-child(3){ border-left:none; }
-  .ba-stat-row{ flex-wrap:wrap; }
-  .ba-stat{ flex:1 1 45%; }
   .compare-row{ flex-wrap:wrap; }
   .info-row{ gap:24px; }
 
@@ -1114,7 +1094,6 @@ body.lang-switching{ opacity:0; }
   .footer-nav a{ border-left:none !important; border-top:1px solid #ececec; }
   .footer-nav a:first-child{ border-top:none; }
   .content{ gap:8px; }
-  .ba-stat{ flex:1 1 100%; }
   .icon-panel{ flex-direction:column; }
   .icon-chip{ flex:1 1 auto; width:100%; }
   .flow-diagram{ flex-direction:column; }
