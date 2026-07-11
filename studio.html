@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мобильная студия — Artem Timofeev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <nav class="subnav">
+    <a class="nav-btn" href="index.html">
+      <svg class="icon-arrow" style="transform:rotate(225deg)" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+    <div class="toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#context">Контекст</a>
+      <a href="#launched">Запустили</a>
+      <a href="#work">Работаем</a>
+      <a href="#results">Результаты</a>
+    </div>
+  </nav>
+
+  <!-- Fixed identity bar for tablet/mobile (icon + case name), burger stays via menu-fab -->
+  <div class="case-header">
+    <div class="case-header__icon"><img src="assets/Case_Mobile_Icon.png" alt=""></div>
+    <div>
+      <div class="case-header__title">Мобильная студия</div>
+      <div class="case-header__subtitle">Кейс</div>
+    </div>
+  </div>
+
+  <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
+
+  <main class="content subpage">
+
+    <!-- HERO -->
+    <section class="hero case-hero" id="nachalo">
+      <div class="hero__text">
+        <img class="case-hero__logo" src="assets/Stuido_Logo.png" alt="RUTUBE Studio">
+        <h1>Запустили и развили инструмент по работе с контентом и его аналитики для блогеров</h1>
+        <p class="sub">100 тыс + скачиваний, 12 млн видео загрузили авторы.<br>Обкатаны и настроены процессы выпуска и аналитики фичей</p>
+      </div>
+      <img class="case-hero__preview" src="assets/Preview_1.png" alt="RUTUBE Studio — экраны приложения">
+    </section>
+
+    <!-- INFO ROW -->
+    <section class="info-row plain" style="margin-top:24px">
+      <div class="info-col">
+        <span>Роль</span>
+        <b>Senior Designer</b>
+      </div>
+      <div class="info-col" style="flex:1">
+        <span>Что было сделано</span>
+        <div class="tags">
+          <b>Стратегия запуска</b>
+          <b>Синхронизация процессов</b>
+          <b>Дизайн приложения</b>
+          <b>UI kit</b>
+        </div>
+      </div>
+      <div class="info-col">
+        <span>Аудитория</span>
+        <b>B2C</b>
+      </div>
+    </section>
+
+    <!-- О МОБИЛЬНОЙ СТУДИИ -->
+    <section class="card plain block-gap" id="context">
+      <div class="card__text">
+        <h2>О мобильной студии</h2>
+        <p class="lede" style="margin-bottom:0">Это мобильное приложение для авторов контента, которое позволяет управлять своим каналом. Пользователи могут загружать видео, проводить прямые эфиры, анализировать статистику канала и взаимодействовать с аудиторией</p>
+      </div>
+      <div class="media-duo" style="margin-top:24px">
+        <img src="assets/Photo_1.png" alt="Приложение Студия RUTUBE">
+        <img src="assets/Photo_2.png" alt="Возможности приложения">
+      </div>
+    </section>
+
+    <!-- БИЗНЕС-МОДЕЛЬ -->
+    <section class="card plain block-gap">
+      <div class="card__text">
+        <h2>Бизнес модель Rutube<br><span class="dim">и где мы в ней находимся</span></h2>
+        <p class="lede">Авторы загружают контент и получают выплаты за счёт его просмотра зрителями, которые платят за подписку/смотрят рекламу</p>
+        <p class="lede">Мы отвечаем за мобильное направление</p>
+        <p class="lede" style="margin-bottom:0">Проблема на старте — нет видения продукта: мы проводим исследования, выявляем ключевые потребности на основе частоты запросов и сегментирования</p>
+      </div>
+      <div class="media-duo" style="margin-top:24px">
+        <img src="assets/Photo_3.png" alt="Опыт авторов: Загрузка, Выплаты, Аналитика">
+        <img src="assets/Photo_4.png" alt="Опыт зрителей: ТВ и трансляции, Киноконтент, UGC, Подписка/Реклама">
+      </div>
+    </section>
+
+    <!-- СТРАТЕГИЯ + MVP -->
+    <section class="card plain block-gap" id="launched">
+      <div class="card__text">
+        <h2>Сформировали стратегию развития</h2>
+        <p class="lede">Провели исследования (Интервью с авторами Rutube/YouTube), выявили основные потребности и сформировали основной список функций для MVP и дальнейших версий продукта</p>
+        <p class="lede" style="margin-bottom:0">Спланировали разработку функций по кварталам</p>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:24px">
+      <p class="shot-card__label">MVP</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_4.png" alt=""><span>Обзор канала</span></div>
+        <div class="phone-item"><img src="assets/Phone_5.png" alt=""><span>Базовая аналитика</span></div>
+        <div class="phone-item"><img src="assets/Phone_6.png" alt=""><span>Ответы на комментарии</span></div>
+        <div class="phone-item"><img src="assets/Phone_7.png" alt=""><span>Загрузка / Редактирование видео</span></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:8px">
+      <p class="shot-card__label">MVP → Release</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_8.png" alt=""><span>Аналитика по видео</span></div>
+        <div class="phone-item"><img src="assets/Phone_9.png" alt=""><span>Создание трансляций</span></div>
+        <div class="phone-item"><img src="assets/Phone_10.png" alt=""><span>Управление контентом</span></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:8px">
+      <p class="shot-card__label">MVP → Release</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_13.png" alt=""><span>Монетизация</span></div>
+        <div class="phone-item"><img src="assets/Phone_12.png" alt=""><span>Аудитория</span></div>
+        <div class="phone-item"><img src="assets/Phone_11.png" alt=""><span>Профиль</span></div>
+      </div>
+    </section>
+
+    <!-- УСКОРИЛИ ПРОЦЕСС -->
+    <section class="card plain block-gap" id="work">
+      <div class="card__text">
+        <h2>Ускорили процесс разработки и поддержки фичей</h2>
+        <p class="lede" style="margin-bottom:0">Благодаря синхронизации дизайна и разработки, структурирования сценариев, создания UI kit и интеграции его в разработку</p>
+      </div>
+      <div class="media-duo" style="margin-top:24px">
+        <img src="assets/Photo_5.png" alt="Дизайн-система и флоу">
+        <img src="assets/Photo_6.png" alt="Типографика и компоненты">
+      </div>
+    </section>
+
+    <!-- СЕГОДНЯ / ПРОЦЕСС -->
+    <section class="card plain block-gap">
+      <div class="card__text">
+        <h2>Мобильная студия сегодня<br><span class="dim">или как мы работаем</span></h2>
+      </div>
+      <div class="flow-cards" style="margin-top:24px">
+        <div class="flow-card">
+          <h3>Идея</h3>
+          <p>Синхронизируемся с продуктовыми приоритетами и исследованиями, обсуждаем нужные функции и формируем план на квартал с оценкой влияния на метрики</p>
+          <img class="flow-card__num" src="assets/One.png" alt="1">
+        </div>
+        <div class="flow-card">
+          <h3>Макет</h3>
+          <p>Обсуждаем задачу и сценарии, создаём и прорабатываем макеты в папке Draft, синхронизируемся с командой, готовим всё к разработке и проводим груминг с оценкой сроков</p>
+          <img class="flow-card__num" src="assets/Two.png" alt="2">
+        </div>
+        <div class="flow-card">
+          <h3>Разработка</h3>
+          <p>Переносим макеты в папку Dev, разработчики реализуют фичу с возможными правками макетов, после чего проводим дизайн-ревью</p>
+          <img class="flow-card__num" src="assets/Three.png" alt="3">
+        </div>
+        <div class="flow-card">
+          <h3>Прод</h3>
+          <p>Выпускаем фичу в прод и стор, дублируем макеты в Prod-файл, фиксируем релиз в Changelog, переносим макеты в Archive и следим за метриками с формированием новых гипотез</p>
+          <img class="flow-card__num" src="assets/Four.png" alt="4">
+        </div>
+      </div>
+    </section>
+
+    <!-- РЕЗУЛЬТАТЫ -->
+    <section class="card plain block-gap" id="results">
+      <div class="card__text">
+        <h2>Результаты</h2>
+        <p class="lede">На старте — хаос в процессах. Все фичи делались в одних макетах, не было единого источника правды, часть фич прорабатывалась без задач, в похожих местах — разное отображение элементов, обособленность команды от основного продукта</p>
+        <p class="lede" style="margin-bottom:0">За время работы настроили комфортный и прозрачный для всех участников команды процесс работы, навели порядок в макетах, подружились с вертикалью веба для синхронизации опыта авторов</p>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:24px">
+      <div style="padding:0 8px 24px">
+        <div class="stat-scroll">
+        <div class="stat-row">
+          <div class="stat"><b>8 мин.</b><span>Timespent</span></div>
+          <div class="stat"><b>4 тыс.</b><span>Загружают видео в день</span></div>
+          <div class="stat"><b>↗ 15% в год</b><span>DAU</span></div>
+          <div class="stat"><b>↗ 20% в год</b><span>RR</span></div>
+        </div>
+        </div>
+      </div>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_1.png" alt=""><span>Обзор канала</span></div>
+        <div class="phone-item"><img src="assets/Phone_2.png" alt=""><span>Аналитика</span></div>
+        <div class="phone-item"><img src="assets/Phone_3.png" alt=""><span>Статистика видео</span></div>
+      </div>
+    </section>
+
+    <!-- TEASERS on white card, per mockup -->
+    <section class="card block-gap">
+      <div class="teaser-row">
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Monetisation_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили долю монетизируемых авторов?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="monetization.html">
+              <span class="pill">Читать кейс</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили конверсию загрузки видео на 36%?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="video.html">
+              <span class="pill">Читать кейс</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="case-modal-overlay" id="caseOverlay"></div>
+<div class="case-modal" id="caseModal">
+  <button class="case-modal__close" id="caseClose" aria-label="Закрыть">✕</button>
+  <div class="case-modal__panel">
+    <div class="case-modal__header">
+      <div class="case-modal__icon"><img src="assets/Case_Mobile_Icon.png" alt=""></div>
+      <div>
+        <div class="case-modal__title">Мобильная студия</div>
+        <div class="case-modal__subtitle">Кейс</div>
+      </div>
+      <div class="case-modal__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <nav class="case-modal__toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#context">Контекст</a>
+      <a href="#launched">Запустили</a>
+      <a href="#work">Работаем</a>
+      <a href="#results">Результаты</a>
+    </nav>
+    <div class="case-modal__profile">
+      <div class="profile-card" style="padding:4px 0">
+        <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+        <div class="profile-card__role">Product designer</div>
+        <div class="profile-card__name">Artem Timofeev</div>
+      </div>
+      <div class="sidebar-list">
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Your company</div><div class="exp-row__title">Design related</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2025 — Now</div><div class="exp-row__title">Lead DS designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2023 — 2025</div><div class="exp-row__title">Senior designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Bay of sea 2022 — 2023</div><div class="exp-row__title">Studio owner</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Freelance 2019 — now</div><div class="exp-row__title">Designer</div></div>
+        </div>
+        <div class="sidebar-links">
+          <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

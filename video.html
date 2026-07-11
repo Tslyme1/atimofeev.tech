@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Видео — Artem Timofeev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <nav class="subnav">
+    <a class="nav-btn" href="javascript:history.back()">
+      <svg class="icon-arrow" style="transform:rotate(180deg)" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Назад
+    </a>
+    <a class="nav-btn" href="index.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+    <div class="toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#problem">Проблема</a>
+      <a href="#analysis">Анализ</a>
+      <a href="#hypo">Гипотезы</a>
+      <a href="#solution">Решение</a>
+      <a href="#result">Результат</a>
+    </div>
+  </nav>
+
+  <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
+
+  <main class="content subpage">
+
+    <section class="hero" id="nachalo" style="text-align:center; min-height:450px">
+      <div class="hero__text" style="align-items:center; padding-top:80px">
+        <h1>Как мы увеличили конверсию загрузки видео на 36%?</h1>
+        <p class="sub">Процесс + результат</p>
+      </div>
+    </section>
+
+    <section class="info-row">
+      <div class="info-col">
+        <span>Роль</span>
+        <b>Senior Designer</b>
+      </div>
+      <div class="info-col" style="flex:1">
+        <span>Что было сделано</span>
+        <div class="tags">
+          <b>Определение проблемы</b>
+          <b>Проектирование дизайна</b>
+          <b>Сопровождение разработки</b>
+        </div>
+      </div>
+      <div class="info-col">
+        <span>Аудитория</span>
+        <b>Авторы-партнёры</b>
+      </div>
+    </section>
+
+    <section class="card" id="problem">
+      <div class="card__text">
+        <h2>Проблема</h2>
+        <p class="lede" style="margin-bottom:0">Реализованная MVP версия сценария загрузки негативно влияла на метрики. Дёшево и сердито, была цель сделать максимально быстро и просто</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card__text">
+        <span class="pill" style="margin-bottom:0">MVP Загрузка видео</span>
+      </div>
+      <div class="img-grid" style="margin-top:16px; height:500px">
+        <div class="ph"></div>
+        <div class="ph"></div>
+        <div class="ph"></div>
+      </div>
+      <div class="grid-caption-row">
+        <span>Экран загрузки</span>
+        <span>Выбор категории</span>
+        <span>Видео загружается</span>
+      </div>
+    </section>
+
+    <div class="funnel">
+      <p class="funnel__label">MVP Воронка сценария</p>
+      <div class="funnel-row">
+        <div class="funnel-step"><b>NDA</b><span>Заходят в сценарий загрузки</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step"><b>76%</b><span>Вводит название</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step"><b>48%</b><span>Выбирает категорию</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step"><b>40%</b><span>Нажатие на «Опубликовать»</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step"><b>21%</b><span>Видео успешно опубликовано</span><div class="funnel-step__line"></div></div>
+      </div>
+    </div>
+
+    <section class="card" id="analysis">
+      <div class="card__text">
+        <h2>Анализ</h2>
+        <p class="lede" style="margin-bottom:0">Посмотрели на текущую воронку взаимодействия со сценарием и выявили слабые места, а также зону нашего влияния</p>
+      </div>
+    </section>
+
+    <div class="funnel">
+      <p class="funnel__label">MVP Воронка сценария</p>
+      <div class="funnel-row">
+        <div class="funnel-step"><b>NDA</b><span>Заходят в сценарий загрузки</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step callout"><b>76%</b><span>Вводит название</span><div class="funnel-step__line"></div><div class="callout-label">↳ Упростить заполнение полей</div></div>
+        <div class="funnel-step"><b>48%</b><span>Выбирает категорию</span><div class="funnel-step__line"></div></div>
+        <div class="funnel-step callout"><b>40%</b><span>Нажатие на «Опубликовать»</span><div class="funnel-step__line"></div><div class="callout-label">↳ Починить приложение</div></div>
+        <div class="funnel-step"><b>21%</b><span>Видео успешно опубликовано</span><div class="funnel-step__line"></div></div>
+      </div>
+    </div>
+
+    <section class="card" id="hypo">
+      <div class="card__text">
+        <h2 style="font-size:32px">Упростить заполнение полей</h2>
+        <p class="lede" style="margin-bottom:0">Сформулировали гипотезы, которые могут сделать сценарий удобнее и увеличить метрики, оценили их по RICE для внедрения в приложение</p>
+      </div>
+    </section>
+
+    <div class="idea-row">
+      <div class="idea-card">
+        <h4>Определять название видео по содержанию</h4>
+        <p>Может не всегда корректно определять, сложно, бек не поддерживает</p>
+      </div>
+      <div class="idea-card">
+        <h4>Автоматическое определение категории</h4>
+        <p>Идеально для пользователя, но бек не поддерживает</p>
+      </div>
+      <div class="idea-card">
+        <h4>Автоматическое заполнение названия</h4>
+        <p>Несложно сделать, пользователь поправит позже</p>
+      </div>
+      <div class="idea-card">
+        <h4>Настройка предвыбора категории</h4>
+        <p>Придётся каждый раз перенастраивать, неудобно и долго</p>
+      </div>
+      <div class="idea-card">
+        <h4>Выводить сверху наиболее часто выбираемые категории</h4>
+        <p>Сложная логика, для некоторых юзеров может не сработать</p>
+      </div>
+      <div class="idea-card">
+        <h4>Добавить поиск</h4>
+        <p>Быстро реализовывать, покрывает все кейсы</p>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card__text">
+        <h2 style="font-size:32px">Починить приложение</h2>
+        <p class="lede" style="margin-bottom:0">Сформулировали гипотезы, которые могут сделать сценарий удобнее и увеличить метрики, оценили их по RICE для внедрения в приложение</p>
+      </div>
+    </section>
+
+    <div class="idea-row">
+      <div class="idea-card">
+        <h4>Снек с просьбой не выходить из прилы</h4>
+        <p>Могут не увидеть, быстро делать</p>
+      </div>
+      <div class="idea-card">
+        <h4>Фоновая загрузка</h4>
+        <p>Делать дольше, но покроем все кейсы</p>
+      </div>
+      <div class="idea-card">
+        <h4>Алерт с просьбой не выходить</h4>
+        <p>Будет напрягать пользователей, быстро делать</p>
+      </div>
+    </div>
+
+    <section class="card" id="result">
+      <div class="card__text">
+        <h2>Результаты</h2>
+        <p class="lede" style="margin-bottom:0">Работы над функцией загрузки видео</p>
+      </div>
+    </section>
+
+    <div class="ba-stat-row">
+      <div class="ba-stat"><div class="val">76% <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 100%</div><div class="lbl">Ввод названия</div></div>
+      <div class="ba-stat"><div class="val">48% <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 73%</div><div class="lbl">Выбирает категорию</div></div>
+      <div class="ba-stat"><div class="val">40% <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 69%</div><div class="lbl">Нажатие на «Опубликовать»</div></div>
+      <div class="ba-stat"><div class="val">21% <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 57%</div><div class="lbl">Видео успешно опубликовано</div></div>
+    </div>
+
+    <section class="card">
+      <div class="card__text" style="padding-bottom:16px">
+        <div style="display:flex; justify-content:space-between; color:var(--muted); font-size:14px; font-weight:600">
+          <span>Реализованное решение</span>
+          <span>Концепт на дизайн-системе</span>
+        </div>
+      </div>
+      <div class="compare-row" style="margin-top:8px">
+        <div class="ph"></div>
+        <div class="ph"></div>
+        <div class="ph"></div>
+      </div>
+      <div class="grid-caption-row">
+        <span>Экран загрузки</span>
+        <span>Выбор категории</span>
+        <span>Видео загружается</span>
+      </div>
+    </section>
+
+    <div class="teaser-row">
+      <div class="teaser-card">
+        <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+        <div class="teaser-card__inner">
+          <div class="teaser-card__media"><img src="assets/Monetisation_Thumbnail.png" alt=""></div>
+          <div>
+            <h4>Как мы увеличили долю монетизируемых авторов?</h4>
+            <p class="desc" style="margin-top:12px">Процесс + результат</p>
+          </div>
+        </div>
+        <div class="teaser-card__cta">
+          <a class="btn-pill" href="monetization.html">
+            <span class="pill">Case study</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="teaser-card">
+        <div class="teaser-card__meta"><span>RUTUBE</span><span>2025—now</span></div>
+        <div class="teaser-card__inner">
+          <div class="teaser-card__media"><img src="assets/Design_system.png" alt=""></div>
+          <div>
+            <h4>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h4>
+            <p class="desc" style="margin-top:12px">&nbsp;</p>
+          </div>
+        </div>
+        <div class="teaser-card__cta">
+          <a class="btn-pill" href="design-system.html">
+            <span class="pill">Case study</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="index.html"><span class="fn-top">Главная <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Обзор всех кейсов</span></a>
+      <a href="studio.html"><span class="fn-top">Студия <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Мобильное приложение</span></a>
+      <a href="design-system.html"><span class="fn-top">Дизайн-система <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">100+ компонентов</span></a>
+      <a href="monetization.html"><span class="fn-top">Монетизация <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Доход авторов</span></a>
+    </nav>
+
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer__close" id="navClose">✕</button>
+  <div class="nav-drawer__eyebrow">Разделы</div>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="studio.html">Студия</a>
+    <a href="design-system.html">Дизайн-система</a>
+    <a href="monetization.html">Монетизация</a>
+    <a href="video.html" class="is-active">Видео</a>
+  </nav>
+  <div class="nav-drawer__footer">Artem Timofeev — Product designer</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artem Timofeev — Product designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- LEFT fixed control block: profile / navigation (398px, exactly as in the mockup) -->
+  <aside class="sidebar" id="sidebar">
+    <div class="profile-card">
+      <div class="profile-card__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+      <div class="profile-card__role">Product designer</div>
+      <div class="profile-card__name">Artem Timofeev</div>
+    </div>
+    <button class="profile-burger" id="profileBurger" aria-label="Опыт и контакты"><span></span></button>
+
+    <div class="sidebar-list" id="sidebarList">
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Your company</div>
+          <div class="exp-row__title">Design related</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Rutube 2025 — Now</div>
+          <div class="exp-row__title">Lead DS designer</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Rutube 2023 — 2025</div>
+          <div class="exp-row__title">Senior designer</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Bay of sea 2022 — 2023</div>
+          <div class="exp-row__title">Studio owner</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Freelance 2019 — now</div>
+          <div class="exp-row__title">Designer</div>
+        </div>
+      </div>
+
+      <div class="sidebar-links">
+        <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <div class="profile-overlay" id="profileOverlay"></div>
+  <div class="profile-modal" id="profileModal">
+    <button class="profile-modal__close" id="profileClose" aria-label="Закрыть">✕</button>
+    <div class="profile-modal__panel">
+    <div class="profile-card">
+      <div class="profile-card__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+      <div class="profile-card__role">Product designer</div>
+      <div class="profile-card__name">Artem Timofeev</div>
+    </div>
+    <div class="sidebar-list">
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Your company</div>
+          <div class="exp-row__title">Design related</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Rutube 2025 — Now</div>
+          <div class="exp-row__title">Lead DS designer</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Rutube 2023 — 2025</div>
+          <div class="exp-row__title">Senior designer</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Bay of sea 2022 — 2023</div>
+          <div class="exp-row__title">Studio owner</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+        <div class="exp-row__meta">
+          <div class="exp-row__period">Freelance 2019 — now</div>
+          <div class="exp-row__title">Designer</div>
+        </div>
+      </div>
+      <div class="sidebar-links">
+        <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Привет!) Я продуктовый дизайнер, фокусируюсь на UX и системном подходе к процессам</h1>
+        <p class="sub">Сейчас делаю 💫 магию в RUTUBE</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="feature-card__icon"><img src="assets/Star.png" alt=""></div><p>Создаю дизайн от идеи до реализации</p></div>
+        <div class="feature-card"><div class="feature-card__icon"><img src="assets/Chaos.png" alt=""></div><p>Структурирую хаос в понятную систему</p></div>
+        <div class="feature-card"><div class="feature-card__icon"><img src="assets/UX.png" alt=""></div><p>Проектирую для людей приятно и просто</p></div>
+        <div class="feature-card"><div class="feature-card__icon"><img src="assets/Target.png" alt=""></div><p>Соединяю удобство с целями бизнеса</p></div>
+      </div>
+    </section>
+
+    <!-- CASE: Design system -->
+    <section class="card">
+      <div class="card__text">
+        <h2>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h2>
+        <p class="lede">Живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, а также прозрачными процессами</p>
+        <div class="stat-scroll">
+        <div class="stat-row">
+          <div class="stat"><b>в 3 раза</b><span>Ускорили дизайнеров и разработку</span></div>
+          <div class="stat"><b>100+</b><span>Компонентов и гайдов</span></div>
+          <div class="stat"><b>5</b><span>Продуктов</span></div>
+          <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
+        </div>
+        </div>
+      </div>
+      <div class="showcase fill">
+        <div class="eyebrow-row"><span>RUTUBE</span><span>2025 — Now</span></div>
+        <img class="showcase-img" src="assets/Design_system.png" alt="RUTUBE design system">
+        <div class="pill-row">
+          <a class="btn-pill" href="design-system.html">
+            <span class="pill">Case study</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE: Studio -->
+    <section class="card">
+      <div class="card__text">
+        <h2>Запустили и развили инструмент по работе с контентом и его аналитики для блогеров</h2>
+        <p class="lede">100 тыс + скачиваний, 12 млн видео загрузили авторы. Обкатаны и настроены процессы выпуска и аналитики фичей</p>
+        <div class="stat-scroll">
+        <div class="stat-row">
+          <div class="stat"><b>2 <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 8 мин.</b><span>Timespent</span></div>
+          <div class="stat"><b>1,5 <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 4 тыс.</b><span>Загружают видео в день</span></div>
+          <div class="stat"><b><img class="mini-arrow-img" src="assets/Arrow_Up.png" alt=""> 15% в год</b><span>DAU</span></div>
+          <div class="stat"><b><img class="mini-arrow-img" src="assets/Arrow_Up.png" alt=""> 20% в год</b><span>RR</span></div>
+        </div>
+        </div>
+      </div>
+      <div class="showcase fill">
+        <div class="eyebrow-row"><span>RUTUBE</span><span>2023—now</span></div>
+        <img class="showcase-img bottom" src="assets/Mobile_studio.png" alt="RUTUBE Studio app">
+        <div class="pill-row">
+          <a class="btn-pill" href="studio.html">
+            <span class="pill">Case study</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="teaser-row">
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили конверсию загрузки видео на 36%?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="video.html">
+              <span class="pill">Case study</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Monetisation_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили долю монетизируемых авторов?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="monetization.html">
+              <span class="pill">Case study</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREELANCE -->
+    <section class="card">
+      <div class="card__text" style="padding-bottom:24px">
+        <h2>Создаю дизайн, запускаю сайты и сервисы для продуктов и услуг</h2>
+        <p class="lede" style="margin-bottom:0">Выстраиваю коммуникацию с заказчиками (от продажи до сдачи проекта), делаю дизайн, координировал команду разработки</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Row 1: E-Wallet (narrow) | Chainswap (wide) -->
+        <div class="project-row">
+          <div class="project-card" style="flex:0 0 33%">
+            <div class="project-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="project-card__thumb phone"><img src="assets/Case_wallet.png" alt="E-Wallet"></div>
+          </div>
+          <div class="project-card">
+            <div class="project-card__meta"><span>BAY OF SEA</span><span>2022—2023</span></div>
+            <div class="project-card__thumb wide"><img src="assets/Case_Chainswap.png" alt="Chainswap"></div>
+          </div>
+        </div>
+        <!-- Row 2: Airplane | Food (equal) -->
+        <div class="project-row">
+          <div class="project-card">
+            <div class="project-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="project-card__thumb phone"><img src="assets/Case_airplane.png" alt="Airplane app"></div>
+          </div>
+          <div class="project-card">
+            <div class="project-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="project-card__thumb phone"><img src="assets/Case_Food.png" alt="Food delivery app"></div>
+          </div>
+        </div>
+        <!-- Row 3: РЖД site (wide) | MyBook (narrow) -->
+        <div class="project-row">
+          <div class="project-card">
+            <div class="project-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="project-card__thumb wide"><img src="assets/Case_site.png" alt="РЖД Медицина сайт"></div>
+          </div>
+          <div class="project-card" style="flex:0 0 27%">
+            <div class="project-card__meta"><span>BAY OF SEA</span><span>2022—2023</span></div>
+            <div class="project-card__thumb phone"><img src="assets/Case-Book.png" alt="MyBook"></div>
+          </div>
+        </div>
+        <!-- Row 4: Where-to-go app | Hackathon (equal) -->
+        <div class="project-row">
+          <div class="project-card">
+            <div class="project-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="project-card__thumb phone"><img src="assets/Case_App.png" alt="Where to go app"></div>
+          </div>
+          <div class="teaser-card" style="flex:1">
+            <div class="teaser-card__meta"><span>FREELANCE</span><span>2019-now</span></div>
+            <div class="teaser-card__inner">
+              <div class="teaser-card__media"><img src="assets/Thumbnail_Hackaton.png" alt=""></div>
+              <div>
+                <h4>Хакатон. Ничего не понять и почти дойти до финала</h4>
+                <p class="desc" style="margin-top:12px">Гайд по участию + ретро</p>
+              </div>
+            </div>
+            <div class="teaser-card__cta">
+              <a class="btn-pill" href="https://vc.ru/design/680563-hakaton-nichego-ne-ponyat-i-pochti-doiti-do-finala" target="_blank" rel="noopener">
+                <span class="pill">Read on VC</span>
+                <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

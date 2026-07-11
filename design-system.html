@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дизайн-система — Artem Timofeev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <nav class="subnav">
+    <a class="nav-btn" href="javascript:history.back()">
+      <svg class="icon-arrow" style="transform:rotate(180deg)" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Назад
+    </a>
+    <a class="nav-btn" href="index.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+    <div class="toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#context">Контекст</a>
+      <a href="#inside">Что внутри</a>
+      <a href="#process">Процесс</a>
+      <a href="#result">Результат</a>
+    </div>
+  </nav>
+
+  <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
+
+  <main class="content subpage">
+
+    <a class="breadcrumb" href="index.html">
+      <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+
+    <section class="hero" id="nachalo" style="min-height:420px">
+      <div class="hero__inner">
+        <h1>Дизайн-система RUTUBE, которая реально работает и масштабируется</h1>
+        <p class="sub">Единый источник правды для 5 продуктовых стримов на Web, Mobile и TV</p>
+        <div class="feature-grid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="feature-card"><div class="feature-card__icon">⚡</div><p>в 3 раза быстрее дизайн и разработка</p></div>
+          <div class="feature-card"><div class="feature-card__icon">🧱</div><p>100+ компонентов и гайдов</p></div>
+          <div class="feature-card"><div class="feature-card__icon">📦</div><p>5 продуктов на одной системе</p></div>
+          <div class="feature-card"><div class="feature-card__icon">🖥️</div><p>3 платформы: Web, Mobile, TV</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="context">
+<div class="card__text">
+      <span class="pill">Контекст</span>
+      <h2 style="margin-top:16px">От разрозненных макетов — к единой системе</h2>
+      <p class="lede">На старте у каждой команды были свои макеты, компоненты и подходы к типографике и отступам. Похожие элементы выглядели и вели себя по-разному на разных платформах, а любое изменение приходилось вносить вручную в десятках мест.</p>
+    </div>
+</section>
+
+    <section class="card" id="inside">
+<div class="card__text">
+      <span class="pill">Что внутри</span>
+      </div>
+<div class="img-grid" style="margin-top:16px">
+        <div class="ph pink"></div>
+        <div class="ph blue"></div>
+        <div class="ph yellow"></div>
+      </div>
+      <div class="grid-caption-row">
+        <span>Токены цвета и типографики</span>
+        <span>Библиотека компонентов</span>
+        <span>Гайдлайны по платформам</span>
+      </div>
+      <p class="lede">Собрали токены (цвет, типографика, отступы, радиусы), библиотеку компонентов с вариантами состояний и гайды по написанию текстов интерфейса — единые для Web, Mobile и TV.</p>
+    </section>
+
+    <section class="card" id="process">
+<div class="card__text">
+      <span class="pill">Процесс</span>
+      <h2 style="margin-top:16px">Как компонент попадает в систему</h2>
+      <div class="process">
+        <div class="process-step"><div class="process-step__inner"><h3>Аудит</h3><p>Собираем повторяющиеся паттерны из продуктовых макетов и находим расхождения между командами</p></div><div class="process-step__num">01</div></div>
+        <div class="process-step"><div class="process-step__inner"><h3>Прототип</h3><p>Проектируем компонент с учётом всех платформ и состояний, обсуждаем с командами-потребителями</p></div><div class="process-step__num">02</div></div>
+        <div class="process-step"><div class="process-step__inner"><h3>Разработка</h3><p>Верстаем компонент в коде синхронно с макетом, покрываем документацией и примерами использования</p></div><div class="process-step__num">03</div></div>
+        <div class="process-step"><div class="process-step__inner"><h3>Внедрение</h3><p>Помогаем командам перейти на новый компонент, собираем обратную связь и вносим доработки</p></div><div class="process-step__num">04</div></div>
+      </div>
+    </div>
+</section>
+
+    <section class="card" id="result">
+<div class="card__text">
+      <span class="pill">Результат</span>
+      <h2 style="margin-top:16px">Дизайнеры и разработчики стали работать в 3 раза быстрее</h2>
+      <p class="lede">Единая система сняла необходимость каждый раз заново решать одни и те же задачи. Продукты стали визуально и функционально согласованы, а онбординг новых сотрудников в команду сократился с недель до дней.</p>
+      <div class="stat-row">
+        <div class="stat"><b>в 3 раза</b><span>Ускорили дизайнеров и разработку</span></div>
+        <div class="stat"><b>100+</b><span>Компонентов и гайдов</span></div>
+        <div class="stat"><b>5</b><span>Продуктов</span></div>
+        <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
+      </div>
+    </div>
+</section>
+
+    <nav class="footer-nav">
+      <a href="index.html"><span class="fn-top">Главная <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Обзор всех кейсов</span></a>
+      <a href="studio.html"><span class="fn-top">Студия <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Мобильное приложение</span></a>
+      <a href="monetization.html"><span class="fn-top">Монетизация <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Доход авторов</span></a>
+      <a href="video.html"><span class="fn-top">Видео <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Плеер и стриминг</span></a>
+    </nav>
+
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer__close" id="navClose">✕</button>
+  <div class="nav-drawer__eyebrow">Разделы</div>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="studio.html">Студия</a>
+    <a href="design-system.html" class="is-active">Дизайн-система</a>
+    <a href="monetization.html">Монетизация</a>
+    <a href="video.html">Видео</a>
+  </nav>
+  <div class="nav-drawer__footer">Artem Timofeev — Product designer</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
