@@ -36,8 +36,9 @@
 
   <main class="content subpage">
 
-    <section class="hero" id="nachalo" style="text-align:center; min-height:450px">
-      <div class="hero__text" style="align-items:center; padding-top:80px">
+    <section class="hero case-hero" id="nachalo" style="min-height:450px">
+      <div class="hero__text">
+        <img class="case-hero__logo" src="assets/Загрузка видео/Загрузка_Logo.png" alt="">
         <h1>Как мы увеличили конверсию загрузки видео на 36%?</h1>
         <p class="sub">Процесс + результат</p>
       </div>
@@ -69,19 +70,12 @@
       </div>
     </section>
 
-    <section class="card">
-      <div class="card__text">
-        <span class="pill" style="margin-bottom:0">MVP Загрузка видео</span>
-      </div>
-      <div class="img-grid" style="margin-top:16px; height:500px">
-        <div class="ph"></div>
-        <div class="ph"></div>
-        <div class="ph"></div>
-      </div>
-      <div class="grid-caption-row">
-        <span>Экран загрузки</span>
-        <span>Выбор категории</span>
-        <span>Видео загружается</span>
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">MVP Загрузка видео</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 18.png" alt=""><span>Экран загрузки</span></div>
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 19.png" alt=""><span>Выбор категории</span></div>
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 20.png" alt=""><span>Видео загружается</span></div>
       </div>
     </section>
 
@@ -94,6 +88,7 @@
         <div class="funnel-step"><b>40%</b><span>Нажатие на «Опубликовать»</span><div class="funnel-step__line"></div></div>
         <div class="funnel-step"><b>21%</b><span>Видео успешно опубликовано</span><div class="funnel-step__line"></div></div>
       </div>
+      <img class="funnel__shape" src="assets/Загрузка видео/Funnel_1.png" alt="">
     </div>
 
     <section class="card" id="analysis">
@@ -112,6 +107,7 @@
         <div class="funnel-step callout"><b>40%</b><span>Нажатие на «Опубликовать»</span><div class="funnel-step__line"></div><div class="callout-label">↳ Починить приложение</div></div>
         <div class="funnel-step"><b>21%</b><span>Видео успешно опубликовано</span><div class="funnel-step__line"></div></div>
       </div>
+      <img class="funnel__shape" src="assets/Загрузка видео/Funnel_2.png" alt="">
     </div>
 
     <section class="card" id="hypo">
@@ -121,34 +117,41 @@
       </div>
     </section>
 
-    <div class="idea-row">
+    <div class="idea-row card-slider">
       <div class="idea-card">
         <h4>Определять название видео по содержанию</h4>
         <p>Может не всегда корректно определять, сложно, бек не поддерживает</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Автоматическое определение категории</h4>
         <p>Идеально для пользователя, но бек не поддерживает</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Автоматическое заполнение названия</h4>
         <p>Несложно сделать, пользователь поправит позже</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/Checkmark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Настройка предвыбора категории</h4>
         <p>Придётся каждый раз перенастраивать, неудобно и долго</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Выводить сверху наиболее часто выбираемые категории</h4>
         <p>Сложная логика, для некоторых юзеров может не сработать</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Добавить поиск</h4>
         <p>Быстро реализовывать, покрывает все кейсы</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/Checkmark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Расширить область взаимодействия со списком категорий</h4>
         <p>Быстро реализовать и протестировать</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/Checkmark.png" alt=""></span>
       </div>
     </div>
 
@@ -159,18 +162,21 @@
       </div>
     </section>
 
-    <div class="idea-row">
+    <div class="idea-row card-slider">
       <div class="idea-card">
         <h4>Снек с просьбой не выходить из прилы</h4>
         <p>Могут не увидеть, быстро делать</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Фоновая загрузка</h4>
         <p>Делать дольше, но покроем все кейсы</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/Checkmark.png" alt=""></span>
       </div>
       <div class="idea-card">
         <h4>Алерт с просьбой не выходить</h4>
         <p>Будет напрягать пользователей, быстро делать</p>
+        <span class="idea-card__icon"><img src="assets/Загрузка видео/X_mark.png" alt=""></span>
       </div>
     </div>
 
@@ -188,22 +194,11 @@
       <div class="ba-stat"><div class="val">21% <img class="mini-arrow-img" src="assets/Arrow_Right.png" alt=""> 57%</div><div class="lbl">Видео успешно опубликовано</div></div>
     </div>
 
-    <section class="card">
-      <div class="card__text" style="padding-bottom:16px">
-        <div style="display:flex; justify-content:space-between; color:var(--muted); font-size:14px; font-weight:600">
-          <span>Реализованное решение</span>
-          <span>Концепт на дизайн-системе</span>
-        </div>
-      </div>
-      <div class="compare-row" style="margin-top:8px">
-        <div class="ph"></div>
-        <div class="ph"></div>
-        <div class="ph"></div>
-      </div>
-      <div class="grid-caption-row">
-        <span>Экран загрузки</span>
-        <span>Выбор категории</span>
-        <span>Видео загружается</span>
+    <section class="shot-card" style="margin-top:24px">
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 21.png" alt=""><span>Экран загрузки</span></div>
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 22.png" alt=""><span>Выбор категории</span></div>
+        <div class="phone-item"><img src="assets/Загрузка видео/Phone 23.png" alt=""><span>Видео загружается</span></div>
       </div>
     </section>
 
