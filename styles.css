@@ -401,11 +401,12 @@ body.lang-switching{ opacity:0; }
 /* Modifier: each metric on its own tile (used in case-page "Результаты" blocks) */
 .stat-row.tiles{ gap:16px; flex-wrap:nowrap; }
 .stat-row.tiles .stat{
-  background: var(--surface-2);
+  background: var(--surface);
   border-radius: var(--radius-md);
   padding: 20px 24px;
-  flex:0 0 auto;
+  flex:1 1 0;
 }
+.shot-card.metrics{ background: var(--bg); }
 .stat b{ font-weight:900; font-size:32px; letter-spacing:-.03em; display:flex; align-items:center; gap:6px; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
@@ -657,14 +658,14 @@ body.lang-switching{ opacity:0; }
   border-radius: var(--radius-lg);
   padding: 24px 32px;
 }
-.info-row.plain{ background:transparent; padding:24px 8px; }
+.info-row.plain{ background:transparent; padding:0 8px; }
 .hero-gap{ margin-top:40px; }
 @media (max-width:1024px){ .hero-gap{ margin-top:32px; } }
 @media (max-width:720px){ .hero-gap{ margin-top:24px; } }
-.info-row .info-col{ display:flex; flex-direction:column; gap:8px; min-width:140px; }
+.info-row .info-col{ display:flex; flex-direction:column; gap:8px; min-width:140px; flex:0 0 auto; }
 .info-row .info-col span{ color:var(--muted); font-size:16px; }
 .info-row .info-col b{ font-weight:500; font-size:16px; }
-.info-row .info-col .tags{ display:flex; gap:24px; flex-wrap:wrap; font-weight:500; font-size:16px; }
+.info-row .info-col .tags{ display:flex; gap:24px; flex-wrap:nowrap; font-weight:500; font-size:16px; }
 
 /* ==========================================================================
    ICON PANEL — dark card with icon chips (Опыт зрителей / Опыт авторов)
@@ -1117,9 +1118,10 @@ body.lang-switching{ opacity:0; }
   padding:24px 16px 40px;
 }
 .shot-card__label{ color:var(--muted); font-size:14px; padding-left:8px; margin:0 0 32px; }
+.shot-card .phone-item{ gap:16px; }
 .shot-card .phone-item img{ height:500px; border-radius:12px; }
-@media (max-width:1024px){ .shot-card .phone-item img{ height:360px; border-radius:12px; } }
-@media (max-width:720px){ .shot-card .phone-item img{ height:300px; border-radius:8px; } }
+@media (max-width:1024px){ .shot-card .phone-item{ gap:12px; } .shot-card .phone-item img{ height:360px; border-radius:12px; } }
+@media (max-width:720px){ .shot-card .phone-item{ gap:8px; } .shot-card .phone-item img{ height:300px; border-radius:8px; } }
 
 /* Shared horizontal-scroll container for any "heading + slider of cards" block:
    apply alongside a content class, e.g. class="process card-slider" */
@@ -1132,6 +1134,7 @@ body.lang-switching{ opacity:0; }
   padding-bottom:4px;
 }
 .card-slider::-webkit-scrollbar{ display:none; }
+.flow-cards{ gap:8px; }
 .flow-card{
   flex:0 0 455px;
   min-height:450px;
