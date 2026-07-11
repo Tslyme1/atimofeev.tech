@@ -350,9 +350,16 @@ body.lang-switching{ opacity:0; }
   .hero.green .case-hero__logo{ top:0px; width:140px; height:140px; }
 }
 /* Modifier: push hero__text lower (used on video.html, without the green color swap) */
-.hero.case-hero.video .hero__text{ padding-top:96px; }
-@media (max-width:1024px){ .hero.case-hero.video .hero__text{ padding-top:66px; } }
-@media (max-width:720px){ .hero.case-hero.video .hero__text{ padding-top:40px; } }
+.hero.case-hero.video .hero__text{ padding-top:160px; }
+.hero.video .case-hero__logo{ top:64px; }
+@media (max-width:1024px){
+  .hero.case-hero.video .hero__text{ padding-top:130px; }
+  .hero.video .case-hero__logo{ top:56px; }
+}
+@media (max-width:720px){
+  .hero.case-hero.video .hero__text{ padding-top:104px; }
+  .hero.video .case-hero__logo{ top:48px; }
+}
 .hero__text{ position:relative; z-index:1; padding: 24px 24px 0; display:flex; flex-direction:column; gap:16px; }
 .hero h1{
   font-weight:900; font-size: clamp(28px, 3.2vw, 48px);
@@ -799,7 +806,7 @@ body.lang-switching{ opacity:0; }
   padding:24px 16px 32px;
   position:relative;
 }
-.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 40px; }
+.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 16px; }
 .funnel-row{ display:flex; justify-content:space-between; }
 .funnel-step{ display:flex; flex-direction:column; gap:8px; flex:0 0 180px; scroll-snap-align:start; }
 .funnel-step b{ font-weight:900; font-size:40px; letter-spacing:-.03em; }
@@ -807,13 +814,15 @@ body.lang-switching{ opacity:0; }
 .funnel-step__line{ height:3px; background:rgba(0,0,0,.15); border-radius:2px; margin-top:8px; }
 .funnel-step.callout{ position:relative; }
 .funnel-step .callout-label{ color:#be32ff; font-weight:800; font-size:16px; margin-top:12px; }
-.funnel__shape{ display:block; width:100%; height:auto; margin-top:24px; pointer-events:none; }
+.funnel__shape{ display:block; width:auto; height:800px; max-width:100%; margin:0 auto; pointer-events:none; }
+@media (max-width:1024px){ .funnel__shape{ height:500px; } }
+@media (max-width:720px){ .funnel__shape{ height:320px; } }
 
 /* ==========================================================================
    IDEA CARD ICON — check/x badge (used inside .flow-card, see below)
    ========================================================================== */
 .idea-card__icon{ font-size:20px; opacity:.6; }
-.idea-card__icon img{ width:24px; height:24px; display:block; }
+.idea-card__icon img{ width:64px; height:64px; display:block; }
 
 /* ==========================================================================
    COMPARE ROW (dark screenshot comparisons)
@@ -1181,7 +1190,7 @@ body.lang-switching{ opacity:0; }
   position:absolute; left:24px; bottom:24px; z-index:1;
   height:52px; width:auto;
 }
-.flow-card .idea-card__icon{ position:absolute; right:24px; bottom:24px; z-index:1; align-self:auto; }
+.flow-card .idea-card__icon{ position:absolute; left:24px; bottom:24px; z-index:1; align-self:auto; }
 @media (max-width:720px){
   .flow-card{ flex:0 0 82%; min-height:380px; }
   .flow-card h3{ font-size:22px; }
