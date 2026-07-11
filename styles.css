@@ -349,6 +349,10 @@ body.lang-switching{ opacity:0; }
   .hero.case-hero.green .hero__text{ padding-top:40px; }
   .hero.green .case-hero__logo{ top:0px; width:140px; height:140px; }
 }
+/* Modifier: push hero__text lower (used on video.html, without the green color swap) */
+.hero.case-hero.video .hero__text{ padding-top:96px; }
+@media (max-width:1024px){ .hero.case-hero.video .hero__text{ padding-top:66px; } }
+@media (max-width:720px){ .hero.case-hero.video .hero__text{ padding-top:40px; } }
 .hero__text{ position:relative; z-index:1; padding: 24px 24px 0; display:flex; flex-direction:column; gap:16px; }
 .hero h1{
   font-weight:900; font-size: clamp(28px, 3.2vw, 48px);
@@ -806,24 +810,10 @@ body.lang-switching{ opacity:0; }
 .funnel__shape{ display:block; width:100%; height:auto; margin-top:24px; pointer-events:none; }
 
 /* ==========================================================================
-   IDEA CARDS — hypotheses row (dark cards)
+   IDEA CARD ICON — check/x badge (used inside .flow-card, see below)
    ========================================================================== */
-.idea-card{
-  flex:0 0 260px;
-  scroll-snap-align:start;
-  background:#0c0c0e;
-  border-radius: var(--radius-lg);
-  padding:24px;
-  min-height:280px;
-  display:flex; flex-direction:column; justify-content:space-between;
-  color:#fff;
-}
-.idea-card h4{ font-weight:900; font-size:22px; letter-spacing:-.02em; margin:0 0 12px; line-height:1.15; }
-.idea-card p{ margin:0; color:#c8c8cc; font-size:15px; line-height:1.5; }
-.idea-card__icon{ align-self:flex-end; font-size:20px; opacity:.6; }
+.idea-card__icon{ font-size:20px; opacity:.6; }
 .idea-card__icon img{ width:24px; height:24px; display:block; }
-@media (max-width:1024px){ .idea-card{ min-height:200px; flex:0 0 240px; } }
-@media (max-width:720px){ .idea-card{ min-height:160px; flex:0 0 76%; } }
 
 /* ==========================================================================
    COMPARE ROW (dark screenshot comparisons)
@@ -1191,6 +1181,7 @@ body.lang-switching{ opacity:0; }
   position:absolute; left:24px; bottom:24px; z-index:1;
   height:52px; width:auto;
 }
+.flow-card .idea-card__icon{ position:absolute; right:24px; bottom:24px; z-index:1; align-self:auto; }
 @media (max-width:720px){
   .flow-card{ flex:0 0 82%; min-height:380px; }
   .flow-card h3{ font-size:22px; }
