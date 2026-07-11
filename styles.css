@@ -406,7 +406,8 @@ body.lang-switching{ opacity:0; }
   padding: 20px 24px;
   flex:1 1 0;
 }
-.shot-card.metrics{ background: var(--bg); }
+.shot-card.metrics{ background: var(--bg); padding-bottom:16px; }
+.stat-row.tiles{ width:100%; }
 .stat b{ font-weight:900; font-size:32px; letter-spacing:-.03em; display:flex; align-items:center; gap:6px; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
@@ -551,7 +552,7 @@ body.lang-switching{ opacity:0; }
    Sub-case cards (two teaser cards inside a case study)
    ========================================================================== */
 .teaser-row{ display:flex; gap:8px; }
-.card .teaser-row{ margin-top:8px; }
+.card__text + .teaser-row{ margin-top:8px; }
 .teaser-card{
   flex:1;
   background: var(--bg);
@@ -652,12 +653,14 @@ body.lang-switching{ opacity:0; }
    INFO ROW — Роль / Аудитория / Что было сделано
    ========================================================================== */
 .info-row{
-  display:flex; flex-wrap:nowrap; justify-content:center; gap:48px; overflow-x:auto;
+  display:flex; flex-wrap:nowrap; justify-content:flex-start; gap:48px; overflow-x:auto;
   margin-top:24px;
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 24px 32px;
+  scrollbar-width:none;
 }
+.info-row::-webkit-scrollbar{ display:none; }
 .info-row.plain{ background:transparent; padding:0 8px; }
 .hero-gap{ margin-top:40px; }
 @media (max-width:1024px){ .hero-gap{ margin-top:32px; } }
@@ -1134,6 +1137,7 @@ body.lang-switching{ opacity:0; }
   padding-bottom:4px;
 }
 .card-slider::-webkit-scrollbar{ display:none; }
+.card-slider > *:last-child{ margin-right:24px; }
 .flow-cards{ gap:8px; }
 .flow-card{
   flex:0 0 455px;
