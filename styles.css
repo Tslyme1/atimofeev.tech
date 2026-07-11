@@ -470,11 +470,10 @@ body.lang-switching{ opacity:0; }
 /* ==========================================================================
    Process steps (real timeline — order matters)
    ========================================================================== */
-.process{
-  display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;
-}
 .process-step{
   position:relative; overflow:hidden;
+  flex:0 0 300px;
+  scroll-snap-align:start;
   background: var(--dark);
   border-radius: var(--radius-lg);
   padding:24px;
@@ -645,11 +644,12 @@ body.lang-switching{ opacity:0; }
    ========================================================================== */
 .info-row{
   display:flex; flex-wrap:nowrap; gap:48px; overflow-x:auto;
+  margin-top:24px;
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 24px 32px;
 }
-.info-row.plain{ background:transparent; padding:0 8px; }
+.info-row.plain{ background:transparent; padding:24px 8px; }
 .hero-gap{ margin-top:40px; }
 @media (max-width:1024px){ .hero-gap{ margin-top:32px; } }
 @media (max-width:720px){ .hero-gap{ margin-top:24px; } }
@@ -740,8 +740,8 @@ body.lang-switching{ opacity:0; }
   position:relative;
 }
 .funnel__label{ color:var(--muted); font-size:14px; margin:0 0 40px; }
-.funnel-row{ display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
-.funnel-step{ display:flex; flex-direction:column; gap:8px; flex:1; min-width:120px; }
+.funnel-row{ display:flex; justify-content:space-between; }
+.funnel-step{ display:flex; flex-direction:column; gap:8px; flex:0 0 180px; scroll-snap-align:start; }
 .funnel-step b{ font-weight:900; font-size:40px; letter-spacing:-.03em; }
 .funnel-step span{ color:var(--muted); font-size:15px; }
 .funnel-step__line{ height:3px; background:rgba(0,0,0,.15); border-radius:2px; margin-top:8px; }
@@ -941,7 +941,6 @@ body.lang-switching{ opacity:0; }
   .sidebar .sidebar-links{ display:none; }
   .content{ margin-left:0; }
   .menu-fab{ top:16px; right:16px; }
-  .process{ grid-template-columns: repeat(2, 1fr); }
   .img-grid{ height:380px; }
   .footer-nav{ grid-template-columns: repeat(2, 1fr); }
   .footer-nav a:nth-child(3){ border-left:none; }
@@ -1047,7 +1046,6 @@ body.lang-switching{ opacity:0; }
   .project-row{ flex-direction:column; }
   .project-row .project-card{ flex:1 1 auto !important; }
   .project-card{ min-height: 420px; }
-  .process{ grid-template-columns: 1fr; }
   .img-grid{ grid-auto-flow:row; grid-auto-columns:unset; height:auto; }
   .img-grid .ph{ height:220px; }
   .footer-nav{ grid-template-columns: 1fr; }
@@ -1061,7 +1059,6 @@ body.lang-switching{ opacity:0; }
   .flow-diagram{ flex-direction:column; }
   .flow-arrow{ transform:rotate(90deg); }
   .bar-chart{ flex-direction:row; }
-  .funnel-row{ flex-direction:column; }
   .info-row{ flex-direction:column; gap:20px; }
 }
 
@@ -1076,8 +1073,6 @@ body.lang-switching{ opacity:0; }
 @media (max-width:1024px){ .block-gap{ margin-top:96px; } }
 @media (max-width:720px){ .block-gap{ margin-top:64px; } }
 .card h2 .dim{ color:#b9b9b9; }
-
-.info-row.plain{ background:transparent; padding:24px 8px; }
 
 .case-hero{
   text-align:center;
@@ -1104,7 +1099,7 @@ body.lang-switching{ opacity:0; }
   position:relative; z-index:1;
 }
 
-.media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
 .media-duo img{ width:100%; height:auto; border-radius:24px; display:block; }
 
 .shot-card{
@@ -1117,7 +1112,9 @@ body.lang-switching{ opacity:0; }
 @media (max-width:1024px){ .shot-card .phone-item img{ height:360px; border-radius:20px; } }
 @media (max-width:720px){ .shot-card .phone-item img{ height:300px; border-radius:16px; } }
 
-.flow-cards{
+/* Shared horizontal-scroll container for any "heading + slider of cards" block:
+   apply alongside a content class, e.g. class="process card-slider" */
+.card-slider{
   display:flex; gap:16px;
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;
@@ -1125,7 +1122,7 @@ body.lang-switching{ opacity:0; }
   scroll-snap-type:x proximity;
   padding-bottom:4px;
 }
-.flow-cards::-webkit-scrollbar{ display:none; }
+.card-slider::-webkit-scrollbar{ display:none; }
 .flow-card{
   flex:0 0 455px;
   min-height:450px;
