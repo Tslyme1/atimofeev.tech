@@ -434,7 +434,7 @@ body.lang-switching{ opacity:0; }
   padding: 20px 24px;
   flex:1 1 0;
 }
-.shot-card.metrics{ background: var(--bg); padding-bottom:16px; }
+.shot-card.metrics{ background: var(--bg); padding:24px 0 0; }
 .stat b{ font-weight:900; font-size:32px; letter-spacing:-.03em; display:flex; align-items:center; gap:6px; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
