@@ -506,6 +506,35 @@ body.lang-switching{ opacity:0; }
 }
 
 /* ==========================================================================
+   Compare panels — "было / стало" pair (design-system case page)
+   ========================================================================== */
+.compare-panels{ display:flex; gap:8px; }
+.compare-panels .panel{
+  flex:1; position:relative; overflow:hidden;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding:32px;
+  min-height:420px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.compare-panels .panel.dark{ background: var(--dark); color:#fff; }
+.compare-panels .panel h3{ font-weight:900; font-size:28px; margin:0 0 12px; letter-spacing:-.02em; position:relative; z-index:1; }
+.compare-panels .panel p{ margin:0; font-size:15px; color:var(--muted); line-height:1.5; max-width:380px; position:relative; z-index:1; }
+.compare-panels .panel.dark p{ color:#d8d8db; }
+.compare-panels .panel img{
+  position:absolute; right:-24px; bottom:-24px;
+  max-width:52%; height:auto; pointer-events:none;
+}
+@media (max-width:1024px){
+  .compare-panels .panel{ flex:0 0 88%; min-height:340px; padding:24px; }
+}
+@media (max-width:720px){
+  .compare-panels .panel{ flex:0 0 88%; min-height:280px; padding:20px; }
+  .compare-panels .panel h3{ font-size:22px; }
+  .compare-panels .panel img{ max-width:44%; }
+}
+
+/* ==========================================================================
    Case link cards (project grid on home)
    ========================================================================== */
 .project-grid{
