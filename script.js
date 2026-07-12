@@ -84,10 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     el.addEventListener('wheel', (e) => {
       if (el.scrollWidth <= el.clientWidth) return;
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)){
-        el.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      // Normalize line/page deltaMode to roughly pixel units so trackpads and notched mice both feel right
+      const unit = e.deltaMode === 1 ? 16 : (e.deltaMode === 2 ? el.clientHeight : 1);
+      el.scrollLeft += e.deltaY * unit;
+      e.preventDefault();
     }, { passive:false });
     el.addEventListener('scroll', updateFade, { passive:true });
     window.addEventListener('resize', updateFade);
