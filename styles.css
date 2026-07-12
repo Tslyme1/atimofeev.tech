@@ -1185,7 +1185,7 @@ body.lang-switching{ opacity:0; }
 .phone-scroll.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
 .flow-cards{ gap:8px; }
 .flow-card{
-  flex:0 0 455px;
+  flex:0 0 546px;
   min-height:450px;
   border-radius:24px;
   padding:24px;
@@ -1212,10 +1212,10 @@ body.lang-switching{ opacity:0; }
 }
 .flow-card .idea-card__icon{ position:absolute; left:24px; bottom:24px; z-index:1; align-self:auto; }
 @media (max-width:1024px){
-  .flow-card{ flex:0 0 303px; min-height:375px; }
+  .flow-card{ flex:0 0 364px; min-height:375px; }
 }
 @media (max-width:720px){
-  .flow-card{ flex:0 0 55%; min-height:317px; }
+  .flow-card{ flex:0 0 66%; min-height:317px; }
   .flow-card h3{ font-size:22px; }
 }
 
