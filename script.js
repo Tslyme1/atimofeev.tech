@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fab?.addEventListener('click', openCaseModal);
     caseClose?.addEventListener('click', closeCaseModal);
     caseOverlay?.addEventListener('click', closeCaseModal);
+    caseModal.querySelectorAll('.case-modal__toc a').forEach(a => a.addEventListener('click', closeCaseModal));
   }
 
   // ---------- Profile modal (burger on tablet/mobile) ----------
@@ -51,6 +52,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape'){ closeDrawer(); closeProfile(); closeCaseModal(); }
+  });
+
+  // ---------- TOC scroll-spy (subnav + case modal) ----------
+  const tocLinks = document.querySelectorAll('.subnav .toc a[href^="#"], .case-modal__toc a[href^="#"]');
+  if (tocLinks.length){
+    const sections = [...new Set(Array.from(tocLinks)
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean))];
+    function setActiveTOC(id){
+      tocLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+    }
+    function updateSpy(){
+      const line = window.innerHeight * 0.4;
+      let current = sections[0];
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top <= line) current = sec;
+      });
+      if (current) setActiveTOC(current.id);
+    }
+    window.addEventListener('scroll', updateSpy, { passive:true });
+    window.addEventListener('resize', updateSpy);
+    updateSpy();
+  }
+
+  // ---------- Horizontal sliders: wheel-to-scroll + right-edge fade ----------
+  document.querySelectorAll('.card-slider, .phone-scroll').forEach(el => {
+    function updateFade(){
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
+      el.classList.toggle('at-end', atEnd || el.scrollWidth <= el.clientWidth);
+    }
+    el.addEventListener('wheel', (e) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+        el.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive:false });
+    el.addEventListener('scroll', updateFade, { passive:true });
+    window.addEventListener('resize', updateFade);
+    updateFade();
   });
 
   // ---------- Whole-block click (teaser cards & showcases) ----------
