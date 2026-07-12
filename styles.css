@@ -353,11 +353,11 @@ body.lang-switching{ opacity:0; }
 }
 /* Modifier: green noise variant (used on monetization.html hero instead of the default violet glow) */
 .hero.green::before{
-  background: url("assets/Green_noise.png") center / cover no-repeat;
+  background: url("assets/Green_noise.png") left center / cover no-repeat;
 }
 .hero.green{ min-height:535px; justify-content:center; }
 .hero.case-hero.green .hero__text{ padding-top:96px; gap:24px; }
-.hero.green .case-hero__logo{ top:28px; width:140px; height:140px; }
+.hero.green .case-hero__logo{ top:-4px; width:140px; height:140px; }
 @media (max-width:1024px){
   .hero.green{ min-height:508px; }
   .hero.case-hero.green .hero__text{ padding-top:66px; }
@@ -369,14 +369,14 @@ body.lang-switching{ opacity:0; }
   .hero.green .case-hero__logo{ top:0px; width:140px; height:140px; }
 }
 /* Modifier: push hero__text lower (used on video.html, without the green color swap) */
-.hero.case-hero.video{ min-height:535px; }
+.hero.case-hero.video{ min-height:535px; justify-content:center; }
 .hero.case-hero.video .hero__text{ padding-top:160px; }
+.hero.case-hero.video h1{ font-size: clamp(24px, 2.6vw, 48px); }
 .hero.video .case-hero__logo{ top:88px; width:140px; height:140px; }
 @media (max-width:1024px){
   .hero.case-hero.video{ min-height:508px; }
   .hero.case-hero.video .hero__text{ padding-top:130px; }
   .hero.video .case-hero__logo{ top:56px; width:140px; height:140px; }
-  .hero.case-hero.video h1{ font-size:48px; }
 }
 @media (max-width:720px){
   .hero.case-hero.video{ min-height:481px; }
@@ -801,7 +801,7 @@ body.lang-switching{ opacity:0; }
   scrollbar-width:none;
 }
 .funnel::-webkit-scrollbar{ display:none; }
-.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 16px; }
+.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 16px; position:sticky; left:16px; width:max-content; }
 .funnel-row{ display:flex; justify-content:space-between; }
 .funnel-step{ display:flex; flex-direction:column; gap:8px; flex:0 0 180px; scroll-snap-align:start; }
 .funnel-step b{ font-weight:900; font-size:40px; letter-spacing:-.03em; }
@@ -811,7 +811,7 @@ body.lang-switching{ opacity:0; }
 .funnel-step .callout-label{ color:#be32ff; font-weight:800; font-size:16px; margin-top:12px; }
 .funnel__shape{ display:block; width:auto; height:800px; max-width:none; margin:0 auto; pointer-events:none; }
 @media (max-width:1024px){ .funnel__shape{ height:500px; } }
-@media (max-width:720px){ .funnel__shape{ height:320px; } }
+@media (max-width:720px){ .funnel__shape{ height:416px; } }
 
 /* ==========================================================================
    IDEA CARD ICON — check/x badge (used inside .flow-card, see below)
@@ -1210,8 +1210,11 @@ body.lang-switching{ opacity:0; }
   height:52px; width:auto;
 }
 .flow-card .idea-card__icon{ position:absolute; left:24px; bottom:24px; z-index:1; align-self:auto; }
+@media (max-width:1024px){
+  .flow-card{ flex:0 0 303px; min-height:375px; }
+}
 @media (max-width:720px){
-  .flow-card{ flex:0 0 82%; min-height:380px; }
+  .flow-card{ flex:0 0 55%; min-height:317px; }
   .flow-card h3{ font-size:22px; }
 }
 
@@ -1245,8 +1248,8 @@ body.lang-switching{ opacity:0; }
 .case-modal__profile .profile-card__avatar{ width:56px; height:56px; border-radius:14px; grid-row:1 / span 2; margin-bottom:0; }
 .case-modal__profile .profile-card__name{ grid-column:2; grid-row:1; align-self:end; font-size:16px; }
 .case-modal__profile .profile-card__role{ grid-column:2; grid-row:2; align-self:start; font-size:13px; }
+.case-modal__profile{ margin-top:16px; }
 
 @media (max-width:720px){
   .menu-fab{ width:48px; height:48px; top:16px; right:16px; }
-  .case-modal__profile{ margin-top:16px; }
 }
