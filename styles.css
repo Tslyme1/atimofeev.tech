@@ -1072,6 +1072,7 @@ body.lang-switching{ opacity:0; }
   .stat-scroll:has(.stat-row.tiles)::after{ content:none; }
 
   .teaser-row{ flex-direction:column; }
+  .hide-mobile{ display:none; }
   .teaser-card{ min-height:0; padding-bottom:76px; }
   .teaser-card__inner{ position:static; transform:none; width:100%; margin-top:12px; }
   .teaser-card h4{ font-size:19px; }
