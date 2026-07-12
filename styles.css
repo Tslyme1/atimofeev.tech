@@ -291,17 +291,6 @@ body.lang-switching{ opacity:0; }
   .content.subpage{ margin-left:0; }
 }
 
-.breadcrumb{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:12px 16px;
-  background: var(--surface);
-  border-radius: var(--radius-pill);
-  width:fit-content;
-  font-weight:600; font-size:16px; letter-spacing:-.02em;
-  margin-bottom:8px;
-}
-.breadcrumb .icon-arrow{ transform: rotate(180deg); }
-
 /* ==========================================================================
    Hero (dark)
    ========================================================================== */
@@ -486,51 +475,6 @@ body.lang-switching{ opacity:0; }
   box-shadow: 0 48px 96px -32px rgba(0,0,0,.18), 0 20px 48px -20px rgba(0,0,0,.1);
 }
 
-.img-grid{
-  display:grid; gap:16px; grid-auto-flow:column; grid-auto-columns: 1fr;
-  height: 500px;
-}
-.img-grid .ph{
-  border-radius: var(--radius-xl);
-  background: transparent;
-  border: 1.5px dashed #d9d9d9;
-  height:100%;
-}
-
-.grid-caption-row{
-  display:flex; gap:16px; margin: 8px 0 24px;
-  color:var(--muted); font-size:14px;
-}
-.grid-caption-row span{ flex:1; text-align:center; }
-
-/* ==========================================================================
-   Process steps (real timeline — order matters)
-   ========================================================================== */
-.process-step{
-  position:relative; overflow:hidden;
-  flex:0 0 300px;
-  scroll-snap-align:start;
-  background: var(--dark);
-  border-radius: var(--radius-lg);
-  padding:24px;
-  min-height:280px;
-  color:#fff;
-}
-.process-step::before{
-  content:"";
-  position:absolute; inset:-40%;
-  background: radial-gradient(45% 45% at 30% 20%, rgba(235,46,159,.45), transparent 70%),
-              radial-gradient(45% 45% at 80% 80%, rgba(79,125,255,.35), transparent 70%);
-  filter: blur(30px);
-}
-.process-step__inner{ position:relative; z-index:1; }
-.process-step h3{ font-weight:900; font-size:24px; margin:0 0 12px; letter-spacing:-.02em; }
-.process-step p{ margin:0; font-size:15px; color:#d8d8db; line-height:1.5; }
-.process-step__num{
-  position:absolute; bottom:20px; left:24px; z-index:1;
-  font-weight:900; font-size:14px; color: var(--accent-yellow); letter-spacing: .1em;
-}
-
 /* ==========================================================================
    Compare panels — "было / стало" pair (design-system case page)
    ========================================================================== */
@@ -541,24 +485,30 @@ body.lang-switching{ opacity:0; }
   border-radius: var(--radius-lg);
   padding:32px;
   min-height:420px;
-  display:flex; flex-direction:column; justify-content:flex-end;
+  display:flex; flex-direction:column;
 }
 .compare-panels .panel.dark{ background: var(--dark); color:#fff; }
 .compare-panels .panel h3{ font-weight:900; font-size:28px; margin:0 0 12px; letter-spacing:-.02em; position:relative; z-index:1; }
 .compare-panels .panel p{ margin:0; font-size:15px; color:var(--muted); line-height:1.5; max-width:380px; position:relative; z-index:1; }
 .compare-panels .panel.dark p{ color:#d8d8db; }
 .compare-panels .panel img{
-  position:absolute; right:-24px; bottom:-24px;
-  max-width:52%; height:auto; pointer-events:none;
+  display:block; margin:24px auto 0 auto;
+  max-width:78%; max-height:280px; width:auto; height:auto;
+  object-fit:contain; pointer-events:none;
 }
+.compare-panels .panel img + img{ margin-top:12px; }
 @media (max-width:1024px){
   .compare-panels .panel{ flex:0 0 88%; min-height:340px; padding:24px; }
 }
 @media (max-width:720px){
   .compare-panels .panel{ flex:0 0 88%; min-height:280px; padding:20px; }
   .compare-panels .panel h3{ font-size:22px; }
-  .compare-panels .panel img{ max-width:44%; }
+  .compare-panels .panel img{ max-height:180px; }
 }
+
+/* Modifier: dark variant of the metric tiles (used on design-system.html "Результаты") */
+.stat-row.tiles.dark .stat{ background:var(--dark); color:#fff; }
+.stat-row.tiles.dark .stat span{ color:#9a9a9a; }
 
 /* ==========================================================================
    Case link cards (project grid on home)
@@ -827,13 +777,6 @@ body.lang-switching{ opacity:0; }
 /* ==========================================================================
    COMPARE ROW (dark screenshot comparisons)
    ========================================================================== */
-.compare-row{ display:flex; gap:8px; }
-.compare-row .ph{
-  flex:1; border-radius: var(--radius-md); border:1.5px dashed #d9d9d9; background:transparent; min-height:420px;
-}
-.section-title{ font-weight:900; font-size:32px; letter-spacing:-.02em; margin:0 0 8px; }
-.section-sub{ color:var(--muted); font-size:18px; margin:0 0 24px; max-width: 700px; }
-
 /* ==========================================================================
    CASE MODAL — icon+title header, in-page TOC, profile card + links
    (used on Studio / Monetization / etc. case pages instead of the plain drawer)
@@ -986,10 +929,8 @@ body.lang-switching{ opacity:0; }
   .sidebar .sidebar-links{ display:none; }
   .content{ margin-left:0; }
   .menu-fab{ top:16px; right:16px; }
-  .img-grid{ height:380px; }
   .footer-nav{ grid-template-columns: repeat(2, 1fr); }
   .footer-nav a:nth-child(3){ border-left:none; }
-  .compare-row{ flex-wrap:wrap; }
   .info-row{ gap:24px; }
 
   /* 5. Hero: stop tiles/text from overlapping, breathing room */
@@ -1087,8 +1028,6 @@ body.lang-switching{ opacity:0; }
   .project-row{ flex-direction:column; }
   .project-row .project-card{ flex:1 1 auto !important; }
   .project-card{ min-height: 420px; }
-  .img-grid{ grid-auto-flow:row; grid-auto-columns:unset; height:auto; }
-  .img-grid .ph{ height:220px; }
   .footer-nav{ grid-template-columns: 1fr; }
   .footer-nav a{ border-left:none !important; border-top:1px solid #ececec; }
   .footer-nav a:first-child{ border-top:none; }

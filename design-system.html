@@ -24,8 +24,8 @@
     </a>
     <div class="toc">
       <a href="#nachalo" class="is-active">Начало</a>
-      <a href="#context">Контекст</a>
-      <a href="#inside">Что внутри</a>
+      <a href="#overview">Обзор</a>
+      <a href="#problems">Что изменилось</a>
       <a href="#process">Процесс</a>
       <a href="#result">Результат</a>
     </div>
@@ -35,81 +35,201 @@
 
   <main class="content subpage">
 
-    <a class="breadcrumb" href="index.html">
-      <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Главная
-    </a>
+    <section class="hero case-hero" id="nachalo">
+      <div class="hero__text">
+        <img class="case-hero__logo" src="assets/Component.png" alt="">
+        <h1>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h1>
+        <p class="sub">Живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, а также прозрачными процессами</p>
+      </div>
+      <img class="case-hero__preview" src="assets/Превью первый блок.png" alt="RUTUBE — интерфейс на дизайн-системе">
+    </section>
 
-    <section class="hero" id="nachalo" style="min-height:420px">
-      <div class="hero__inner">
-        <h1>Дизайн-система RUTUBE, которая реально работает и масштабируется</h1>
-        <p class="sub">Единый источник правды для 5 продуктовых стримов на Web, Mobile и TV</p>
-        <div class="feature-grid" style="grid-template-columns:repeat(4,1fr)">
-          <div class="feature-card"><div class="feature-card__icon">⚡</div><p>в 3 раза быстрее дизайн и разработка</p></div>
-          <div class="feature-card"><div class="feature-card__icon">🧱</div><p>100+ компонентов и гайдов</p></div>
-          <div class="feature-card"><div class="feature-card__icon">📦</div><p>5 продуктов на одной системе</p></div>
-          <div class="feature-card"><div class="feature-card__icon">🖥️</div><p>3 платформы: Web, Mobile, TV</p></div>
+    <section class="info-row plain">
+      <div class="info-col">
+        <span>Роль</span>
+        <b>Design System Lead</b>
+      </div>
+      <div class="info-col">
+        <span>Что было сделано</span>
+        <div class="tags">
+          <b>Синхронизация процессов</b>
+          <b>Создание компонентов и гайдов</b>
+          <b>Внедрение на Web, Mobile, TV</b>
+        </div>
+      </div>
+      <div class="info-col">
+        <span>Аудитория</span>
+        <b>Команды дизайна и разработки</b>
+      </div>
+    </section>
+
+    <div class="compare-panels card-slider" style="margin-top:196px" id="overview">
+      <div class="panel dark">
+        <h3>DS Rutube год назад</h3>
+        <p>Начинала своё зарождение и была похожа на непроработанный UI-кит без документации, с одним перегруженным файлом на все продукты и хаотичными процессами</p>
+        <img src="assets/DS Rutube год назад.png" alt="">
+      </div>
+      <div class="panel dark">
+        <h3>DS Rutube сегодня</h3>
+        <p>Это живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, шаблонами задач, разделёнными файлами, а также прозрачными процессами</p>
+        <img src="assets/DS Rutube сегодня_1.png" alt="">
+        <img src="assets/DS Rutube сегодня_2.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider" style="margin-top:24px" id="problems">
+      <div class="panel dark">
+        <h3>Большое количество вопросов по компонентам</h3>
+        <p>Дизайнеры и разработчики регулярно задавали одинаковые вопросы о состояниях компонентов, допустимых вариантах и правилах использования. Некоторые решения существовали только в макетах или устных договорённостях</p>
+        <img src="assets/Большое количество вопросов по компонентам.png" alt="">
+      </div>
+      <div class="panel dark">
+        <h3>Разработали подробные гайды и внедрили митапы</h3>
+        <p>Появился единый источник правды для дизайнеров и разработчиков, снизилось количество повторяющихся вопросов, а также ускорился процесс принятия интерфейсных решений</p>
+        <img src="assets/Разработали подробные гайды и внедрили митапы.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider" style="margin-top:24px">
+      <div class="panel dark">
+        <h3>Нет прозрачного процесса развития дизайн-системы</h3>
+        <p>Команды не понимали, как предложить доработку компонентов или инициировать изменения, как правильно заводить задачи. Не всегда знали об обновлениях компонентов</p>
+        <img src="assets/Нет прозрачного процесса развития дизайн-системы.png" alt="">
+      </div>
+      <div class="panel dark">
+        <h3>Уменьшили хаос в задачах и процессе работы команды</h3>
+        <p>Ввели процесс создания задач на улучшение дизайн-системы с последующей валидацией и планированием в backlog, создали отдельный телеграм канал с публикациями обновлений, сделали упрощенный и более информативный Changelog, а также понятный нейминг и нумерацию веток</p>
+        <img src="assets/Уменьшили хаос в задачах и процессе работы команды.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider" style="margin-top:24px">
+      <div class="panel dark">
+        <h3>Неудобно пользоваться библиотекой</h3>
+        <p>Непонятная навигация по компонентам, как продуктовым, так и из дизайн системы. 1 файл для всех продуктов</p>
+        <img src="assets/Неудобно пользоваться библиотекой.png" alt="">
+      </div>
+      <div class="panel dark">
+        <h3>Улучшили взаимодействие с компонентами</h3>
+        <p>1 файл с компонентами - 1 стрим, упростили навигацию, команде стало проще ориентироваться по базовым и продуктовым компонентам. Памяти достаточно, ветки спокойно вливаются</p>
+        <img src="assets/Улучшили взаимодействие с компонентами.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels" style="margin-top:24px">
+      <div class="panel dark">
+        <h3>TV + APP</h3>
+        <p>Масштабирование дизайн системы, строим роадмап по компонентам и макетам, готовим токены</p>
+        <img src="assets/TV + APP.png" alt="">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="process">
+      <div class="card__text">
+        <h2>Как мы работаем</h2>
+        <p class="lede" style="margin-bottom:0">Процесс работы над дизайн системой</p>
+      </div>
+    </section>
+
+    <div class="flow-cards card-slider" style="margin-top:24px">
+      <div class="flow-card">
+        <h3>Находим кейсы</h3>
+        <p>Смотрим на входящие задачи и макеты продуктовых дизайнеров</p>
+        <img class="flow-card__num" src="assets/One.png" alt="1">
+      </div>
+      <div class="flow-card">
+        <h3>Проверяем покрытие</h3>
+        <p>Стоит ли заводить это как компонент дс или оставить его продуктовым</p>
+        <img class="flow-card__num" src="assets/Two.png" alt="2">
+      </div>
+      <div class="flow-card">
+        <h3>Думаем над решением</h3>
+        <p>Обсуждаем и оцениваем требования к компоненту по сложности/срокам</p>
+        <img class="flow-card__num" src="assets/Three.png" alt="3">
+      </div>
+      <div class="flow-card">
+        <h3>Драфт компонента</h3>
+        <p>Создаем ветку с первичной структурой и гайдом компонента</p>
+        <img class="flow-card__num" src="assets/Four.png" alt="4">
+      </div>
+      <div class="flow-card">
+        <h3>Брейншторм</h3>
+        <p>Обсуждаем с разработкой нюансы и технические ограничения</p>
+        <img class="flow-card__num" src="assets/Five.png" alt="5">
+      </div>
+      <div class="flow-card">
+        <h3>Релиз</h3>
+        <p>Публикуем компонент и новость о его создании/изменении</p>
+        <img class="flow-card__num" src="assets/Six.png" alt="6">
+      </div>
+      <div class="flow-card">
+        <h3>Ревью и анализ</h3>
+        <p>Смотрим на корректность использования компонента</p>
+        <img class="flow-card__num" src="assets/Seven.png" alt="7">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="result">
+      <div class="card__text">
+        <h2>Результаты</h2>
+        <p class="lede" style="margin-bottom:0">Работы над дизайн системой</p>
+      </div>
+    </section>
+
+    <div class="stat-row tiles dark" style="margin-top:24px">
+      <div class="stat"><b>в 3 раза</b><span>Ускорили дизайнеров и разработку</span></div>
+      <div class="stat"><b>100+</b><span>Компонентов и гайдов</span></div>
+      <div class="stat"><b>5</b><span>Продуктов</span></div>
+      <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
+    </div>
+
+    <div style="margin-top:24px">
+      <p class="funnel__label">Интерфейс на дизайн системе</p>
+      <img src="assets/Превью последний блок.png" alt="" style="width:100%; height:auto; border-radius:24px;">
+    </div>
+
+    <section class="card block-gap">
+      <div class="teaser-row">
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили конверсию загрузки видео на 36%?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="video.html">
+              <span class="pill">Подробнее</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Monetisation_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили долю монетизируемых авторов?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="monetization.html">
+              <span class="pill">Подробнее</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
-
-    <section class="card" id="context">
-<div class="card__text">
-      <span class="pill">Контекст</span>
-      <h2 style="margin-top:16px">От разрозненных макетов — к единой системе</h2>
-      <p class="lede">На старте у каждой команды были свои макеты, компоненты и подходы к типографике и отступам. Похожие элементы выглядели и вели себя по-разному на разных платформах, а любое изменение приходилось вносить вручную в десятках мест.</p>
-    </div>
-</section>
-
-    <section class="card" id="inside">
-<div class="card__text">
-      <span class="pill">Что внутри</span>
-      </div>
-<div class="img-grid" style="margin-top:16px">
-        <div class="ph pink"></div>
-        <div class="ph blue"></div>
-        <div class="ph yellow"></div>
-      </div>
-      <div class="grid-caption-row">
-        <span>Токены цвета и типографики</span>
-        <span>Библиотека компонентов</span>
-        <span>Гайдлайны по платформам</span>
-      </div>
-      <p class="lede">Собрали токены (цвет, типографика, отступы, радиусы), библиотеку компонентов с вариантами состояний и гайды по написанию текстов интерфейса — единые для Web, Mobile и TV.</p>
-    </section>
-
-    <section class="card" id="process">
-<div class="card__text">
-      <span class="pill">Процесс</span>
-      <h2 style="margin-top:16px">Как компонент попадает в систему</h2>
-      <div class="process card-slider">
-        <div class="process-step"><div class="process-step__inner"><h3>Аудит</h3><p>Собираем повторяющиеся паттерны из продуктовых макетов и находим расхождения между командами</p></div><div class="process-step__num">01</div></div>
-        <div class="process-step"><div class="process-step__inner"><h3>Прототип</h3><p>Проектируем компонент с учётом всех платформ и состояний, обсуждаем с командами-потребителями</p></div><div class="process-step__num">02</div></div>
-        <div class="process-step"><div class="process-step__inner"><h3>Разработка</h3><p>Верстаем компонент в коде синхронно с макетом, покрываем документацией и примерами использования</p></div><div class="process-step__num">03</div></div>
-        <div class="process-step"><div class="process-step__inner"><h3>Внедрение</h3><p>Помогаем командам перейти на новый компонент, собираем обратную связь и вносим доработки</p></div><div class="process-step__num">04</div></div>
-      </div>
-    </div>
-</section>
-
-    <section class="card" id="result">
-<div class="card__text">
-      <span class="pill">Результат</span>
-      <h2 style="margin-top:16px">Дизайнеры и разработчики стали работать в 3 раза быстрее</h2>
-      <p class="lede">Единая система сняла необходимость каждый раз заново решать одни и те же задачи. Продукты стали визуально и функционально согласованы, а онбординг новых сотрудников в команду сократился с недель до дней.</p>
-      <div class="stat-row">
-        <div class="stat"><b>в 3 раза</b><span>Ускорили дизайнеров и разработку</span></div>
-        <div class="stat"><b>100+</b><span>Компонентов и гайдов</span></div>
-        <div class="stat"><b>5</b><span>Продуктов</span></div>
-        <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
-      </div>
-    </div>
-</section>
 
     <nav class="footer-nav">
       <a href="index.html"><span class="fn-top">Главная <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Обзор всех кейсов</span></a>
       <a href="studio.html"><span class="fn-top">Студия <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Мобильное приложение</span></a>
       <a href="monetization.html"><span class="fn-top">Монетизация <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Доход авторов</span></a>
-      <a href="video.html"><span class="fn-top">Видео <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Плеер и стриминг</span></a>
+      <a href="video.html"><span class="fn-top">Видео <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Плеер и стриминг</span></a>
     </nav>
 
   </main>
