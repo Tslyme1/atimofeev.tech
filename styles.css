@@ -1180,15 +1180,28 @@ body.lang-switching{ opacity:0; }
 .card-slider > *:last-child{ margin-right:24px; }
 .card-slider.at-end{ -webkit-mask-image:none; mask-image:none; }
 .shot-card:has(.phone-scroll), .funnel{
+  position:relative;
   -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 160px), rgba(0,0,0,.65) calc(100% - 100px), rgba(0,0,0,.25) calc(100% - 40px), transparent 100%);
   mask-image: linear-gradient(to right, #000 calc(100% - 160px), rgba(0,0,0,.65) calc(100% - 100px), rgba(0,0,0,.25) calc(100% - 40px), transparent 100%);
 }
+/* White cushion layer: sits UNDER the gray mask fade above, so the transition
+   goes photo -> white -> page gray instead of jumping straight from photo to gray */
+.shot-card:has(.phone-scroll)::after, .funnel::after{
+  content:"";
+  position:absolute; top:0; right:0; bottom:0; width:160px;
+  background: linear-gradient(to right, rgba(255,255,255,0), var(--surface) 80%);
+  pointer-events:none;
+  border-radius:0 24px 24px 0;
+  transition: opacity .2s ease;
+}
 .shot-card.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
+.shot-card.at-end::after, .funnel.at-end::after{ opacity:0; }
 @media (max-width:720px){
   .shot-card:has(.phone-scroll), .funnel{
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 150px), rgba(0,0,0,.65) calc(100% - 92px), rgba(0,0,0,.25) calc(100% - 36px), transparent 100%);
     mask-image: linear-gradient(to right, #000 calc(100% - 150px), rgba(0,0,0,.65) calc(100% - 92px), rgba(0,0,0,.25) calc(100% - 36px), transparent 100%);
   }
+  .shot-card:has(.phone-scroll)::after, .funnel::after{ width:150px; }
 }
 .flow-cards{ gap:8px; }
 .flow-card{
