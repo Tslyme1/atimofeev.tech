@@ -31,6 +31,14 @@
     </div>
   </nav>
 
+  <div class="case-header">
+    <div class="case-header__icon"><img src="assets/Case_Design system_Icon.png" alt=""></div>
+    <div>
+      <div class="case-header__title">Дизайн-система</div>
+      <div class="case-header__subtitle">Кейс</div>
+    </div>
+  </div>
+
   <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
 
   <main class="content subpage">
@@ -182,7 +190,7 @@
       <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
     </div>
 
-    <div class="compare-panels" style="margin-top:24px">
+    <div class="compare-panels">
       <div class="panel tv">
         <p class="funnel__label" style="margin:0">Интерфейс на дизайн системе</p>
         <img src="assets/Превью последний блок.png" alt="">
@@ -229,18 +237,63 @@
   </main>
 </div>
 
-<div class="scrim" id="scrim"></div>
-<div class="nav-drawer" id="navDrawer">
-  <button class="nav-drawer__close" id="navClose">✕</button>
-  <div class="nav-drawer__eyebrow">Разделы</div>
-  <nav>
-    <a href="index.html">Главная</a>
-    <a href="studio.html">Студия</a>
-    <a href="design-system.html" class="is-active">Дизайн-система</a>
-    <a href="monetization.html">Монетизация</a>
-    <a href="video.html">Видео</a>
-  </nav>
-  <div class="nav-drawer__footer">Artem Timofeev — Product designer</div>
+<div class="case-modal-overlay" id="caseOverlay"></div>
+<div class="case-modal" id="caseModal">
+  <button class="case-modal__close" id="caseClose" aria-label="Закрыть">✕</button>
+  <div class="case-modal__panel">
+    <div class="case-modal__header">
+      <div class="case-modal__icon"><img src="assets/Case_Design system_Icon.png" alt=""></div>
+      <div>
+        <div class="case-modal__title">Дизайн-система</div>
+        <div class="case-modal__subtitle">Кейс</div>
+      </div>
+      <div class="case-modal__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <nav class="case-modal__toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#overview">Обзор</a>
+      <a href="#problems">Что изменилось</a>
+      <a href="#process">Процесс</a>
+      <a href="#result">Результат</a>
+    </nav>
+    <div class="case-modal__profile">
+      <div class="profile-card" style="padding:4px 0">
+        <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+        <div class="profile-card__role">Product designer</div>
+        <div class="profile-card__name">Artem Timofeev</div>
+      </div>
+      <div class="sidebar-list">
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Your company</div><div class="exp-row__title">Design related</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2025 — Now</div><div class="exp-row__title">Lead DS designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2023 — 2025</div><div class="exp-row__title">Senior designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Bay of sea 2022 — 2023</div><div class="exp-row__title">Studio owner</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Freelance 2019 — now</div><div class="exp-row__title">Designer</div></div>
+        </div>
+        <div class="sidebar-links">
+          <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
