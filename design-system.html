@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="ds-page">
 
 <div class="layout">
 
@@ -35,7 +35,7 @@
 
   <main class="content subpage">
 
-    <section class="hero case-hero" id="nachalo">
+    <section class="hero case-hero ds" id="nachalo">
       <div class="hero__text">
         <img class="case-hero__logo" src="assets/Component.png" alt="">
         <h1>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h1>
@@ -64,60 +64,59 @@
     </section>
 
     <div class="compare-panels card-slider" style="margin-top:196px" id="overview">
-      <div class="panel dark">
+      <div class="panel">
         <h3>DS Rutube год назад</h3>
         <p>Начинала своё зарождение и была похожа на непроработанный UI-кит без документации, с одним перегруженным файлом на все продукты и хаотичными процессами</p>
         <img src="assets/DS Rutube год назад.png" alt="">
       </div>
-      <div class="panel dark">
+      <div class="panel violet">
         <h3>DS Rutube сегодня</h3>
         <p>Это живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, шаблонами задач, разделёнными файлами, а также прозрачными процессами</p>
-        <img src="assets/DS Rutube сегодня_1.png" alt="">
-        <img src="assets/DS Rutube сегодня_2.png" alt="">
+        <img src="assets/DS Rutube сегодня.png" alt="">
       </div>
     </div>
 
-    <div class="compare-panels card-slider" style="margin-top:24px" id="problems">
+    <div class="compare-panels card-slider" style="margin-top:196px" id="problems">
       <div class="panel dark">
         <h3>Большое количество вопросов по компонентам</h3>
         <p>Дизайнеры и разработчики регулярно задавали одинаковые вопросы о состояниях компонентов, допустимых вариантах и правилах использования. Некоторые решения существовали только в макетах или устных договорённостях</p>
         <img src="assets/Большое количество вопросов по компонентам.png" alt="">
       </div>
-      <div class="panel dark">
+      <div class="panel violet">
         <h3>Разработали подробные гайды и внедрили митапы</h3>
         <p>Появился единый источник правды для дизайнеров и разработчиков, снизилось количество повторяющихся вопросов, а также ускорился процесс принятия интерфейсных решений</p>
         <img src="assets/Разработали подробные гайды и внедрили митапы.png" alt="">
       </div>
     </div>
 
-    <div class="compare-panels card-slider" style="margin-top:24px">
+    <div class="compare-panels card-slider" style="margin-top:196px">
       <div class="panel dark">
         <h3>Нет прозрачного процесса развития дизайн-системы</h3>
         <p>Команды не понимали, как предложить доработку компонентов или инициировать изменения, как правильно заводить задачи. Не всегда знали об обновлениях компонентов</p>
         <img src="assets/Нет прозрачного процесса развития дизайн-системы.png" alt="">
       </div>
-      <div class="panel dark">
+      <div class="panel violet">
         <h3>Уменьшили хаос в задачах и процессе работы команды</h3>
         <p>Ввели процесс создания задач на улучшение дизайн-системы с последующей валидацией и планированием в backlog, создали отдельный телеграм канал с публикациями обновлений, сделали упрощенный и более информативный Changelog, а также понятный нейминг и нумерацию веток</p>
         <img src="assets/Уменьшили хаос в задачах и процессе работы команды.png" alt="">
       </div>
     </div>
 
-    <div class="compare-panels card-slider" style="margin-top:24px">
+    <div class="compare-panels card-slider" style="margin-top:196px">
       <div class="panel dark">
         <h3>Неудобно пользоваться библиотекой</h3>
         <p>Непонятная навигация по компонентам, как продуктовым, так и из дизайн системы. 1 файл для всех продуктов</p>
         <img src="assets/Неудобно пользоваться библиотекой.png" alt="">
       </div>
-      <div class="panel dark">
+      <div class="panel violet">
         <h3>Улучшили взаимодействие с компонентами</h3>
         <p>1 файл с компонентами - 1 стрим, упростили навигацию, команде стало проще ориентироваться по базовым и продуктовым компонентам. Памяти достаточно, ветки спокойно вливаются</p>
         <img src="assets/Улучшили взаимодействие с компонентами.png" alt="">
       </div>
     </div>
 
-    <div class="compare-panels" style="margin-top:24px">
-      <div class="panel dark">
+    <div class="compare-panels" style="margin-top:196px">
+      <div class="panel violet">
         <h3>TV + APP</h3>
         <p>Масштабирование дизайн системы, строим роадмап по компонентам и макетам, готовим токены</p>
         <img src="assets/TV + APP.png" alt="">
@@ -224,13 +223,6 @@
         </div>
       </div>
     </section>
-
-    <nav class="footer-nav">
-      <a href="index.html"><span class="fn-top">Главная <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Обзор всех кейсов</span></a>
-      <a href="studio.html"><span class="fn-top">Студия <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Мобильное приложение</span></a>
-      <a href="monetization.html"><span class="fn-top">Монетизация <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Доход авторов</span></a>
-      <a href="video.html"><span class="fn-top">Видео <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="fn-sub">Плеер и стриминг</span></a>
-    </nav>
 
   </main>
 </div>

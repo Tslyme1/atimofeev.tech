@@ -46,6 +46,12 @@ body{
   line-height: 1.35;
   -webkit-font-smoothing: antialiased;
 }
+/* Modifier: page-wide dark theme (design-system.html) */
+body.ds-page{
+  background:#0c0c0e;
+  color:#fff;
+}
+}
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 button{ font-family:inherit; }
@@ -479,31 +485,30 @@ body.lang-switching{ opacity:0; }
    Compare panels — "было / стало" pair (design-system case page)
    ========================================================================== */
 .compare-panels{ display:flex; gap:8px; }
+.compare-panels.card-slider{ gap:8px; }
 .compare-panels .panel{
   flex:1; position:relative; overflow:hidden;
-  background: var(--bg);
+  background: var(--dark);
   border-radius: var(--radius-lg);
   padding:32px;
   min-height:420px;
   display:flex; flex-direction:column;
+  color:#fff;
 }
-.compare-panels .panel.dark{ background: var(--dark); color:#fff; }
-.compare-panels .panel h3{ font-weight:900; font-size:28px; margin:0 0 12px; letter-spacing:-.02em; position:relative; z-index:1; }
-.compare-panels .panel p{ margin:0; font-size:15px; color:var(--muted); line-height:1.5; max-width:380px; position:relative; z-index:1; }
-.compare-panels .panel.dark p{ color:#d8d8db; }
+.compare-panels .panel.violet{ background: var(--dark) url("assets/Bg.png") center / cover no-repeat; }
+.compare-panels .panel h3{ font-weight:900; font-size:36px; margin:0 0 8px; letter-spacing:-.02em; position:relative; z-index:1; }
+.compare-panels .panel p{ margin:0; font-size:15px; color:#d8d8db; line-height:1.5; max-width:380px; position:relative; z-index:1; }
 .compare-panels .panel img{
-  display:block; margin:24px auto 0 auto;
-  max-width:78%; max-height:280px; width:auto; height:auto;
-  object-fit:contain; pointer-events:none;
+  display:block; margin:auto auto 0 auto;
+  max-width:92%; width:auto; height:auto; max-height:60%;
+  object-fit:contain; pointer-events:none; position:relative; z-index:1;
 }
-.compare-panels .panel img + img{ margin-top:12px; }
 @media (max-width:1024px){
   .compare-panels .panel{ flex:0 0 88%; min-height:340px; padding:24px; }
 }
 @media (max-width:720px){
   .compare-panels .panel{ flex:0 0 88%; min-height:280px; padding:20px; }
-  .compare-panels .panel h3{ font-size:22px; }
-  .compare-panels .panel img{ max-height:180px; }
+  .compare-panels .panel h3{ font-size:26px; }
 }
 
 /* Modifier: dark variant of the metric tiles (used on design-system.html "Результаты") */
@@ -1074,6 +1079,18 @@ body.lang-switching{ opacity:0; }
   height:auto;
   margin: 48px auto -70px;
   position:relative; z-index:1;
+}
+
+/* Modifier: design-system.html hero — fixed 800px height, preview pinned
+   to the bottom via absolute position instead of adding to the box height,
+   narrower heading/subtitle */
+.hero.case-hero.ds{ min-height:800px; overflow:hidden; }
+.hero.case-hero.ds .hero__text{ position:relative; z-index:2; }
+.hero.case-hero.ds h1{ max-width:560px; }
+.hero.case-hero.ds .sub{ max-width:466px; }
+.hero.case-hero.ds .case-hero__preview{
+  position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+  width:min(980px, 88%); margin:0; z-index:1;
 }
 
 .media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:24px; }
