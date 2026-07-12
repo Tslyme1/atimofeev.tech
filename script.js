@@ -208,14 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (originals.has(n)) n.nodeValue = originals.get(n);
       }
     });
-    document.querySelectorAll('.profile-card__lang button').forEach(b => {
+    document.querySelectorAll('.profile-card__lang button, .case-modal__lang button').forEach(b => {
       b.classList.toggle('active', (b.dataset.lang || b.textContent.trim().toLowerCase()) === lang);
     });
     try { localStorage.setItem('folio-lang', lang); } catch(e){}
     document.documentElement.lang = lang;
   }
 
-  document.querySelectorAll('.profile-card__lang button').forEach(btn => {
+  document.querySelectorAll('.profile-card__lang button, .case-modal__lang button').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = (btn.dataset.lang || btn.textContent.trim().toLowerCase()) === 'en' ? 'en' : 'ru';
       document.body.classList.add('lang-switching');

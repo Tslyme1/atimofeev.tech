@@ -54,8 +54,9 @@ body.ds-page{
 body.ds-page .card:not(.plain){ background: var(--dark); }
 body.ds-page .teaser-card{ background: var(--dark-2); }
 body.ds-page .teaser-card__inner{ background: var(--dark); }
-body.ds-page .teaser-card .pill, body.ds-page .teaser-card .pill-icon{ background:#fff; color:var(--ink); }
-body.ds-page .teaser-card:hover .pill, body.ds-page .teaser-card:hover .pill-icon{ background:var(--ink); color:#fff; }
+body.ds-page .teaser-card .pill, body.ds-page .teaser-card .pill-icon{ background:var(--dark-2); color:#fff; }
+body.ds-page .teaser-card:hover .pill, body.ds-page .teaser-card:hover .pill-icon{ background:#fff; color:var(--ink); }
+body.ds-page .case-modal__close{ background:var(--dark-2); color:#fff; }
 
 /* Fixed top bar + burger menu + case-modal — dark theme on design-system.html */
 body.ds-page .subnav .nav-btn{ background: var(--dark); color:#fff; }
@@ -366,22 +367,24 @@ body.lang-switching{ opacity:0; }
 @media (max-width:720px){
   .hero.green{ min-height:481px; }
   .hero.case-hero.green .hero__text{ padding-top:40px; }
-  .hero.green .case-hero__logo{ top:0px; width:140px; height:140px; }
+  .hero.green .case-hero__logo{ top:-32px; width:140px; height:140px; }
 }
 /* Modifier: push hero__text lower (used on video.html, without the green color swap) */
 .hero.case-hero.video{ min-height:535px; justify-content:center; }
 .hero.case-hero.video .hero__text{ padding-top:160px; }
-.hero.case-hero.video h1{ font-size: clamp(24px, 2.6vw, 48px); }
+.hero.case-hero.video h1{ font-size:48px; }
 .hero.video .case-hero__logo{ top:88px; width:140px; height:140px; }
 @media (max-width:1024px){
   .hero.case-hero.video{ min-height:508px; }
   .hero.case-hero.video .hero__text{ padding-top:130px; }
   .hero.video .case-hero__logo{ top:56px; width:140px; height:140px; }
+  .hero.case-hero.video h1{ font-size:32px; }
 }
 @media (max-width:720px){
   .hero.case-hero.video{ min-height:481px; }
   .hero.case-hero.video .hero__text{ padding-top:104px; }
-  .hero.video .case-hero__logo{ top:48px; width:140px; height:140px; }
+  .hero.video .case-hero__logo{ top:16px; width:140px; height:140px; }
+  .hero.case-hero.video h1{ font-size:26px; }
 }
 .hero__text{ position:relative; z-index:1; padding: 24px 24px 0; display:flex; flex-direction:column; gap:16px; }
 .hero h1{
@@ -1065,10 +1068,11 @@ body.lang-switching{ opacity:0; }
   .stat b{ font-size:22px; }
   .stat span{ font-size:14px; white-space:nowrap; }
 
-  /* Metric tiles (Результаты): stretch full width like the teaser articles instead of scrolling narrower */
-  .stat-row.tiles{ flex-wrap:wrap; overflow-x:visible; padding-right:0; width:calc(100% - 16px); margin-left:8px; margin-right:8px; }
+  /* Metric tiles (Результаты): stretch full screen width, no side inset */
+  .stat-row.tiles{ flex-wrap:wrap; overflow-x:visible; padding-right:0; width:100%; margin-left:0; margin-right:0; }
   .stat-row.tiles .stat{ flex:1 1 calc(50% - 4px); min-width:0; }
   .stat-row.tiles .stat span{ white-space:normal; }
+  .stat-scroll:has(.stat-row.tiles)::after{ content:none; }
 
   .teaser-row{ flex-direction:column; }
   .teaser-card{ min-height:0; padding-bottom:76px; }
@@ -1145,7 +1149,7 @@ body.lang-switching{ opacity:0; }
 }
 @media (max-width:720px){
   .hero.case-hero.ds{ min-height:533px; }
-  .hero.ds .case-hero__logo{ top:0px; width:140px; height:140px; }
+  .hero.ds .case-hero__logo{ top:-32px; width:140px; height:140px; }
   .hero.case-hero.ds .case-hero__preview{ width:min(980px, 88%); }
 }
 
