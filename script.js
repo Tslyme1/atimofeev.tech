@@ -95,6 +95,84 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFade();
   });
 
+  // ---------- Lightbox for phone screen galleries ----------
+  const phoneGalleries = Array.from(document.querySelectorAll('.phone-scroll'))
+    .map(scroll => Array.from(scroll.querySelectorAll('.phone-item img')))
+    .filter(gallery => gallery.length);
+
+  if (phoneGalleries.length){
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML =
+      '<button class="lightbox__close" aria-label="Закрыть">✕</button>' +
+      '<button class="lightbox__nav lightbox__prev" aria-label="Назад">‹</button>' +
+      '<div class="lightbox__stage"><img class="lightbox__img" alt=""></div>' +
+      '<button class="lightbox__nav lightbox__next" aria-label="Далее">›</button>' +
+      '<div class="lightbox__counter"></div>';
+    document.body.appendChild(overlay);
+
+    const lbImg = overlay.querySelector('.lightbox__img');
+    const lbCounter = overlay.querySelector('.lightbox__counter');
+    const lbClose = overlay.querySelector('.lightbox__close');
+    const lbPrev = overlay.querySelector('.lightbox__prev');
+    const lbNext = overlay.querySelector('.lightbox__next');
+
+    let gallery = [];
+    let index = 0;
+
+    function render(){
+      const src = gallery[index];
+      lbImg.src = src.getAttribute('src');
+      lbImg.alt = src.getAttribute('alt') || '';
+      const multi = gallery.length > 1;
+      lbCounter.style.display = multi ? '' : 'none';
+      lbPrev.style.display = multi ? '' : 'none';
+      lbNext.style.display = multi ? '' : 'none';
+      lbCounter.textContent = (index + 1) + ' / ' + gallery.length;
+    }
+    function openLightbox(g, i){
+      gallery = g; index = i;
+      render();
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    function prevSlide(){ index = (index - 1 + gallery.length) % gallery.length; render(); }
+    function nextSlide(){ index = (index + 1) % gallery.length; render(); }
+
+    phoneGalleries.forEach(g => {
+      g.forEach((img, i) => {
+        const item = img.closest('.phone-item');
+        if (!item) return;
+        item.style.cursor = 'zoom-in';
+        item.addEventListener('click', () => openLightbox(g, i));
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', prevSlide);
+    lbNext.addEventListener('click', nextSlide);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') prevSlide();
+      else if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    let touchStartX = null;
+    overlay.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive:true });
+    overlay.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) (dx > 0 ? prevSlide() : nextSlide());
+      touchStartX = null;
+    }, { passive:true });
+  }
+
   // ---------- Whole-block click (teaser cards & showcases) ----------
   document.querySelectorAll('.teaser-card, .showcase').forEach(block => {
     const link = block.querySelector('a.btn-pill');
