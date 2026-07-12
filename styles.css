@@ -598,7 +598,7 @@ body.lang-switching{ opacity:0; }
    Sub-case cards (two teaser cards inside a case study)
    ========================================================================== */
 .teaser-row{ display:flex; gap:8px; }
-.card__text + .teaser-row{ margin-top:8px; }
+.teaser-row:not(:first-child){ margin-top:8px; }
 .teaser-card{
   flex:1;
   background: var(--bg);
@@ -1179,10 +1179,16 @@ body.lang-switching{ opacity:0; }
 .card-slider > *:last-child{ margin-right:24px; }
 .card-slider.at-end{ -webkit-mask-image:none; mask-image:none; }
 .shot-card:has(.phone-scroll), .funnel{
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
-  mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 120px), rgba(0,0,0,.55) calc(100% - 60px), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 120px), rgba(0,0,0,.55) calc(100% - 60px), transparent 100%);
 }
 .shot-card.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
+@media (max-width:720px){
+  .shot-card:has(.phone-scroll), .funnel{
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 90px), rgba(0,0,0,.5) calc(100% - 44px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 90px), rgba(0,0,0,.5) calc(100% - 44px), transparent 100%);
+  }
+}
 .flow-cards{ gap:8px; }
 .flow-card{
   flex:0 0 546px;
