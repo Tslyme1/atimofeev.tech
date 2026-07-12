@@ -78,9 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Horizontal sliders: wheel-to-scroll + right-edge fade ----------
   document.querySelectorAll('.card-slider, .phone-scroll, .funnel').forEach(el => {
+    const maskTarget = el.closest('.shot-card') || el;
     function updateFade(){
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
-      el.classList.toggle('at-end', atEnd || el.scrollWidth <= el.clientWidth);
+      maskTarget.classList.toggle('at-end', atEnd || el.scrollWidth <= el.clientWidth);
     }
     el.addEventListener('wheel', (e) => {
       if (el.scrollWidth <= el.clientWidth) return;

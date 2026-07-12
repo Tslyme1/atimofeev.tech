@@ -1178,11 +1178,11 @@ body.lang-switching{ opacity:0; }
 .card-slider::-webkit-scrollbar{ display:none; }
 .card-slider > *:last-child{ margin-right:24px; }
 .card-slider.at-end{ -webkit-mask-image:none; mask-image:none; }
-.phone-scroll, .funnel{
+.shot-card:has(.phone-scroll), .funnel{
   -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
   mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
 }
-.phone-scroll.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
+.shot-card.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
 .flow-cards{ gap:8px; }
 .flow-card{
   flex:0 0 546px;
