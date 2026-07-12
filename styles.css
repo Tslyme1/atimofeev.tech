@@ -372,7 +372,7 @@ body.lang-switching{ opacity:0; }
 /* Modifier: push hero__text lower (used on video.html, without the green color swap) */
 .hero.case-hero.video{ min-height:535px; justify-content:center; }
 .hero.case-hero.video .hero__text{ padding-top:160px; }
-.hero.case-hero.video h1{ font-size:48px; }
+.hero.case-hero.video h1{ font-size: clamp(24px, 2.6vw, 48px); }
 .hero.video .case-hero__logo{ top:88px; width:140px; height:140px; }
 @media (max-width:1024px){
   .hero.case-hero.video{ min-height:508px; }
