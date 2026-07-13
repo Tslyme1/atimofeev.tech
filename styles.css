@@ -705,8 +705,11 @@ body.lang-switching{ opacity:0; }
   border-radius: var(--radius-lg);
   padding: 24px 32px;
   scrollbar-width:none;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent 100%);
 }
 .info-row::-webkit-scrollbar{ display:none; }
+.info-row.at-end{ -webkit-mask-image:none; mask-image:none; }
 .info-row.plain{ background:transparent; padding:0 8px; }
 .hero-gap{ margin-top:40px; }
 @media (max-width:1024px){ .hero-gap{ margin-top:32px; } }
@@ -1153,6 +1156,15 @@ body.lang-switching{ opacity:0; }
 
 .media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:24px; }
 .media-duo img{ width:100%; height:auto; border-radius:24px; display:block; }
+.media-duo.card-slider{ -webkit-mask-image:none; mask-image:none; }
+@media (max-width:1024px){
+  .media-duo.card-slider{
+    display:flex; overflow-x:auto;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+  }
+  .media-duo.card-slider > *{ flex:0 0 88%; width:88%; }
+}
 
 .shot-card{
   background:var(--surface);
@@ -1202,6 +1214,7 @@ body.lang-switching{ opacity:0; }
     mask-image: linear-gradient(to right, #000 calc(100% - 150px), rgba(0,0,0,.65) calc(100% - 92px), rgba(0,0,0,.25) calc(100% - 36px), transparent 100%);
   }
   .shot-card:has(.phone-scroll)::after, .funnel::after{ width:150px; }
+  .shot-card.at-end:has(.phone-scroll){ -webkit-mask-image:none; mask-image:none; }
 }
 .flow-cards{ gap:8px; }
 .flow-card{
