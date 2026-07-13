@@ -1195,8 +1195,12 @@ body.lang-switching{ opacity:0; }
   mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
 }
 /* White cushion layer: sits UNDER the gray mask fade above, so the transition
-   goes photo -> white -> page gray instead of jumping straight from photo to gray */
-.shot-card:has(.phone-scroll)::after, .funnel::after{
+   goes photo -> white -> page gray instead of jumping straight from photo to gray.
+   Only for shot-card photo galleries — .funnel's content already sits directly
+   on the page background, so this extra white overlay just reads as a big
+   white smear there; it relies on the mask-image fade alone, same as
+   card-slider/phone-scroll. */
+.shot-card:has(.phone-scroll)::after{
   content:"";
   position:absolute; top:0; right:0; bottom:0; width:160px;
   background: linear-gradient(to right, rgba(255,255,255,0), var(--surface) 80%);
@@ -1204,10 +1208,10 @@ body.lang-switching{ opacity:0; }
   border-radius:0 24px 24px 0;
   transition: opacity .2s ease;
 }
-.shot-card.at-end::after, .funnel.at-end::after{ opacity:0; }
+.shot-card.at-end::after{ opacity:0; }
 @media (max-width:720px){
   .shot-card:has(.phone-scroll), .funnel{ --fade-max:150px; }
-  .shot-card:has(.phone-scroll)::after, .funnel::after{ width:150px; }
+  .shot-card:has(.phone-scroll)::after{ width:150px; }
 }
 .flow-cards{ gap:8px; }
 .flow-card{
