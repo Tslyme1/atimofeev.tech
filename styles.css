@@ -705,11 +705,12 @@ body.lang-switching{ opacity:0; }
   border-radius: var(--radius-lg);
   padding: 24px 32px;
   scrollbar-width:none;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent 100%);
-  mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent 100%);
+  --fade-max: 48px;
+  --fade: var(--fade-max);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
 }
 .info-row::-webkit-scrollbar{ display:none; }
-.info-row.at-end{ -webkit-mask-image:none; mask-image:none; }
 .info-row.plain{ background:transparent; padding:0 8px; }
 .hero-gap{ margin-top:40px; }
 @media (max-width:1024px){ .hero-gap{ margin-top:32px; } }
@@ -1131,6 +1132,10 @@ body.lang-switching{ opacity:0; }
   position:relative; z-index:1;
 }
 
+/* Modifier: taller hero + bigger preview (+64px each) — studio.html hero */
+.hero.case-hero.lg .hero__text{ padding-top:120px; }
+.hero.case-hero.lg .case-hero__preview{ width:min(1044px, 92%); }
+
 /* Modifier: design-system.html hero — fixed 800px height, preview pinned
    to the bottom via absolute position instead of adding to the box height,
    narrower heading/subtitle */
@@ -1156,15 +1161,6 @@ body.lang-switching{ opacity:0; }
 
 .media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:24px; }
 .media-duo img{ width:100%; height:auto; border-radius:24px; display:block; }
-.media-duo.card-slider{ -webkit-mask-image:none; mask-image:none; }
-@media (max-width:1024px){
-  .media-duo.card-slider{
-    display:flex; overflow-x:auto;
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
-    mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
-  }
-  .media-duo.card-slider > *{ flex:0 0 88%; width:88%; }
-}
 
 .shot-card{
   background:var(--surface);
@@ -1185,16 +1181,19 @@ body.lang-switching{ opacity:0; }
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
   padding-bottom:4px;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
-  mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+  --fade-max: 64px;
+  --fade: var(--fade-max);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
 }
 .card-slider::-webkit-scrollbar{ display:none; }
 .card-slider > *:last-child{ margin-right:24px; }
-.card-slider.at-end{ -webkit-mask-image:none; mask-image:none; }
 .shot-card:has(.phone-scroll), .funnel{
   position:relative;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 160px), rgba(0,0,0,.65) calc(100% - 100px), rgba(0,0,0,.25) calc(100% - 40px), transparent 100%);
-  mask-image: linear-gradient(to right, #000 calc(100% - 160px), rgba(0,0,0,.65) calc(100% - 100px), rgba(0,0,0,.25) calc(100% - 40px), transparent 100%);
+  --fade-max: 160px;
+  --fade: var(--fade-max);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent 100%);
 }
 /* White cushion layer: sits UNDER the gray mask fade above, so the transition
    goes photo -> white -> page gray instead of jumping straight from photo to gray */
@@ -1206,22 +1205,17 @@ body.lang-switching{ opacity:0; }
   border-radius:0 24px 24px 0;
   transition: opacity .2s ease;
 }
-.shot-card.at-end, .funnel.at-end{ -webkit-mask-image:none; mask-image:none; }
 .shot-card.at-end::after, .funnel.at-end::after{ opacity:0; }
 @media (max-width:720px){
-  .shot-card:has(.phone-scroll), .funnel{
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 150px), rgba(0,0,0,.65) calc(100% - 92px), rgba(0,0,0,.25) calc(100% - 36px), transparent 100%);
-    mask-image: linear-gradient(to right, #000 calc(100% - 150px), rgba(0,0,0,.65) calc(100% - 92px), rgba(0,0,0,.25) calc(100% - 36px), transparent 100%);
-  }
+  .shot-card:has(.phone-scroll), .funnel{ --fade-max:150px; }
   .shot-card:has(.phone-scroll)::after, .funnel::after{ width:150px; }
-  .shot-card.at-end:has(.phone-scroll){ -webkit-mask-image:none; mask-image:none; }
 }
 .flow-cards{ gap:8px; }
 .flow-card{
   flex:0 0 546px;
   min-height:450px;
   border-radius:24px;
-  padding:24px;
+  padding:24px 24px 108px;
   color:#fff;
   position:relative;
   overflow:hidden;
@@ -1229,6 +1223,10 @@ body.lang-switching{ opacity:0; }
   background:
     radial-gradient(130% 120% at 25% 0%, #53228a 0%, #2a1240 45%, #150a20 100%);
 }
+/* Bottom padding reserves room for the badge/icon anchored at bottom:24px so
+   text never overlaps it — if content needs more space than min-height, the
+   card grows instead (108px = 24px badge inset + 52px badge height + 32px gap) */
+.flow-card:has(.idea-card__icon){ padding-bottom:120px; } /* 64px check/x icon */
 .flow-card::after{
   content:"";
   position:absolute; inset:0;
@@ -1270,6 +1268,7 @@ body.lang-switching{ opacity:0; }
   .subnav{ display:none; }
   .layout{ padding-top: 80px; }
   .content.subpage{ margin-left:0; }
+  html{ scroll-padding-top: 96px; }
 }
 
 .case-modal__profile .exp-row{ display:none; }

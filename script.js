@@ -80,8 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card-slider, .phone-scroll, .funnel, .info-row').forEach(el => {
     const maskTarget = el.closest('.shot-card') || el;
     function updateFade(){
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
-      maskTarget.classList.toggle('at-end', atEnd || el.scrollWidth <= el.clientWidth);
+      const remaining = el.scrollWidth - el.clientWidth - el.scrollLeft;
+      const atEnd = remaining <= 2 || el.scrollWidth <= el.clientWidth;
+      maskTarget.classList.toggle('at-end', atEnd);
+      // Shrink the fade continuously as the end approaches instead of snapping the
+      // mask on/off, so the right edge never jumps mid-scroll (esp. iOS momentum).
+      const maxFade = parseFloat(getComputedStyle(maskTarget).getPropertyValue('--fade-max')) || 0;
+      const fade = Math.max(0, Math.min(maxFade, remaining));
+      maskTarget.style.setProperty('--fade', fade + 'px');
     }
     el.addEventListener('wheel', (e) => {
       if (el.scrollWidth <= el.clientWidth) return;
