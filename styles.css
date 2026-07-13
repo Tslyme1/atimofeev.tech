@@ -1132,8 +1132,7 @@ body.lang-switching{ opacity:0; }
   position:relative; z-index:1;
 }
 
-/* Modifier: taller hero + bigger preview (+64px each) — studio.html hero */
-.hero.case-hero.lg .hero__text{ padding-top:120px; }
+/* Modifier: bigger preview image (+64px), same positioning otherwise — studio.html hero */
 .hero.case-hero.lg .case-hero__preview{ width:min(1044px, 92%); }
 
 /* Modifier: design-system.html hero — fixed 800px height, preview pinned

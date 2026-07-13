@@ -79,15 +79,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- Horizontal sliders: wheel-to-scroll + right-edge fade ----------
   document.querySelectorAll('.card-slider, .phone-scroll, .funnel, .info-row').forEach(el => {
     const maskTarget = el.closest('.shot-card') || el;
-    function updateFade(){
+    // Read once (and on resize only) — calling getComputedStyle from inside a
+    // scroll handler forces a synchronous style recalc every frame, which is
+    // what caused the stutter during momentum scrolling.
+    let maxFade = parseFloat(getComputedStyle(maskTarget).getPropertyValue('--fade-max')) || 0;
+    let lastFade = null;
+    let ticking = false;
+    function apply(){
+      ticking = false;
       const remaining = el.scrollWidth - el.clientWidth - el.scrollLeft;
       const atEnd = remaining <= 2 || el.scrollWidth <= el.clientWidth;
       maskTarget.classList.toggle('at-end', atEnd);
       // Shrink the fade continuously as the end approaches instead of snapping the
       // mask on/off, so the right edge never jumps mid-scroll (esp. iOS momentum).
-      const maxFade = parseFloat(getComputedStyle(maskTarget).getPropertyValue('--fade-max')) || 0;
       const fade = Math.max(0, Math.min(maxFade, remaining));
-      maskTarget.style.setProperty('--fade', fade + 'px');
+      if (fade !== lastFade){
+        lastFade = fade;
+        maskTarget.style.setProperty('--fade', fade + 'px');
+      }
+    }
+    function updateFade(){
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(apply);
     }
     el.addEventListener('wheel', (e) => {
       if (el.scrollWidth <= el.clientWidth) return;
@@ -98,16 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     }, { passive:false });
     el.addEventListener('scroll', updateFade, { passive:true });
-    window.addEventListener('resize', updateFade);
-    updateFade();
+    window.addEventListener('resize', () => {
+      maxFade = parseFloat(getComputedStyle(maskTarget).getPropertyValue('--fade-max')) || 0;
+      updateFade();
+    });
+    apply();
   });
 
   // ---------- Lightbox for phone screen galleries ----------
   const phoneGalleries = Array.from(document.querySelectorAll('.phone-scroll'))
     .map(scroll => Array.from(scroll.querySelectorAll('.phone-item img')))
     .filter(gallery => gallery.length);
+  const showcaseImgs = Array.from(document.querySelectorAll('.showcase-img'));
 
-  if (phoneGalleries.length){
+  if (phoneGalleries.length || showcaseImgs.length){
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML =
@@ -156,6 +174,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!item) return;
         item.style.cursor = 'zoom-in';
         item.addEventListener('click', () => openLightbox(g, i));
+      });
+    });
+
+    // Case preview images on the homepage (single-image galleries). Click
+    // opens the zoom instead of the whole-card navigation link.
+    showcaseImgs.forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox([img], 0);
       });
     });
 
