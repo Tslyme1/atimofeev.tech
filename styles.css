@@ -545,6 +545,9 @@ body.lang-switching{ opacity:0; }
   .compare-panels.card-slider .panel{ flex:0 0 88%; height:420px; padding:20px; }
   .compare-panels:not(.card-slider) .panel{ height:420px; padding:20px; }
   .compare-panels .panel h3{ font-size:26px; }
+  /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
+  .compare-panels.result-preview .panel{ height:350px; padding:17px; }
+  .compare-panels.result-preview .panel img{ transform: scale(1.56); }
 }
 
 /* Modifier: dark variant of the metric tiles (used on design-system.html "Результаты") */
