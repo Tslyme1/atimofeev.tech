@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Монетизация — Artem Timofeev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <nav class="subnav">
+    <a class="nav-btn" href="javascript:history.back()">
+      <svg class="icon-arrow" style="transform:rotate(180deg)" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Назад
+    </a>
+    <a class="nav-btn" href="index.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+    <div class="toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#context">Контекст</a>
+      <a href="#problem">Проблема</a>
+      <a href="#process">Процесс</a>
+      <a href="#analysis">Анализ</a>
+      <a href="#solution">Решение</a>
+      <a href="#result">Результат</a>
+    </div>
+  </nav>
+
+  <div class="case-header">
+    <div class="case-header__icon"><img src="assets/Case_Monetisation_Icon.png" alt=""></div>
+    <div>
+      <div class="case-header__title">Монетизация</div>
+      <div class="case-header__subtitle">Кейс</div>
+    </div>
+  </div>
+
+  <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
+
+  <main class="content subpage">
+
+    <section class="hero case-hero green" id="nachalo">
+      <div class="hero__text">
+        <img class="case-hero__logo" src="assets/Money-green-dark.png" alt="">
+        <h1>Как мы увеличили долю монетизируемых авторов внутри мобильной студии</h1>
+        <p class="sub">Процесс + результат</p>
+      </div>
+    </section>
+
+    <section class="info-row plain">
+      <div class="info-col">
+        <span>Роль</span>
+        <b>Senior Designer</b>
+      </div>
+      <div class="info-col">
+        <span>Что было сделано</span>
+        <div class="tags">
+          <b>Определение проблемы</b>
+          <b>Проектирование дизайна</b>
+          <b>Сопровождение разработки</b>
+        </div>
+      </div>
+      <div class="info-col">
+        <span>Аудитория</span>
+        <b>Авторы-партнёры</b>
+      </div>
+    </section>
+
+    <section class="card plain block-gap" id="context">
+      <div class="card__text">
+        <h2>Контекст</h2>
+        <p class="lede">Монетизация — один из ключевых драйверов удержания авторов на платформе: чем больше авторов зарабатывает на контенте, тем выше их мотивация загружать видео, а значит — растёт вотчтайм и рекламная выручка RUTUBE</p>
+        <p class="lede" style="margin-bottom:0">Бизнес-цель — увеличить эту долю, не снижая качество одобряемых заявок</p>
+      </div>
+    </section>
+
+    <div class="media-duo" style="margin-top:16px">
+      <div class="icon-panel single-img">
+        <img src="assets/Photo_3.png" alt="Опыт авторов" style="width:100%; height:100%; object-fit:cover">
+      </div>
+      <div class="icon-panel single-img">
+        <img src="assets/Photo_4.png" alt="Опыт зрителей" style="width:100%; height:100%; object-fit:cover">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="problem">
+      <div class="card__text">
+        <h2>Проблема</h2>
+        <p class="lede" style="margin-bottom:8px">Авторы не понимали:</p>
+        <ul class="lede-list" style="margin:0 0 24px">
+          <li>Может ли их контент монетизироваться</li>
+          <li>Как стать монетизируемым</li>
+          <li>Какие требования предъявляются к заявке</li>
+        </ul>
+        <p class="lede">Происходили регулярные обращения в поддержку в месяц по теме монетизации, заявки отклонялось из-за несоответствия требованиям</p>
+        <p class="lede" style="margin-bottom:0">Появилась гипотеза: если сделать путь «условия → заявка → одобрение» прозрачным внутри интерфейса, вырастет доля авторов, которые доходят до одобренной заявки, и снизится нагрузка на поддержку</p>
+      </div>
+    </section>
+
+    <section class="card plain block-gap" id="process">
+      <div class="card__text">
+        <h2>Процесс</h2>
+        <p class="lede" style="margin-bottom:8px">Разбили путь автора на три этапа:<br>Выполнение условий → Подача заявки → Одобрение заявки</p>
+        <p class="lede">Сформулировали продуктовую цель: максимизировать долю авторов, которые выполнили условия и подали заявку, которая не будет отклонена (то есть оптимизировали не просто «подачу», а «подачу качественную» — иначе выросла бы нагрузка на модерацию без роста реальных партнёров)</p>
+        <p class="lede" style="margin-bottom:8px">На этапе исследования:</p>
+        <ul class="lede-list" style="margin:0">
+          <li>Подняли аналитику по текущей воронке, чтобы найти, на каком шаге теряются авторы</li>
+          <li>Прогнали тикеты поддержки по теме монетизации и сгруппировали по типам непонимания (не знают об условиях / не понимают, что не так с заявкой / не знают, что заявка вообще существует)</li>
+          <li>Синхронизировались с командой модерации/комплаенса, чтобы понять, какие причины отказов самые частые — это стало входом для формулировки требований внутри формы</li>
+        </ul>
+      </div>
+    </section>
+
+    <img src="assets/Photo_7.png" alt="Автор → Выполнение условий → Заявка на монетизацию → Партнёр" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
+
+    <section class="card plain block-gap" id="analysis">
+      <div class="card__text">
+        <h2>Анализ</h2>
+        <p class="lede">Смотрели продукты с похожей механикой «условия → пошаговая заявка на монетизацию»</p>
+        <p class="lede" style="margin-bottom:8px">Что взяли:</p>
+        <ul class="lede-list" style="margin:0 0 24px">
+          <li>Явное отображение прогресса выполнения условий до подачи заявки (а не после)</li>
+          <li>Пошаговую форму вместо одной длинной страницы — снижает когнитивную нагрузку и позволяет валидировать каждый шаг отдельно</li>
+        </ul>
+        <p class="lede" style="margin-bottom:0">Ключевой инсайт: во вью-версии (старая реализация, где условия и форма подачи заявки были представлены как статичная страница/веб-вью) конверсия проседала — очень небольшой процент авторов, выполнивших условия, доходили до подачи заявки. Основная точка потери — частичное заполнение заявки и невозможность возврата к определённому этапу</p>
+      </div>
+    </section>
+
+    <section class="card plain block-gap" id="solution">
+      <div class="card__text">
+        <h2>Решение</h2>
+        <p class="lede" style="margin-bottom:8px">Из анализа воронки и паттернов конкурентов сформулировали два решения:</p>
+        <ol class="lede-list" style="margin:0 0 24px">
+          <li>Виджет прогресса выполнения условий — закрывает проблему «не понимаю, что уже сделано и что осталось». Автор в любой момент видит статус по каждому условию монетизации</li>
+          <li>Пошаговая нативная форма заявки вместо статичного вью — закрывает проблему «форма выглядит длинной/непонятной», и позволяет валидировать данные на каждом шаге, а не после отправки всей заявки — за счёт этого снижается доля отклонённых заявок</li>
+        </ol>
+        <p class="lede" style="margin-bottom:16px">Перед релизом протестировали прототип на авторах, чтобы убедиться, что пошаговая форма не увеличивает время прохождения и не роняет completion rate</p>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">MVP</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_14.png" alt="Загрузите видео для монетизации"><span>Геймификация</span></div>
+        <div class="phone-item"><img src="assets/Phone_15.png" alt="Подайте заявку на монетизацию"><span>Виджет заявки</span></div>
+        <div class="phone-item"><img src="assets/Phone_16.png" alt="Создание кошелька"><span>Пошаговая форма</span></div>
+        <div class="phone-item"><img src="assets/Phone_17.png" alt="Подтверждение личности"><span>Вовлечение в заполнение</span></div>
+      </div>
+    </section>
+
+    <section class="card plain block-gap" id="result">
+      <div class="card__text">
+        <h2>Результат</h2>
+        <p class="lede">По данным аналитики в МСБ самая высокая доля партнёров</p>
+        <p class="lede" style="margin-bottom:0">Партнёры — самая целевая аудитория авторов, поскольку они больше всего заинтересованы в загрузке контента → это напрямую увеличивает вотчтайм платформы → RUTUBE зарабатывает больше на рекламе</p>
+      </div>
+    </section>
+
+    <img src="assets/Photo_8.png" alt="Доля партнёров в продуктах" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
+
+    <section class="card">
+      <div class="teaser-row">
+      <div class="teaser-card">
+        <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+        <div class="teaser-card__inner">
+          <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
+          <div>
+            <h4>Как мы увеличили конверсию загрузки видео на 36%?</h4>
+            <p class="desc" style="margin-top:12px">Процесс + результат</p>
+          </div>
+        </div>
+        <div class="teaser-card__cta">
+          <a class="btn-pill" href="video.html">
+            <span class="pill">Читать кейс</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="teaser-card">
+        <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+        <div class="teaser-card__inner">
+          <div class="teaser-card__media"><img src="assets/Mobile_studio.png" alt="" style="object-fit:contain; background:#0c0c0e"></div>
+          <div>
+            <h4>Запустили и развили мобильную студию для авторов</h4>
+            <p class="desc" style="margin-top:12px">Процесс + результат</p>
+          </div>
+        </div>
+        <div class="teaser-card__cta">
+          <a class="btn-pill" href="studio.html">
+            <span class="pill">Читать кейс</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="case-modal-overlay" id="caseOverlay"></div>
+<div class="case-modal" id="caseModal">
+  <button class="case-modal__close" id="caseClose" aria-label="Закрыть">✕</button>
+  <div class="case-modal__panel">
+    <div class="case-modal__header">
+      <div class="case-modal__icon"><img src="assets/Case_Monetisation_Icon.png" alt=""></div>
+      <div>
+        <div class="case-modal__title">Монетизация</div>
+        <div class="case-modal__subtitle">Кейс</div>
+      </div>
+      <div class="case-modal__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <nav class="case-modal__toc">
+      <a href="#nachalo">Начало</a>
+      <a href="#context">Контекст</a>
+      <a href="#problem">Проблема</a>
+      <a href="#process">Процесс</a>
+      <a href="#analysis">Анализ</a>
+      <a href="#solution">Решение</a>
+      <a href="#result">Результат</a>
+      <a href="index.html">Главная</a>
+    </nav>
+    <div class="case-modal__profile">
+      <div class="profile-card" style="padding:4px 0">
+        <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+        <div class="profile-card__role">Product designer</div>
+        <div class="profile-card__name">Artem Timofeev</div>
+      </div>
+      <div class="sidebar-list">
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Your company</div><div class="exp-row__title">Design related</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2025 — Now</div><div class="exp-row__title">Lead DS designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2023 — 2025</div><div class="exp-row__title">Senior designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Bay of sea 2022 — 2023</div><div class="exp-row__title">Studio owner</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Freelance 2019 — now</div><div class="exp-row__title">Designer</div></div>
+        </div>
+        <div class="sidebar-links">
+          <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

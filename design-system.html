@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дизайн-система — Artem Timofeev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="ds-page">
+
+<div class="layout">
+
+  <nav class="subnav">
+    <a class="nav-btn" href="javascript:history.back()">
+      <svg class="icon-arrow" style="transform:rotate(180deg)" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Назад
+    </a>
+    <a class="nav-btn" href="index.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Главная
+    </a>
+    <div class="toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#overview">Обзор</a>
+      <a href="#problems">Что изменилось</a>
+      <a href="#process">Процесс</a>
+      <a href="#result">Результат</a>
+    </div>
+  </nav>
+
+  <div class="case-header">
+    <div class="case-header__icon"><img src="assets/Case_Design system_Icon.png" alt=""></div>
+    <div>
+      <div class="case-header__title">Дизайн-система</div>
+      <div class="case-header__subtitle">Кейс</div>
+    </div>
+  </div>
+
+  <button class="menu-fab" id="menuFab" aria-label="Открыть меню"><span></span></button>
+
+  <main class="content subpage">
+
+    <section class="hero case-hero ds" id="nachalo">
+      <div class="hero__text">
+        <img class="case-hero__logo" src="assets/Component.png" alt="">
+        <h1>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h1>
+        <p class="sub">Живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, а также прозрачными процессами</p>
+      </div>
+      <img class="case-hero__preview" src="assets/Превью первый блок.png" alt="RUTUBE — интерфейс на дизайн-системе">
+    </section>
+
+    <section class="info-row plain">
+      <div class="info-col">
+        <span>Роль</span>
+        <b>Design System Lead</b>
+      </div>
+      <div class="info-col">
+        <span>Что было сделано</span>
+        <div class="tags">
+          <b>Синхронизация процессов</b>
+          <b>Создание компонентов и гайдов</b>
+          <b>Внедрение на Web, Mobile, TV</b>
+        </div>
+      </div>
+      <div class="info-col">
+        <span>Аудитория</span>
+        <b>Команды дизайна и разработки</b>
+      </div>
+    </section>
+
+    <div class="compare-panels card-slider block-gap" id="overview">
+      <div class="panel">
+        <h3>DS Rutube год назад</h3>
+        <p>Начинала своё зарождение и была похожа на непроработанный UI-кит без документации, с одним перегруженным файлом на все продукты и хаотичными процессами</p>
+        <img src="assets/DS Rutube год назад.png" alt="">
+      </div>
+      <div class="panel violet">
+        <h3>DS Rutube сегодня</h3>
+        <p>Это живой продукт, которым пользуются дизайнеры и разработчики 5 стримов с понятной документацией, шаблонами задач, разделёнными файлами, а также прозрачными процессами</p>
+        <img src="assets/DS Rutube сегодня.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider block-gap" id="problems">
+      <div class="panel dark">
+        <h3>Большое количество вопросов по компонентам</h3>
+        <p>Дизайнеры и разработчики регулярно задавали одинаковые вопросы о состояниях компонентов, допустимых вариантах и правилах использования. Некоторые решения существовали только в макетах или устных договорённостях</p>
+        <img src="assets/Большое количество вопросов по компонентам.png" alt="">
+      </div>
+      <div class="panel violet">
+        <h3>Разработали подробные гайды и внедрили митапы</h3>
+        <p>Появился единый источник правды для дизайнеров и разработчиков, снизилось количество повторяющихся вопросов, а также ускорился процесс принятия интерфейсных решений</p>
+        <img src="assets/Разработали подробные гайды и внедрили митапы.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider block-gap">
+      <div class="panel dark">
+        <h3>Нет прозрачного процесса развития дизайн-системы</h3>
+        <p>Команды не понимали, как предложить доработку компонентов или инициировать изменения, как правильно заводить задачи. Не всегда знали об обновлениях компонентов</p>
+        <img src="assets/Нет прозрачного процесса развития дизайн-системы.png" alt="">
+      </div>
+      <div class="panel violet">
+        <h3>Уменьшили хаос в задачах и процессе работы команды</h3>
+        <p>Ввели процесс создания задач на улучшение дизайн-системы с последующей валидацией и планированием в backlog, создали отдельный телеграм канал с публикациями обновлений, сделали упрощенный и более информативный Changelog, а также понятный нейминг и нумерацию веток</p>
+        <img src="assets/Уменьшили хаос в задачах и процессе работы команды.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels card-slider block-gap">
+      <div class="panel dark">
+        <h3>Неудобно пользоваться библиотекой</h3>
+        <p>Непонятная навигация по компонентам, как продуктовым, так и из дизайн системы. 1 файл для всех продуктов</p>
+        <img src="assets/Неудобно пользоваться библиотекой.png" alt="">
+      </div>
+      <div class="panel violet">
+        <h3>Улучшили взаимодействие с компонентами</h3>
+        <p>1 файл с компонентами - 1 стрим, упростили навигацию, команде стало проще ориентироваться по базовым и продуктовым компонентам. Памяти достаточно, ветки спокойно вливаются</p>
+        <img src="assets/Улучшили взаимодействие с компонентами.png" alt="">
+      </div>
+    </div>
+
+    <div class="compare-panels block-gap">
+      <div class="panel tv">
+        <h3>TV + APP</h3>
+        <p>Масштабирование дизайн системы, строим роадмап по компонентам и макетам, готовим токены</p>
+        <img src="assets/TV + APP.png" alt="">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="process">
+      <div class="card__text">
+        <h2>Как мы работаем</h2>
+        <p class="lede" style="margin-bottom:0">Процесс работы над дизайн системой</p>
+      </div>
+    </section>
+
+    <div class="flow-cards card-slider" style="margin-top:24px">
+      <div class="flow-card">
+        <h3>Находим кейсы</h3>
+        <p>Смотрим на входящие задачи и макеты продуктовых дизайнеров</p>
+        <img class="flow-card__num" src="assets/One.png" alt="1">
+      </div>
+      <div class="flow-card">
+        <h3>Проверяем покрытие</h3>
+        <p>Стоит ли заводить это как компонент дс или оставить его продуктовым</p>
+        <img class="flow-card__num" src="assets/Two.png" alt="2">
+      </div>
+      <div class="flow-card">
+        <h3>Думаем над решением</h3>
+        <p>Обсуждаем и оцениваем требования к компоненту по сложности/срокам</p>
+        <img class="flow-card__num" src="assets/Three.png" alt="3">
+      </div>
+      <div class="flow-card">
+        <h3>Драфт компонента</h3>
+        <p>Создаем ветку с первичной структурой и гайдом компонента</p>
+        <img class="flow-card__num" src="assets/Four.png" alt="4">
+      </div>
+      <div class="flow-card">
+        <h3>Брейншторм</h3>
+        <p>Обсуждаем с разработкой нюансы и технические ограничения</p>
+        <img class="flow-card__num" src="assets/Five.png" alt="5">
+      </div>
+      <div class="flow-card">
+        <h3>Релиз</h3>
+        <p>Публикуем компонент и новость о его создании/изменении</p>
+        <img class="flow-card__num" src="assets/Six.png" alt="6">
+      </div>
+      <div class="flow-card">
+        <h3>Ревью и анализ</h3>
+        <p>Смотрим на корректность использования компонента</p>
+        <img class="flow-card__num" src="assets/Seven.png" alt="7">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="result">
+      <div class="card__text">
+        <h2>Результаты</h2>
+        <p class="lede" style="margin-bottom:0">Работы над дизайн системой</p>
+      </div>
+    </section>
+
+    <div class="stat-row tiles dark" style="margin-top:24px">
+      <div class="stat"><b>в 3 раза</b><span>Ускорили дизайнеров и разработку</span></div>
+      <div class="stat"><b>100+</b><span>Компонентов и гайдов</span></div>
+      <div class="stat"><b>5</b><span>Продуктов</span></div>
+      <div class="stat"><b>3 платформы</b><span>Web, Mobile, TV</span></div>
+    </div>
+
+    <div class="compare-panels">
+      <div class="panel tv">
+        <p class="funnel__label" style="margin:0">Интерфейс на дизайн системе</p>
+        <img src="assets/Превью последний блок.png" alt="">
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="teaser-row">
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили конверсию загрузки видео на 36%?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="video.html">
+              <span class="pill">Подробнее</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
+          <div class="teaser-card__inner">
+            <div class="teaser-card__media"><img src="assets/Monetisation_Thumbnail.png" alt=""></div>
+            <div>
+              <h4>Как мы увеличили долю монетизируемых авторов?</h4>
+              <p class="desc" style="margin-top:12px">Процесс + результат</p>
+            </div>
+          </div>
+          <div class="teaser-card__cta">
+            <a class="btn-pill" href="monetization.html">
+              <span class="pill">Подробнее</span>
+              <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="case-modal-overlay" id="caseOverlay"></div>
+<div class="case-modal" id="caseModal">
+  <button class="case-modal__close" id="caseClose" aria-label="Закрыть">✕</button>
+  <div class="case-modal__panel">
+    <div class="case-modal__header">
+      <div class="case-modal__icon"><img src="assets/Case_Design system_Icon.png" alt=""></div>
+      <div>
+        <div class="case-modal__title">Дизайн-система</div>
+        <div class="case-modal__subtitle">Кейс</div>
+      </div>
+      <div class="case-modal__lang">
+        <button class="active" data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <nav class="case-modal__toc">
+      <a href="#nachalo" class="is-active">Начало</a>
+      <a href="#overview">Обзор</a>
+      <a href="#problems">Что изменилось</a>
+      <a href="#process">Процесс</a>
+      <a href="#result">Результат</a>
+      <a href="index.html">Главная</a>
+    </nav>
+    <div class="case-modal__profile">
+      <div class="profile-card" style="padding:4px 0">
+        <div class="profile-card__avatar"><img src="assets/Avatar.png" alt="Artem Timofeev"></div>
+        <div class="profile-card__role">Product designer</div>
+        <div class="profile-card__name">Artem Timofeev</div>
+      </div>
+      <div class="sidebar-list">
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_1.png" alt=""></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Your company</div><div class="exp-row__title">Design related</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2025 — Now</div><div class="exp-row__title">Lead DS designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_2.png" alt="Rutube"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Rutube 2023 — 2025</div><div class="exp-row__title">Senior designer</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_3.png" alt="Bay of sea"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Bay of sea 2022 — 2023</div><div class="exp-row__title">Studio owner</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__icon"><img src="assets/Work_4.png" alt="Freelance"></div>
+          <div class="exp-row__meta"><div class="exp-row__period">Freelance 2019 — now</div><div class="exp-row__title">Designer</div></div>
+        </div>
+        <div class="sidebar-links">
+          <a href="https://t.me/artemmtimofeev" target="_blank" rel="noopener">Contact <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://www.linkedin.com/in/artemmtimofeev/?locale=ru" target="_blank" rel="noopener">Linkedin <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://hirehi.ru/resume/7KIi3SW5td" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
