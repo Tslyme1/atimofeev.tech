@@ -123,9 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneGalleries = Array.from(document.querySelectorAll('.phone-scroll'))
     .map(scroll => Array.from(scroll.querySelectorAll('.phone-item img')))
     .filter(gallery => gallery.length);
-  const showcaseImgs = Array.from(document.querySelectorAll('.showcase-img'));
+  // Only the freelance project thumbnails ("Создаю дизайн, запускаю сайты и
+  // сервисы для продуктов и услуг" section) get the zoom lightbox — not the
+  // two case-study preview images above them.
+  const projectImgs = Array.from(document.querySelectorAll('.project-grid .project-card__thumb img'));
 
-  if (phoneGalleries.length || showcaseImgs.length){
+  if (phoneGalleries.length || projectImgs.length){
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML =
@@ -177,13 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Case preview images on the homepage (single-image galleries). Click
-    // opens the zoom instead of the whole-card navigation link.
-    showcaseImgs.forEach(img => {
+    // Freelance project thumbnails on the homepage — one shared gallery you
+    // can flip through with prev/next.
+    projectImgs.forEach((img, i) => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', (e) => {
         e.stopPropagation();
-        openLightbox([img], 0);
+        openLightbox(projectImgs, i);
       });
     });
 
