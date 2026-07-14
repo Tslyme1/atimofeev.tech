@@ -306,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
         applyLang(lang);
         document.body.classList.remove('lang-switching');
       }, 200);
+      closeProfile();
+      closeCaseModal();
     });
   });
 
