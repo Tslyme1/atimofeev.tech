@@ -287,6 +287,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (originals.has(n)) n.nodeValue = originals.get(n);
       }
     });
+    document.querySelectorAll('img[data-en-src]').forEach(img => {
+      if (!img.dataset.ruSrc) img.dataset.ruSrc = img.getAttribute('src');
+      img.setAttribute('src', lang === 'en' ? img.dataset.enSrc : img.dataset.ruSrc);
+    });
     document.querySelectorAll('.profile-card__lang button, .case-modal__lang button').forEach(b => {
       b.classList.toggle('active', (b.dataset.lang || b.textContent.trim().toLowerCase()) === lang);
     });
