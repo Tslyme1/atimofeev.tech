@@ -553,11 +553,14 @@ body.lang-switching{ opacity:0; }
   .compare-panels:not(.card-slider) .panel{ height:auto; min-height:224px; padding:20px 20px 308px; }
   .compare-panels .panel h3{ font-size:26px; }
   .compare-panels:not(.result-preview) .panel img{ max-height:390px; }
-  /* TV + APP: 1.5x taller than the other panels per feedback */
-  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:400px; }
+  /* TV + APP: block height halved, photo shrunk 1.3x from the last pass */
+  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:135px; }
+  .compare-panels:not(.result-preview) .panel.tv img{ max-height:163px; }
   /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
   .compare-panels.result-preview .panel{ height:350px; min-height:0; padding:17px; }
   .compare-panels.result-preview .panel img{ transform: scale(1.56); }
+  /* First "было/стало" pair: photo shifted down 15% of panel height */
+  .compare-panels#overview .panel img{ bottom:-15%; }
 }
 
 /* Modifier: dark variant of the metric tiles (used on design-system.html "Результаты") */
