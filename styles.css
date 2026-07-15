@@ -542,16 +542,19 @@ body.lang-switching{ opacity:0; }
   .compare-panels:not(.card-slider) .panel{ height:550px; padding:24px; }
 }
 @media (max-width:720px){
-  .compare-panels.card-slider .panel{ flex:0 0 88%; height:680px; padding:20px; }
-  .compare-panels:not(.card-slider) .panel{ height:680px; padding:20px; }
+  /* Panel height is content-driven (min-height floor + bottom padding
+     reserved for the photo) instead of one fixed value for every panel —
+     a uniform fixed height either clips long "было/стало" paragraphs
+     under the photo, or forces every short panel to match the tallest
+     one. The image itself is capped in absolute px (not %) since it has
+     width:100%/height:auto and would otherwise scale with the panel's
+     height instead of freeing up room for text. */
+  .compare-panels.card-slider .panel{ flex:0 0 88%; height:auto; min-height:420px; padding:20px 20px 360px; }
+  .compare-panels:not(.card-slider) .panel{ height:auto; min-height:420px; padding:20px 20px 360px; }
   .compare-panels .panel h3{ font-size:26px; }
-  /* Image has width:100%/height:auto, so it scales with the panel's fixed
-     width regardless of panel height — capping it in px (not %) is what
-     actually frees up room for text instead of just growing both together.
-     Excludes .result-preview, which has its own already-tuned sizing. */
-  .compare-panels:not(.result-preview) .panel img{ max-height:220px; }
+  .compare-panels:not(.result-preview) .panel img{ max-height:260px; }
   /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
-  .compare-panels.result-preview .panel{ height:350px; padding:17px; }
+  .compare-panels.result-preview .panel{ height:350px; min-height:0; padding:17px; }
   .compare-panels.result-preview .panel img{ transform: scale(1.56); }
 }
 
