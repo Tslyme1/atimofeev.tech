@@ -549,14 +549,12 @@ body.lang-switching{ opacity:0; }
      one. The image itself is capped in absolute px (not %) since it has
      width:100%/height:auto and would otherwise scale with the panel's
      height instead of freeing up room for text. */
-  .compare-panels.card-slider .panel{ flex:0 0 88%; height:auto; min-height:269px; padding:20px 20px 369px; }
-  .compare-panels:not(.card-slider) .panel{ height:auto; min-height:269px; padding:20px 20px 369px; }
+  .compare-panels.card-slider .panel{ flex:0 0 88%; height:auto; min-height:224px; padding:20px 20px 308px; }
+  .compare-panels:not(.card-slider) .panel{ height:auto; min-height:224px; padding:20px 20px 308px; }
   .compare-panels .panel h3{ font-size:26px; }
   .compare-panels:not(.result-preview) .panel img{ max-height:390px; }
-  /* TV + APP uses a wide/landscape screenshot (ratio ~0.6) instead of the
-     portrait phone screenshots the other panels use, so the generic
-     bottom padding (sized for those) left a big empty gap above it here */
-  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:223px; }
+  /* TV + APP: 1.5x taller than the other panels per feedback */
+  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:400px; }
   /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
   .compare-panels.result-preview .panel{ height:350px; min-height:0; padding:17px; }
   .compare-panels.result-preview .panel img{ transform: scale(1.56); }
