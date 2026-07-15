@@ -549,10 +549,10 @@ body.lang-switching{ opacity:0; }
      one. The image itself is capped in absolute px (not %) since it has
      width:100%/height:auto and would otherwise scale with the panel's
      height instead of freeing up room for text. */
-  .compare-panels.card-slider .panel{ flex:0 0 88%; height:auto; min-height:420px; padding:20px 20px 360px; }
-  .compare-panels:not(.card-slider) .panel{ height:auto; min-height:420px; padding:20px 20px 360px; }
+  .compare-panels.card-slider .panel{ flex:0 0 88%; height:auto; min-height:350px; padding:20px 20px 530px; }
+  .compare-panels:not(.card-slider) .panel{ height:auto; min-height:350px; padding:20px 20px 530px; }
   .compare-panels .panel h3{ font-size:26px; }
-  .compare-panels:not(.result-preview) .panel img{ max-height:260px; }
+  .compare-panels:not(.result-preview) .panel img{ max-height:390px; }
   /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
   .compare-panels.result-preview .panel{ height:350px; min-height:0; padding:17px; }
   .compare-panels.result-preview .panel img{ transform: scale(1.56); }
