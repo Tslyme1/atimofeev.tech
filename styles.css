@@ -821,7 +821,7 @@ body.lang-switching{ opacity:0; }
   scrollbar-width:none;
 }
 .funnel::-webkit-scrollbar{ display:none; }
-.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 16px; position:sticky; left:16px; width:max-content; }
+.funnel__label{ color:var(--muted); font-size:14px; margin:0 0 16px; position:sticky; left:8px; width:max-content; }
 .funnel-row{ display:flex; justify-content:space-between; }
 .funnel-step{ display:flex; flex-direction:column; gap:8px; flex:0 0 180px; scroll-snap-align:start; }
 .funnel-step b{ font-weight:900; font-size:40px; letter-spacing:-.03em; }
