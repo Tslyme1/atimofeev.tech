@@ -554,8 +554,8 @@ body.lang-switching{ opacity:0; }
   .compare-panels .panel h3{ font-size:26px; }
   .compare-panels:not(.result-preview) .panel img{ max-height:390px; }
   /* TV + APP: block height halved, photo shrunk 1.3x from the last pass */
-  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:162px; }
-  .compare-panels:not(.result-preview) .panel.tv img{ max-height:196px; }
+  .compare-panels:not(.result-preview) .panel.tv{ min-height:0; padding-bottom:188px; }
+  .compare-panels:not(.result-preview) .panel.tv img{ max-height:163px; }
   /* "Интерфейс на дизайн системе" preview: block shrunk ×1.2, photo enlarged ×1.2 */
   .compare-panels.result-preview .panel{ height:350px; min-height:0; padding:17px; }
   .compare-panels.result-preview .panel img{ transform: scale(1.56); }
