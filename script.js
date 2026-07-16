@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.className = 'pw-gate';
     overlay.innerHTML =
       '<div class="pw-gate__panel">' +
+        '<button class="pw-gate__close" aria-label="Закрыть">✕</button>' +
         '<h3>Кейс под NDA</h3>' +
         '<p>Введите пароль для доступа</p>' +
         '<div class="pw-gate__cells">' +
@@ -21,8 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
         '</div>' +
         '<p class="pw-gate__error">Неверный пароль</p>' +
       '</div>';
-    document.documentElement.appendChild(overlay);
+    document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';
+
+    function closeGate(){
+      overlay.remove();
+      document.body.style.overflow = '';
+    }
+    overlay.querySelector('.pw-gate__close').addEventListener('click', closeGate);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeGate(); });
+    document.addEventListener('keydown', function escClose(e){
+      if (e.key === 'Escape' && document.body.contains(overlay)){ closeGate(); }
+    });
 
     const cells = Array.from(overlay.querySelectorAll('.pw-gate__cell'));
     const errorEl = overlay.querySelector('.pw-gate__error');
