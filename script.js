@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  let saved = 'ru';
-  try { saved = localStorage.getItem('folio-lang') || 'ru'; } catch(e){}
+  let saved = 'en';
+  try { saved = localStorage.getItem('folio-lang') || 'en'; } catch(e){}
   if (saved === 'en') applyLang('en');
 });
