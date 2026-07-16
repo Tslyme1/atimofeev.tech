@@ -613,8 +613,10 @@ body.lang-switching{ opacity:0; }
 /* ==========================================================================
    Sub-case cards (two teaser cards inside a case study)
    ========================================================================== */
-.teaser-row{ display:flex; gap:8px; }
+.teaser-row{ display:flex; flex-wrap:wrap; gap:8px; }
 .teaser-row:not(:first-child){ margin-top:8px; }
+.teaser-row .teaser-card{ flex:1 1 calc(50% - 4px); }
+.teaser-row .teaser-card:last-child:nth-child(odd){ flex-basis:100%; }
 .teaser-card{
   flex:1;
   background: var(--bg);
@@ -1095,7 +1097,7 @@ body.lang-switching{ opacity:0; }
   .stat-row.tiles .stat span{ white-space:normal; }
   .stat-scroll:has(.stat-row.tiles)::after{ content:none; }
 
-  .teaser-row{ flex-direction:column; }
+  .teaser-row .teaser-card{ flex-basis:100%; }
   .hide-mobile{ display:none; }
   .teaser-card{ min-height:0; padding-bottom:76px; }
   .teaser-card__inner{ position:static; transform:none; width:100%; margin-top:12px; }
