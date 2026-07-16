@@ -1344,3 +1344,54 @@ body.lang-switching{ opacity:0; }
   .lightbox__next{ right:8px; }
   .lightbox__close{ width:40px; height:40px; top:12px; right:12px; }
 }
+
+/* ==========================================================================
+   NDA PASSWORD GATE — blocks case pages behind a 5-digit code
+   ========================================================================== */
+.pw-gate{
+  position:fixed; inset:0; z-index:200;
+  background:rgba(12,12,14,.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px;
+}
+.pw-gate__panel{
+  background:var(--surface);
+  border-radius: var(--radius-xl);
+  padding:40px 32px;
+  width:min(400px, 100%);
+  text-align:center;
+  box-shadow: 0 24px 80px rgba(0,0,0,.4);
+}
+.pw-gate__panel h3{ font-weight:800; font-size:22px; letter-spacing:-.02em; margin:0 0 8px; }
+.pw-gate__panel p{ color:var(--muted); font-size:15px; margin:0 0 24px; }
+.pw-gate__cells{ display:flex; gap:10px; justify-content:center; }
+.pw-gate__cell{
+  width:52px; height:60px;
+  border-radius: var(--radius-sm);
+  border:2px solid var(--surface-2);
+  background:var(--bg);
+  text-align:center;
+  font-size:24px; font-weight:800; color:var(--ink);
+  font-family:inherit;
+  transition: border-color .15s ease, background .15s ease;
+}
+.pw-gate__cell:focus{ outline:none; border-color:var(--accent-pink); background:#fff; }
+.pw-gate__error{
+  color:#e5484d; font-size:14px; margin:16px 0 0; height:0; opacity:0;
+  transition: opacity .15s ease;
+}
+.pw-gate__error.is-visible{ height:auto; opacity:1; }
+.pw-gate__panel.shake{ animation: pwGateShake .4s ease; }
+@keyframes pwGateShake{
+  0%, 100%{ transform:translateX(0); }
+  20%{ transform:translateX(-8px); }
+  40%{ transform:translateX(8px); }
+  60%{ transform:translateX(-6px); }
+  80%{ transform:translateX(6px); }
+}
+@media (max-width:480px){
+  .pw-gate__cell{ width:44px; height:52px; font-size:20px; }
+  .pw-gate__cells{ gap:8px; }
+}

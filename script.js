@@ -1,4 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ---------- NDA password gate (studio/design-system/video/monetization) ----------
+  (function(){
+    const NDA_PAGES = ['studio.html', 'design-system.html', 'video.html', 'monetization.html'];
+    const page = location.pathname.split('/').pop();
+    if (!NDA_PAGES.includes(page)) return;
+
+    let unlocked = false;
+    try { unlocked = sessionStorage.getItem('nda-unlocked') === '1' || localStorage.getItem('nda-unlocked') === '1'; } catch(e){}
+    if (unlocked) return;
+
+    const CODE = '77777';
+    const overlay = document.createElement('div');
+    overlay.className = 'pw-gate';
+    overlay.innerHTML =
+      '<div class="pw-gate__panel">' +
+        '<h3>Кейс под NDA</h3>' +
+        '<p>Введите пароль для доступа</p>' +
+        '<div class="pw-gate__cells">' +
+          Array.from({length:5}, () => '<input class="pw-gate__cell" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off">').join('') +
+        '</div>' +
+        '<p class="pw-gate__error">Неверный пароль</p>' +
+      '</div>';
+    document.documentElement.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    const cells = Array.from(overlay.querySelectorAll('.pw-gate__cell'));
+    const errorEl = overlay.querySelector('.pw-gate__error');
+
+    function checkCode(){
+      const value = cells.map(c => c.value).join('');
+      if (value.length < 5) return;
+      if (value === CODE){
+        try {
+          localStorage.setItem('nda-unlocked', '1');
+          sessionStorage.setItem('nda-unlocked', '1');
+        } catch(e){}
+        overlay.remove();
+        document.body.style.overflow = '';
+      } else {
+        errorEl.classList.add('is-visible');
+        overlay.querySelector('.pw-gate__panel').classList.add('shake');
+        setTimeout(() => overlay.querySelector('.pw-gate__panel').classList.remove('shake'), 400);
+        cells.forEach(c => c.value = '');
+        cells[0].focus();
+      }
+    }
+
+    cells.forEach((cell, i) => {
+      cell.addEventListener('input', () => {
+        cell.value = cell.value.replace(/[^0-9]/g, '');
+        errorEl.classList.remove('is-visible');
+        if (cell.value && i < cells.length - 1){
+          cells[i + 1].focus();
+        } else if (cell.value && i === cells.length - 1){
+          checkCode();
+        }
+      });
+      cell.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !cell.value && i > 0){
+          cells[i - 1].focus();
+        }
+      });
+      cell.addEventListener('paste', (e) => {
+        const text = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '').slice(0, 5);
+        if (!text) return;
+        e.preventDefault();
+        text.split('').forEach((ch, idx) => { if (cells[idx]) cells[idx].value = ch; });
+        const next = Math.min(text.length, cells.length - 1);
+        cells[next].focus();
+        if (text.length >= 5) checkCode();
+      });
+    });
+    cells[0].focus();
+  })();
+
   // ---------- Nav drawer (menu fab on case pages) ----------
   const fab = document.getElementById('menuFab');
   const drawer = document.getElementById('navDrawer');
