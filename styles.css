@@ -13,6 +13,10 @@
   --accent-blue: #4f7dff;
   --accent-yellow: #fec901;
   --accent-green: #22c57a;
+  --accent-violet: #be32ff;
+  /* Sticky-note colours from the category diagram — also used by its legend */
+  --sticky-yellow: #ffe299;
+  --sticky-green: #b3efbd;
 
   --radius-xl: 32px;
   --radius-lg: 24px;
@@ -450,9 +454,25 @@ body.lang-switching{ opacity:0; }
 .lede-list.spaced li{ margin-bottom:16px; }
 .lede-list.spaced li:last-child{ margin-bottom:0; }
 
+/* Prioritised hypotheses: bold claim, plain reasoning, violet verdict */
+.hypo-list{ display:flex; flex-direction:column; gap:56px; max-width:700px; }
+.hypo{ color:var(--ink); }
+.hypo p{ margin:0; font-size:18px; line-height:1.5; }
+.hypo p + p{ margin-top:24px; }
+.hypo__claim{ font-weight:700; }
+.hypo__verdict{ color:var(--accent-violet); }
+@media (max-width:720px){
+  .hypo-list{ gap:40px; }
+  .hypo p{ font-size:16px; }
+}
+
 /* Category legend — colored dot + label pairs above a diagram image */
-.category-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:24px; color:var(--muted); font-size:14px; font-weight:500; }
-.category-legend__dot{ display:inline-block; width:16px; height:16px; border-radius:50%; margin-right:8px; vertical-align:middle; }
+.category-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:32px; color:var(--muted); font-size:14px; font-weight:500; }
+.category-legend__item{ display:inline-flex; align-items:center; gap:8px; }
+/* flex:none keeps the dot round — as a flex child it would otherwise shrink into an oval */
+.category-legend__dot{ flex:none; width:16px; height:16px; border-radius:50%; }
+.category-legend__dot.missed{ background: var(--sticky-yellow); }
+.category-legend__dot.reached{ background: var(--sticky-green); }
 
 .stat-row{
   display:flex; flex-wrap:wrap; gap:48px;
@@ -579,13 +599,14 @@ body.lang-switching{ opacity:0; }
 /* Release comparison — two dark columns of stacked metric tiles (monetization.html "Результаты") */
 .release-compare{ display:flex; gap:8px; }
 .release-compare__col{
-  flex:1 1 0; background:var(--dark); border-radius:var(--radius-lg); padding:24px;
+  flex:1 1 0; border-radius:var(--radius-lg); padding:24px;
   display:flex; flex-direction:column; gap:24px;
+  background: var(--dark) url("assets/Bg_Result.png") center / cover no-repeat;
 }
 .release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0; }
 .release-compare .stat-row.tiles{ flex-direction:column; }
-.release-compare .stat-row.tiles .stat{ background:rgba(255,255,255,.08); color:#fff; }
-.release-compare .stat-row.tiles .stat span{ color:#9a9a9a; }
+.release-compare .stat-row.tiles .stat{ background:rgba(255,255,255,.14); color:#fff; }
+.release-compare .stat-row.tiles .stat span{ color:rgba(255,255,255,.72); }
 @media (max-width:720px){ .release-compare{ flex-direction:column; } }
 
 /* ==========================================================================
