@@ -446,9 +446,9 @@ body.lang-switching{ opacity:0; }
   letter-spacing:-.03em; line-height:1.08; margin:0 0 16px;
 }
 .card .lede{
-  color:var(--muted); font-size:18px; line-height:1.5; max-width:700px; margin:0 0 24px;
+  color:var(--ink); font-size:18px; line-height:1.5; max-width:700px; margin:0 0 24px;
 }
-.lede-list{ color:var(--muted); font-size:18px; line-height:1.5; padding-left:22px; max-width:700px; }
+.lede-list{ color:var(--ink); font-size:18px; line-height:1.5; padding-left:22px; max-width:700px; }
 @media (max-width:720px){ .lede-list{ font-size:16px; } }
 /* Modifier: visible gap between items — for long, multi-sentence list entries (hypotheses, roadmap) */
 .lede-list.spaced li{ margin-bottom:16px; }
@@ -1169,6 +1169,21 @@ body.lang-switching{ opacity:0; }
 .block-gap{ margin-top:196px; }
 @media (max-width:1024px){ .block-gap{ margin-top:96px; } }
 @media (max-width:720px){ .block-gap{ margin-top:64px; } }
+/* Modifier: half the usual gap — for a block that still belongs to the figure above it */
+.block-gap.tight{ margin-top:96px; }
+@media (max-width:1024px){ .block-gap.tight{ margin-top:48px; } }
+@media (max-width:720px){ .block-gap.tight{ margin-top:32px; } }
+
+/* 48px between a block's copy and the media illustrating it (main.content
+   already contributes an 8px row gap, so the margin carries the other 40px) */
+.content > .card + .shot-card,
+.content > .card + .shot-row,
+.content > .card + .stat-row,
+.content > .card + .category-legend,
+.content > .card + .flow-cards,
+.content > .card + .release-compare,
+.content > .card + .media-duo,
+.content > .card + img{ margin-top:40px; }
 .card h2 .dim{ color:#b9b9b9; }
 
 .case-hero{
