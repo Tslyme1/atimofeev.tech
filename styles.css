@@ -567,6 +567,18 @@ body.lang-switching{ opacity:0; }
 .stat-row.tiles.dark .stat{ background:var(--dark); color:#fff; }
 .stat-row.tiles.dark .stat span{ color:#9a9a9a; }
 
+/* Release comparison — two dark columns of stacked metric tiles (monetization.html "Результаты") */
+.release-compare{ display:flex; gap:8px; }
+.release-compare__col{
+  flex:1 1 0; background:var(--dark); border-radius:var(--radius-lg); padding:24px;
+  display:flex; flex-direction:column; gap:24px;
+}
+.release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0; }
+.release-compare .stat-row.tiles{ flex-direction:column; }
+.release-compare .stat-row.tiles .stat{ background:rgba(255,255,255,.08); color:#fff; }
+.release-compare .stat-row.tiles .stat span{ color:#9a9a9a; }
+@media (max-width:720px){ .release-compare{ flex-direction:column; } }
+
 /* ==========================================================================
    Case link cards (project grid on home)
    ========================================================================== */
