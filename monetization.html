@@ -38,8 +38,11 @@
       <a href="#context">Контекст</a>
       <a href="#problem">Проблема</a>
       <a href="#process">Процесс</a>
+      <a href="#constraints">Ограничения</a>
+      <a href="#hypotheses">Гипотезы</a>
       <a href="#analysis">Анализ</a>
       <a href="#solution">Решение</a>
+      <a href="#screens">Проверка</a>
       <a href="#result">Результат</a>
     </div>
   </nav>
@@ -110,6 +113,13 @@
       </div>
     </section>
 
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Моб. студия до монетизации</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_30.png" alt="Мобильная студия до появления монетизации"></div>
+      </div>
+    </section>
+
     <section class="card plain block-gap" id="process">
       <div class="card__text">
         <h2>Процесс</h2>
@@ -125,6 +135,70 @@
     </section>
 
     <img src="assets/Photo_7.png" data-en-src="assets/Photo_7_eng.png" alt="Автор → Выполнение условий → Заявка на монетизацию → Партнёр" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
+
+    <section class="card plain block-gap" id="constraints">
+      <div class="card__text">
+        <h2>Ограничения</h2>
+        <p class="lede" style="margin-bottom:0">В ходе анализа собрали ряд ограничений, на которые опирались при разработке функции</p>
+      </div>
+    </section>
+
+    <div class="flow-cards card-slider" style="margin-top:24px">
+      <div class="flow-card">
+        <h3>Общий бэк</h3>
+        <p>Бэк заявки один на веб и мобилку, переписывать под мобильный клиент нет возможности</p>
+        <img class="flow-card__num" src="assets/One.png" alt="1">
+      </div>
+      <div class="flow-card">
+        <h3>Сроки</h3>
+        <p>Сроки релиза и ресурс разработки очень ограничены</p>
+        <img class="flow-card__num" src="assets/Two.png" alt="2">
+      </div>
+      <div class="flow-card">
+        <h3>Комплаенс</h3>
+        <p>Требования к заявке диктует комплаенс, дизайн их не упрощает — только объясняет</p>
+        <img class="flow-card__num" src="assets/Three.png" alt="3">
+      </div>
+      <div class="flow-card">
+        <h3>76% СМЗ</h3>
+        <p>76% авторов мобильной студии, подходящих под условия — самозанятые, их данные уже есть в госсистемах, но интеграции на текущий момент нет</p>
+        <img class="flow-card__num" src="assets/Four.png" alt="4">
+      </div>
+      <div class="flow-card">
+        <h3>3 типа авторов</h3>
+        <p>Заявку подают самозанятые, ИП и физлица. Состав документов и причины отказов у них разные</p>
+        <img class="flow-card__num" src="assets/Five.png" alt="5">
+      </div>
+    </div>
+
+    <section class="card plain block-gap" id="hypotheses">
+      <div class="card__text">
+        <h2>Категории авторов</h2>
+        <p class="lede" style="margin-bottom:0">Сформулировал проблемы по категориям авторов (Дошёл / Не дошёл до заявки), опираясь на анализ и декомпозицию, и на этой основе составил и приоритизировал гипотезы по их решению</p>
+      </div>
+    </section>
+
+    <img src="assets/Hypotesys.png" alt="Категории авторов: не дошёл до заявки / дошёл до заявки" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
+
+    <section class="card plain block-gap">
+      <div class="card__text">
+        <ol class="lede-list" style="margin:0">
+          <li><b>Гипотеза 1.</b> Если показать прогресс выполнения условий прямо на главной Студии, автор увидит, что монетизация ему доступна, и поймёт, чего конкретно не хватает. Охват максимальный, влияние высокое, уверенность высокая — подтверждено тикетами и бенчмарками. Фундамент для 1 релиза, делаем</li>
+          <li><b>Гипотеза 2.</b> Если отдать саму заявку в вебвью, автор сможет подать заявку не дожидаясь нативной формы, а мы за один спринт проверим гипотезу 1 на живых данных. Охват узкий, стоимость почти нулевая — осознанный компромисс, чтобы попасть в релиз</li>
+          <li><b>Гипотеза 3.</b> Если разбить форму на шаги внутри приложения, автор перестанет видеть длинную непонятную анкету, а данные будут проверяться на каждом шаге. Влияние высокое, но уверенность до теста средняя — степперы часто увеличивают время прохождения. Во 2 релиз, только после того, как данные докажут, что узкое место именно форма</li>
+          <li><b>Гипотеза 4.</b> Если сохранять черновик, автор вернётся к заявке после обрыва, а не начнёт с нуля. Влияние высокое: прерванная сессия сегодня равна потерянному автору. Во 2 релиз, в связке с гипотезой 3 — по отдельности смысла нет</li>
+          <li><b>Гипотеза 5.</b> Если подтягивать данные самозанятых из госсистем, автор не вводит их руками — падают и ошибки, и время модерации. Влияние максимальное из всех, но стоимость очень высокая — интеграция, закупка, юридическое согласование вне контура команды. Долго, выносим в отдельный релиз (позже это стало основой редизайна сценария)</li>
+          <li><b>Гипотеза 6.</b> Если присылать пуш при приближении к выполнению условий, автор вернётся вовремя. Дёшево, но уверенность низкая — легко превратить в спам. Бэклог</li>
+          <li><b>Гипотеза 7.</b> Если прогонять контент через предпроверку до подачи, автор узнает о нарушениях заранее. Нужен ML-сервис и формализованные критерии от модерации, которых на тот момент не существовало. Бэклог</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card plain block-gap">
+      <div class="card__text">
+        <p class="lede" style="margin-bottom:0">Перед проектированием провёл исследование, чтобы выявить подходящее место для точки входа в монетизацию (раздел с условиями, аналитика выплат и т.д.): 426 респондентов, аудитория — авторы RUTUBE. У 84% не подключена монетизация</p>
+      </div>
+    </section>
 
     <section class="card plain block-gap" id="analysis">
       <div class="card__text">
@@ -161,6 +235,90 @@
       </div>
     </section>
 
+    <section class="card plain block-gap" id="screens">
+      <div class="card__text">
+        <h2>Проверка гипотез</h2>
+        <p class="lede" style="margin-bottom:0">Сделал дизайн каждого из шагов, который проходит автор перед тем как стать партнёром</p>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Тест расположения точки входа</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_31.png" alt="Точка входа в Nav bar"><span>В Nav bar — 53% успеха, медиана 19.5 с</span></div>
+        <div class="phone-item"><img src="assets/Phone_32.png" alt="Точка входа в Tab bar"><span>В Tab bar — 35% успеха, медиана 20.48 с</span></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Прогресс выполнения условий</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_33.png" alt="Прогресс-бар со статусами"><span>Прогресс-бар со статусами</span></div>
+        <div class="phone-item"><img src="assets/Phone_34.png" alt="Прогресс-бар со статусами"><span>Прогресс-бар со статусами</span></div>
+        <div class="phone-item"><img src="assets/Phone_35.png" alt="Страница с условиями и информацией"><span>Страница с условиями и информацией</span></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Форма заявки — вебвью</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_36.png" alt="Форма заявки, вебвью"></div>
+        <div class="phone-item"><img src="assets/Phone_37.png" alt="Форма заявки, вебвью"></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Статус заявки</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_38.png" alt="После одобрения — баланс на главной"><span>После одобрения — баланс на главной</span></div>
+        <div class="phone-item"><img src="assets/Phone_39.png" alt="После одобрения — баланс на главной"><span>После одобрения — баланс на главной</span></div>
+        <div class="phone-item"><img src="assets/Phone_40.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"><span>При отклонении — виджет с причиной</span></div>
+        <div class="phone-item"><img src="assets/Phone_41.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"><span>При отклонении — виджет с причиной</span></div>
+      </div>
+    </section>
+
+    <section class="card plain block-gap" id="findings">
+      <div class="card__text">
+        <h2>Находки после 1 релиза</h2>
+        <p class="lede">1 релиз сделал ровно то, на что был рассчитан: авторы узнали о монетизации и пошли в форму. Но форма не сумела обработать этот поток должным образом — completion rate просел</p>
+        <p class="lede" style="margin-bottom:8px">Провёл серию глубинных интервью с авторами, которые заполнили заявку, и выявил трейдоффы решения:</p>
+        <ul class="lede-list" style="margin:0 0 24px">
+          <li>Пользователь уставал заполнять форму — сохранить черновик было нельзя, только начинать с нуля</li>
+          <li>Сессия периодически прерывалась по инициативе пользователя или из-за ошибок бэка — автор отваливался на середине и недозаполнял заявку</li>
+          <li>Внутри вебвью совершенно другой интерфейс, отличный от мобильной студии — это увеличивало количество отказов</li>
+          <li>Большинство пользователей — самозанятые, официально зарегистрированные, их данные уже есть в госсистемах, но каждый раз приходилось вводить их вручную — это увеличивало и количество ошибок при заполнении, и время модерации</li>
+        </ul>
+        <p class="lede" style="margin-bottom:0">Нашим продактам удалось согласовать интеграцию с Госуслугами — в будущем это стало большим драйвером роста показателей одобрения заявок</p>
+      </div>
+    </section>
+
+    <section class="card plain block-gap">
+      <div class="card__text">
+        <h2>Редизайн заявки</h2>
+        <p class="lede">После релиза спроектировал редизайн заявки, который помогает довести пользователя до одобрения быстрее и проще:</p>
+        <ul class="lede-list" style="margin:0 0 24px">
+          <li>Вынес выбор типа автора вперёд и объяснил его — раньше был сухой список «самозанятый / ИП / физлицо», и люди останавливались с вопросом «а мне какой и для чего?»</li>
+          <li>Переработал большую форму в последовательную с шагами: Создание кошелька → Авторизация в Госуслугах → Отправка данных → Ожидание модерации</li>
+        </ul>
+        <p class="lede" style="margin-bottom:8px">Провёл исследование на 9 авторах — самозанятые, часть уже подавала заявку и получила отказ, часть не подавала вообще: первые дали материал по возврату после отказа, вторые — по первому входу</p>
+        <p class="lede" style="margin-bottom:0">Что удалось проверить: пошаговость не увеличивает реальное время прохождения, completion rate не падает</p>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Пошаговая форма</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_42.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_43.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_44.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_45.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_46.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_47.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_48.png" alt="Пошаговая форма"></div>
+        <div class="phone-item"><img src="assets/Phone_49.png" alt="Пошаговая форма"></div>
+      </div>
+    </section>
+
     <section class="card plain block-gap" id="result">
       <div class="card__text">
         <h2>Результат</h2>
@@ -169,7 +327,26 @@
       </div>
     </section>
 
+    <div class="stat-row tiles dark" style="margin-top:24px">
+      <div class="stat"><b>18% → 48%</b><span>Completion rate формы (открыл → отправил)</span></div>
+      <div class="stat"><b>55% → 88%</b><span>Одобрено с первой попытки</span></div>
+      <div class="stat"><b>10% → 42%</b><span>Сквозная: открыл форму → стал партнёром</span></div>
+      <div class="stat"><b>16 → 9 мин</b><span>Среднее время прохождения заявки</span></div>
+    </div>
+
     <img src="assets/Photo_8.png" alt="Доля партнёров в продуктах" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
+
+    <section class="card plain block-gap" id="roadmap">
+      <div class="card__text">
+        <h2>Как планируем развивать дальше</h2>
+        <ul class="lede-list" style="margin:0">
+          <li>Перенос сценария на ИП и юрлиц — оптимизировали под самозанятых как под массовый сегмент, ИП и юрлица — дополнительная точка роста</li>
+          <li>Предпроверка контента до подачи — автор узнаёт о нарушении до того, как потратил время на заявку. Шаг зависит от модерации</li>
+          <li>Уведомление о смене статуса заявки — сейчас автор узнаёт об отказе, только когда сам зайдёт в приложение или посмотрит почту</li>
+          <li>Прогноз выполнения условий в виджете — «при текущем темпе вы выполните условие примерно через N дней». Дополнительная мотивация, но технически дорого</li>
+        </ul>
+      </div>
+    </section>
 
     <section class="card">
       <div class="teaser-row">
@@ -247,8 +424,11 @@
       <a href="#context">Контекст</a>
       <a href="#problem">Проблема</a>
       <a href="#process">Процесс</a>
+      <a href="#constraints">Ограничения</a>
+      <a href="#hypotheses">Гипотезы</a>
       <a href="#analysis">Анализ</a>
       <a href="#solution">Решение</a>
+      <a href="#screens">Проверка</a>
       <a href="#result">Результат</a>
       <a href="index.html">Главная</a>
     </nav>
