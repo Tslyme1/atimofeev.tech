@@ -601,7 +601,7 @@ body.lang-switching{ opacity:0; }
 .release-compare__col{
   flex:1 1 0; border-radius:var(--radius-lg); padding:24px;
   display:flex; flex-direction:column; gap:24px;
-  background: var(--dark) url("assets/Bg_Result.png") center / cover no-repeat;
+  background: var(--dark) url("assets/Result_noise.png") left top / cover no-repeat;
 }
 .release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0; }
 .release-compare .stat-row.tiles{ flex-direction:column; }
