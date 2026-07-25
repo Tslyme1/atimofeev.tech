@@ -446,6 +446,13 @@ body.lang-switching{ opacity:0; }
 }
 .lede-list{ color:var(--muted); font-size:18px; line-height:1.5; padding-left:22px; max-width:700px; }
 @media (max-width:720px){ .lede-list{ font-size:16px; } }
+/* Modifier: visible gap between items — for long, multi-sentence list entries (hypotheses, roadmap) */
+.lede-list.spaced li{ margin-bottom:16px; }
+.lede-list.spaced li:last-child{ margin-bottom:0; }
+
+/* Category legend — colored dot + label pairs above a diagram image */
+.category-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:24px; color:var(--muted); font-size:14px; font-weight:500; }
+.category-legend__dot{ display:inline-block; width:16px; height:16px; border-radius:50%; margin-right:8px; vertical-align:middle; }
 
 .stat-row{
   display:flex; flex-wrap:wrap; gap:48px;
@@ -464,6 +471,8 @@ body.lang-switching{ opacity:0; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
 .stat span{ color:var(--muted); font-size:18px; }
+.stat b.positive{ color:var(--accent-green); }
+.stat b.negative{ color:#e5484d; }
 
 .showcase{
   background: var(--bg);
@@ -566,6 +575,18 @@ body.lang-switching{ opacity:0; }
 /* Modifier: dark variant of the metric tiles (used on design-system.html "Результаты") */
 .stat-row.tiles.dark .stat{ background:var(--dark); color:#fff; }
 .stat-row.tiles.dark .stat span{ color:#9a9a9a; }
+
+/* Release comparison — two dark columns of stacked metric tiles (monetization.html "Результаты") */
+.release-compare{ display:flex; gap:8px; }
+.release-compare__col{
+  flex:1 1 0; background:var(--dark); border-radius:var(--radius-lg); padding:24px;
+  display:flex; flex-direction:column; gap:24px;
+}
+.release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0; }
+.release-compare .stat-row.tiles{ flex-direction:column; }
+.release-compare .stat-row.tiles .stat{ background:rgba(255,255,255,.08); color:#fff; }
+.release-compare .stat-row.tiles .stat span{ color:#9a9a9a; }
+@media (max-width:720px){ .release-compare{ flex-direction:column; } }
 
 /* ==========================================================================
    Case link cards (project grid on home)
@@ -1189,6 +1210,18 @@ body.lang-switching{ opacity:0; }
   padding:16px 16px 40px;
 }
 .shot-card__label{ color:var(--muted); font-size:14px; margin:0 0 32px; }
+/* Row of labeled screen groups shown side by side (the mockup splits screens
+   into separate labeled columns rather than one wide scroller) */
+.shot-row{ display:flex; gap:8px; }
+.shot-row > .shot-card{ flex:1 1 0; min-width:0; }
+.shot-row > .shot-card.wide{ flex:2.55 1 0; }
+/* Each column is sized to its own screens, so the scroll fade has nothing to hide */
+.shot-row > .shot-card:has(.phone-scroll){ -webkit-mask-image:none; mask-image:none; }
+.shot-row > .shot-card:has(.phone-scroll)::after{ content:none; }
+@media (max-width:900px){
+  .shot-row{ flex-direction:column; }
+  .shot-row > .shot-card.wide{ flex:1 1 auto; }
+}
 .shot-card .phone-item{ gap:16px; }
 .shot-card .phone-item img{ height:500px; border-radius:12px; }
 @media (max-width:1024px){ .shot-card .phone-item{ gap:12px; } .shot-card .phone-item img{ height:360px; border-radius:12px; } }
