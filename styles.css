@@ -1210,6 +1210,18 @@ body.lang-switching{ opacity:0; }
   padding:16px 16px 40px;
 }
 .shot-card__label{ color:var(--muted); font-size:14px; margin:0 0 32px; }
+/* Row of labeled screen groups shown side by side (the mockup splits screens
+   into separate labeled columns rather than one wide scroller) */
+.shot-row{ display:flex; gap:8px; }
+.shot-row > .shot-card{ flex:1 1 0; min-width:0; }
+.shot-row > .shot-card.wide{ flex:2.55 1 0; }
+/* Each column is sized to its own screens, so the scroll fade has nothing to hide */
+.shot-row > .shot-card:has(.phone-scroll){ -webkit-mask-image:none; mask-image:none; }
+.shot-row > .shot-card:has(.phone-scroll)::after{ content:none; }
+@media (max-width:900px){
+  .shot-row{ flex-direction:column; }
+  .shot-row > .shot-card.wide{ flex:1 1 auto; }
+}
 .shot-card .phone-item{ gap:16px; }
 .shot-card .phone-item img{ height:500px; border-radius:12px; }
 @media (max-width:1024px){ .shot-card .phone-item{ gap:12px; } .shot-card .phone-item img{ height:360px; border-radius:12px; } }

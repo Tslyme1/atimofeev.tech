@@ -218,19 +218,27 @@
       </div>
     </section>
 
-    <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">Тест расположения точки входа</p>
-      <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_31.png" alt="Точка входа в Nav bar"><span>В Nav bar</span></div>
-        <div class="phone-item"><img src="assets/Phone_32.png" alt="Точка входа в Tab bar"><span>В Tab bar</span></div>
-      </div>
-      <div class="stat-row tiles" style="margin-top:24px">
-        <div class="stat"><b class="positive">53%</b><span>Успеха</span></div>
-        <div class="stat"><b>19.5 с.</b><span>Медианное время</span></div>
-        <div class="stat"><b class="negative">35%</b><span>Успеха</span></div>
-        <div class="stat"><b>20.48 с.</b><span>Медианное время</span></div>
-      </div>
-    </section>
+    <div class="stat-row tiles" style="margin-top:24px">
+      <div class="stat"><b class="positive">53%</b><span>Успеха</span></div>
+      <div class="stat"><b>19.5 с.</b><span>Медианное время</span></div>
+      <div class="stat"><b class="negative">35%</b><span>Успеха</span></div>
+      <div class="stat"><b>20.48 с.</b><span>Медианное время</span></div>
+    </div>
+
+    <div class="shot-row" style="margin-top:16px">
+      <section class="shot-card">
+        <p class="shot-card__label">В Nav bar</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_31.png" alt="Точка входа в Nav bar"></div>
+        </div>
+      </section>
+      <section class="shot-card">
+        <p class="shot-card__label">В Tab bar</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_32.png" alt="Точка входа в Tab bar"></div>
+        </div>
+      </section>
+    </div>
 
     <section class="card plain block-gap" id="solution">
       <div class="card__text">
@@ -239,20 +247,21 @@
       </div>
     </section>
 
-    <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">Прогресс бар со статусами</p>
-      <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_33.png" alt="Прогресс-бар со статусами"></div>
-        <div class="phone-item"><img src="assets/Phone_34.png" alt="Прогресс-бар со статусами"></div>
-      </div>
-    </section>
-
-    <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">Страница с условиями и информацией</p>
-      <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_35.png" alt="Страница с условиями и информацией"></div>
-      </div>
-    </section>
+    <div class="shot-row" style="margin-top:16px">
+      <section class="shot-card wide">
+        <p class="shot-card__label">Прогресс бар со статусами</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_33.png" alt="Прогресс-бар со статусами"></div>
+          <div class="phone-item"><img src="assets/Phone_34.png" alt="Прогресс-бар со статусами"></div>
+        </div>
+      </section>
+      <section class="shot-card">
+        <p class="shot-card__label">Страница с условиями и информацией</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_35.png" alt="Страница с условиями и информацией"></div>
+        </div>
+      </section>
+    </div>
 
     <section class="shot-card" style="margin-top:16px">
       <p class="shot-card__label">Форма заявки — вебвью</p>
@@ -262,21 +271,22 @@
       </div>
     </section>
 
-    <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">После одобрения — баланс на главной</p>
-      <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_38.png" alt="После одобрения — баланс на главной"></div>
-        <div class="phone-item"><img src="assets/Phone_39.png" alt="После одобрения — баланс на главной"></div>
-      </div>
-    </section>
-
-    <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">При отклонении — виджет с причиной и дальнейшими действиями</p>
-      <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_40.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
-        <div class="phone-item"><img src="assets/Phone_41.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
-      </div>
-    </section>
+    <div class="shot-row" style="margin-top:16px">
+      <section class="shot-card">
+        <p class="shot-card__label">После одобрения — баланс на главной</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_38.png" alt="После одобрения — баланс на главной"></div>
+          <div class="phone-item"><img src="assets/Phone_39.png" alt="После одобрения — баланс на главной"></div>
+        </div>
+      </section>
+      <section class="shot-card">
+        <p class="shot-card__label">При отклонении — виджет с причиной и дальнейшими действиями</p>
+        <div class="phone-scroll">
+          <div class="phone-item"><img src="assets/Phone_40.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
+          <div class="phone-item"><img src="assets/Phone_41.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
+        </div>
+      </section>
+    </div>
 
     <section class="card plain block-gap" id="findings">
       <div class="card__text">
@@ -357,15 +367,6 @@
       </div>
     </div>
 
-    <section class="card plain block-gap">
-      <div class="card__text">
-        <p class="lede">По данным аналитики в МСБ самая высокая доля партнёров</p>
-        <p class="lede" style="margin-bottom:0">Партнёры — самая целевая аудитория авторов, поскольку они больше всего заинтересованы в загрузке контента → это напрямую увеличивает вотчтайм платформы → RUTUBE зарабатывает больше на рекламе</p>
-      </div>
-    </section>
-
-    <img src="assets/Photo_8.png" alt="Доля партнёров в продуктах" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
-
     <section class="card plain block-gap" id="roadmap">
       <div class="card__text">
         <h2>Гипотезы развития</h2>
@@ -382,38 +383,6 @@
     <section class="card">
       <div class="teaser-row">
       <div class="teaser-card">
-        <div class="teaser-card__meta"><span>RUTUBE</span><span>2025—now</span></div>
-        <div class="teaser-card__inner">
-          <div class="teaser-card__media"><img src="assets/Ds_Thumbnail.png" alt=""></div>
-          <div>
-            <h4>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h4>
-            <p class="desc" style="margin-top:12px">&nbsp;</p>
-          </div>
-        </div>
-        <div class="teaser-card__cta">
-          <a class="btn-pill" href="design-system.html">
-            <span class="pill">Читать кейс</span>
-            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-      </div>
-      <div class="teaser-card">
-        <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
-        <div class="teaser-card__inner">
-          <div class="teaser-card__media"><img src="assets/Mobile studio_Thumbnail.png" alt=""></div>
-          <div>
-            <h4>Запустили и развили мобильную студию для авторов</h4>
-            <p class="desc" style="margin-top:12px">Процесс + результат</p>
-          </div>
-        </div>
-        <div class="teaser-card__cta">
-          <a class="btn-pill" href="studio.html">
-            <span class="pill">Читать кейс</span>
-            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-      </div>
-      <div class="teaser-card">
         <div class="teaser-card__meta"><span>RUTUBE</span><span>2023—now</span></div>
         <div class="teaser-card__inner">
           <div class="teaser-card__media"><img src="assets/Video_Thumbnail.png" alt=""></div>
@@ -424,7 +393,22 @@
         </div>
         <div class="teaser-card__cta">
           <a class="btn-pill" href="video.html">
-            <span class="pill">Читать кейс</span>
+            <span class="pill">Подробнее</span>
+            <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="teaser-card">
+        <div class="teaser-card__meta"><span>RUTUBE</span><span>2025—now</span></div>
+        <div class="teaser-card__inner">
+          <div class="teaser-card__media"><img src="assets/Ds_Thumbnail.png" alt=""></div>
+          <div>
+            <h4>Развиваю дизайн-систему RUTUBE, которая реально работает и масштабируется</h4>
+          </div>
+        </div>
+        <div class="teaser-card__cta">
+          <a class="btn-pill" href="design-system.html">
+            <span class="pill">Подробнее</span>
             <span class="pill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
