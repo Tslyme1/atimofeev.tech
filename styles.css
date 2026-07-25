@@ -446,6 +446,13 @@ body.lang-switching{ opacity:0; }
 }
 .lede-list{ color:var(--muted); font-size:18px; line-height:1.5; padding-left:22px; max-width:700px; }
 @media (max-width:720px){ .lede-list{ font-size:16px; } }
+/* Modifier: visible gap between items — for long, multi-sentence list entries (hypotheses, roadmap) */
+.lede-list.spaced li{ margin-bottom:16px; }
+.lede-list.spaced li:last-child{ margin-bottom:0; }
+
+/* Category legend — colored dot + label pairs above a diagram image */
+.category-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:24px; color:var(--muted); font-size:14px; font-weight:500; }
+.category-legend__dot{ display:inline-block; width:16px; height:16px; border-radius:50%; margin-right:8px; vertical-align:middle; }
 
 .stat-row{
   display:flex; flex-wrap:wrap; gap:48px;
@@ -464,6 +471,8 @@ body.lang-switching{ opacity:0; }
 .mini-arrow{ font-size:0.5em; font-weight:600; color: var(--muted); display:inline-block; }
 .mini-arrow-img{ width:20px; height:20px; object-fit:contain; display:inline-block; flex-shrink:0; }
 .stat span{ color:var(--muted); font-size:18px; }
+.stat b.positive{ color:var(--accent-green); }
+.stat b.negative{ color:#e5484d; }
 
 .showcase{
   background: var(--bg);

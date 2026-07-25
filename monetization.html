@@ -185,11 +185,16 @@
       </div>
     </section>
 
+    <div class="category-legend" style="margin-top:16px">
+      <span class="category-legend__dot" style="background:var(--accent-pink)"></span>Не дошёл до заявки
+      <span class="category-legend__dot" style="background:var(--accent-green)"></span>Дошёл до заявки
+    </div>
+
     <img src="assets/Hypotesys.png" alt="Категории авторов: не дошёл до заявки / дошёл до заявки" style="width:100%; height:auto; border-radius:24px; margin-top:16px">
 
     <section class="card plain block-gap">
       <div class="card__text">
-        <ol class="lede-list" style="margin:0">
+        <ol class="lede-list spaced" style="margin:0">
           <li><b>Гипотеза 1.</b> Если показать прогресс выполнения условий прямо на главной Студии, автор увидит, что монетизация ему доступна, и поймёт, чего конкретно не хватает. Охват максимальный — виджет видят все, кто открывает Студию. Влияние высокое: без него остальные шаги не имеют смысла. Уверенность высокая — подтверждено тикетами и бенчмарками. Фундамент для 1 релиза, делаем</li>
           <li><b>Гипотеза 2.</b> Если отдать саму заявку в вебвью, автор сможет подать заявку не дожидаясь нативной формы, а мы за один спринт проверим гипотезу 1 на живых данных. Охват узкий, только выполнившие условия. Стоимость почти нулевая — переиспользуем то, что работает в вебе. Осознанный компромисс, чтобы попасть в релиз</li>
           <li><b>Гипотеза 3.</b> Если разбить форму на шаги внутри приложения, автор перестанет видеть длинную непонятную анкету, а данные будут проверяться на каждом шаге. Влияние высокое — бьёт прямо в главную причину отказов. Уверенность до теста средняя — степперы часто увеличивают реальное время прохождения. Стоимость высокая. Во 2 релиз, только после того, как данные докажут, что узкое место именно форма</li>
@@ -216,8 +221,14 @@
     <section class="shot-card" style="margin-top:16px">
       <p class="shot-card__label">Тест расположения точки входа</p>
       <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_31.png" alt="Точка входа в Nav bar"><span>В Nav bar — 53% успеха, медиана 19.5 с</span></div>
-        <div class="phone-item"><img src="assets/Phone_32.png" alt="Точка входа в Tab bar"><span>В Tab bar — 35% успеха, медиана 20.48 с</span></div>
+        <div class="phone-item"><img src="assets/Phone_31.png" alt="Точка входа в Nav bar"><span>В Nav bar</span></div>
+        <div class="phone-item"><img src="assets/Phone_32.png" alt="Точка входа в Tab bar"><span>В Tab bar</span></div>
+      </div>
+      <div class="stat-row tiles" style="margin-top:24px">
+        <div class="stat"><b class="positive">53%</b><span>Успеха</span></div>
+        <div class="stat"><b>19.5 с.</b><span>Медианное время</span></div>
+        <div class="stat"><b class="negative">35%</b><span>Успеха</span></div>
+        <div class="stat"><b>20.48 с.</b><span>Медианное время</span></div>
       </div>
     </section>
 
@@ -229,11 +240,17 @@
     </section>
 
     <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">Прогресс выполнения условий</p>
+      <p class="shot-card__label">Прогресс бар со статусами</p>
       <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_33.png" alt="Прогресс-бар со статусами"><span>Прогресс-бар со статусами</span></div>
-        <div class="phone-item"><img src="assets/Phone_34.png" alt="Прогресс-бар со статусами"><span>Прогресс-бар со статусами</span></div>
-        <div class="phone-item"><img src="assets/Phone_35.png" alt="Страница с условиями и информацией"><span>Страница с условиями и информацией</span></div>
+        <div class="phone-item"><img src="assets/Phone_33.png" alt="Прогресс-бар со статусами"></div>
+        <div class="phone-item"><img src="assets/Phone_34.png" alt="Прогресс-бар со статусами"></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Страница с условиями и информацией</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_35.png" alt="Страница с условиями и информацией"></div>
       </div>
     </section>
 
@@ -246,12 +263,18 @@
     </section>
 
     <section class="shot-card" style="margin-top:16px">
-      <p class="shot-card__label">Статус заявки</p>
+      <p class="shot-card__label">После одобрения — баланс на главной</p>
       <div class="phone-scroll">
-        <div class="phone-item"><img src="assets/Phone_38.png" alt="После одобрения — баланс на главной"><span>После одобрения — баланс на главной</span></div>
-        <div class="phone-item"><img src="assets/Phone_39.png" alt="После одобрения — баланс на главной"><span>После одобрения — баланс на главной</span></div>
-        <div class="phone-item"><img src="assets/Phone_40.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"><span>При отклонении — виджет с причиной</span></div>
-        <div class="phone-item"><img src="assets/Phone_41.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"><span>При отклонении — виджет с причиной</span></div>
+        <div class="phone-item"><img src="assets/Phone_38.png" alt="После одобрения — баланс на главной"></div>
+        <div class="phone-item"><img src="assets/Phone_39.png" alt="После одобрения — баланс на главной"></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">При отклонении — виджет с причиной и дальнейшими действиями</p>
+      <div class="phone-scroll">
+        <div class="phone-item"><img src="assets/Phone_40.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
+        <div class="phone-item"><img src="assets/Phone_41.png" alt="При отклонении — виджет с причиной и дальнейшими действиями"></div>
       </div>
     </section>
 
@@ -290,6 +313,12 @@
         <div class="phone-item"><img src="assets/Phone_43.png" alt="Пошаговая форма"></div>
         <div class="phone-item"><img src="assets/Phone_44.png" alt="Пошаговая форма"></div>
         <div class="phone-item"><img src="assets/Phone_45.png" alt="Пошаговая форма"></div>
+      </div>
+    </section>
+
+    <section class="shot-card" style="margin-top:16px">
+      <p class="shot-card__label">Пошаговая форма</p>
+      <div class="phone-scroll">
         <div class="phone-item"><img src="assets/Phone_46.png" alt="Пошаговая форма"></div>
         <div class="phone-item"><img src="assets/Phone_47.png" alt="Пошаговая форма"></div>
         <div class="phone-item"><img src="assets/Phone_48.png" alt="Пошаговая форма"></div>
@@ -341,7 +370,7 @@
       <div class="card__text">
         <h2>Гипотезы развития</h2>
         <p class="lede" style="margin-bottom:8px">Как планируем дальше развивать функционал</p>
-        <ol class="lede-list" style="margin:0">
+        <ol class="lede-list spaced" style="margin:0">
           <li><b>Перенос сценария на ИП и юрлиц.</b> Мы оптимизировали под самозанятых как под массовый сегмент, ИП и юрлица — дополнительная точка роста</li>
           <li><b>Предпроверка контента до подачи.</b> Автор узнаёт о нарушении до того, как потратил время на заявку. Шаг зависит от модерации</li>
           <li><b>Уведомление о смене статуса заявки.</b> Сейчас автор узнаёт об отказе, только когда сам зайдёт в приложение или посмотрит электронную почту</li>
