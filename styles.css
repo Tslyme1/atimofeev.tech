@@ -602,15 +602,20 @@ body.lang-switching{ opacity:0; }
 
 /* Intro stats under the product blurb (monetization.html "О продукте") */
 .stat-row.about-stats{ gap:48px; }
+/* The unit sits on the number's baseline, not centred against it */
+.stat-row.about-stats .stat b{ align-items:baseline; gap:4px; }
 .stat-row.about-stats .stat b small{ font-size:16px; font-weight:900; letter-spacing:-.02em; }
 
 /* Problem + hypotheses pair: dark statement panel beside a board of sticky notes */
-.problem-row{ display:flex; gap:8px; align-items:stretch; }
+.problem-row{ display:flex; gap:8px; align-items:stretch; height:800px; }
 .problem-panel{
   flex:0 0 397px; border-radius:var(--radius-lg); padding:16px;
   display:flex; flex-direction:column; gap:32px;
   color:#fff; background:var(--dark-3) center / cover no-repeat;
 }
+/* Statement and its explanation form one group, so they sit closer together
+   than the group does to the eyebrow above */
+.problem-panel__body{ display:flex; flex-direction:column; gap:16px; }
 .problem-panel.missed{ background-image:url("assets/monetisation/Bg_Problem_1.png"); }
 .problem-panel.reached{ background-image:url("assets/monetisation/Bg_Problem_2.png"); }
 .problem-panel__eyebrow{ margin:0; font-size:14px; font-weight:500; opacity:.67; }
@@ -629,26 +634,64 @@ body.lang-switching{ opacity:0; }
 .hyp-board__notes img:first-child{ transform:rotate(-4deg); }
 .hyp-board__notes img:last-child:not(:first-child){ transform:rotate(5deg); }
 @media (max-width:1024px){
-  .problem-row{ flex-direction:column; }
+  .problem-row{ flex-direction:column; height:auto; }
   .problem-panel{ flex:1 1 auto; }
   .problem-panel h3{ font-size:26px; }
+  .hyp-board{ min-height:420px; }
 }
 
-/* CJM figure — four labelled steps over the case background */
+/* Purple constraint/finding cards — the statement itself is the headline */
+.flow-cards.point .flow-card{
+  flex:0 0 462px; min-height:450px; padding:24px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  background:var(--dark-3) url("assets/monetisation/Bg_Point.png") center / cover no-repeat;
+}
+.flow-cards.point .flow-card::after{ content:none; }
+.flow-cards.point .flow-card p{
+  margin:0; max-width:none; color:#fff;
+  font-size:32px; font-weight:900; line-height:1.05; letter-spacing:-.03em;
+}
+.flow-cards.point .flow-card__num{ position:static; height:48px; align-self:flex-start; }
+@media (max-width:1024px){ .flow-cards.point .flow-card{ flex:0 0 380px; min-height:400px; } }
+@media (max-width:720px){
+  .flow-cards.point .flow-card{ flex:0 0 78%; min-height:340px; }
+  .flow-cards.point .flow-card p{ font-size:24px; }
+}
+
+/* CJM figure — four steps over the case background, artwork carries the labels */
 .cjm{
   position:relative; border-radius:var(--radius-lg); overflow:hidden;
-  padding:16px 16px 40px; color:#fff;
+  aspect-ratio:1418 / 800; padding:16px; color:#fff;
+  display:flex; flex-direction:column;
   background:var(--dark-3) url("assets/monetisation/Bg_CJM.png") center / cover no-repeat;
 }
-.cjm__label{ margin:0 0 32px; font-size:14px; font-weight:500; opacity:.67; }
-.cjm__steps{ display:flex; gap:8px; }
-.cjm__step{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
+.cjm__label{ margin:0; font-size:14px; font-weight:500; opacity:.67; }
+.cjm__steps{ flex:1 1 auto; display:flex; align-items:center; justify-content:center; gap:54px; }
 .cjm__step img{ width:100%; max-width:256px; height:auto; display:block; }
-.cjm__step span{ font-size:18px; font-weight:500; }
+@media (max-width:1024px){ .cjm__steps{ gap:24px; } }
 @media (max-width:720px){
-  .cjm__steps{ flex-wrap:wrap; }
+  .cjm{ aspect-ratio:auto; padding:16px 16px 24px; }
+  .cjm__steps{ flex-wrap:wrap; gap:8px; padding-top:24px; }
   .cjm__step{ flex:1 1 calc(50% - 4px); }
-  .cjm__step span{ font-size:15px; }
+}
+
+/* Dark figure block — chart on the case noise, headline caption (Общие результаты) */
+.graph-card{
+  position:relative; border-radius:var(--radius-lg); overflow:hidden;
+  aspect-ratio:1418 / 800; padding:16px; color:#fff;
+  display:flex; flex-direction:column;
+  background:var(--dark-3) url("assets/monetisation/Result3_noise.png") center / cover no-repeat;
+}
+.graph-card__label{
+  margin:0; max-width:720px;
+  font-size:32px; font-weight:900; line-height:1.05; letter-spacing:-.03em;
+}
+.graph-card__figure{ flex:1 1 auto; display:flex; align-items:center; justify-content:center; }
+.graph-card__figure img{ width:100%; max-width:1212px; height:auto; display:block; }
+@media (max-width:720px){
+  .graph-card{ aspect-ratio:auto; }
+  .graph-card__label{ font-size:22px; }
+  .graph-card__figure{ padding:24px 0; }
 }
 
 /* Headline metric tiles — big number plus caption, light or noise-backed */
@@ -670,9 +713,15 @@ body.lang-switching{ opacity:0; }
   .result-tile b small{ font-size:24px; }
 }
 
-/* Badge marking the option that won a test */
+/* Pill badge marking the option that won a test — sits above its screen */
 .phone-item.is-winner{ position:relative; }
-.phone-item__badge{ position:absolute; top:-12px; right:-12px; width:64px; height:64px; border-radius:0 !important; }
+.shot-card .phone-item img.phone-item__badge{
+  position:absolute; top:-52px; left:50%; transform:translateX(-50%);
+  width:220px; height:40px; border-radius:0;
+}
+@media (max-width:720px){
+  .shot-card .phone-item img.phone-item__badge{ top:-44px; width:176px; height:32px; }
+}
 
 /* Release comparison — two dark columns of stacked metric tiles (monetization.html "Результаты") */
 .release-compare{ display:flex; gap:8px; }
@@ -1331,6 +1380,11 @@ body.lang-switching{ opacity:0; }
 /* Non-phone artwork inside a shot-card (diagrams, charts) */
 .shot-card__figure{ display:flex; align-items:center; justify-content:center; }
 .shot-card__figure img{ width:100%; height:auto; display:block; border-radius:var(--radius-sm); }
+/* The monetization mockup runs its screens and figures larger than the other cases */
+.monetization .shot-card .phone-item img:not(.phone-item__badge){ height:606px; }
+.monetization .shot-card__figure img{ width:auto; max-width:100%; max-height:704px; }
+@media (max-width:1024px){ .monetization .shot-card .phone-item img:not(.phone-item__badge){ height:420px; } }
+@media (max-width:720px){ .monetization .shot-card .phone-item img:not(.phone-item__badge){ height:340px; } }
 /* Row of labeled screen groups shown side by side (the mockup splits screens
    into separate labeled columns rather than one wide scroller) */
 .shot-row{ display:flex; gap:8px; }
