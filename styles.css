@@ -9,6 +9,7 @@
   --muted: #9a9a9a;
   --dark: #17181a;
   --dark-2: #1d1d1e;
+  --dark-3: #0c0c0e;
   --accent-pink: #eb2e9f;
   --accent-blue: #4f7dff;
   --accent-yellow: #fec901;
@@ -599,17 +600,95 @@ body.lang-switching{ opacity:0; }
 .stat-row.tiles.dark .stat{ background:var(--dark); color:#fff; }
 .stat-row.tiles.dark .stat span{ color:#9a9a9a; }
 
+/* Intro stats under the product blurb (monetization.html "О продукте") */
+.stat-row.about-stats{ gap:48px; }
+.stat-row.about-stats .stat b small{ font-size:16px; font-weight:900; letter-spacing:-.02em; }
+
+/* Problem + hypotheses pair: dark statement panel beside a board of sticky notes */
+.problem-row{ display:flex; gap:8px; align-items:stretch; }
+.problem-panel{
+  flex:0 0 397px; border-radius:var(--radius-lg); padding:16px;
+  display:flex; flex-direction:column; gap:32px;
+  color:#fff; background:var(--dark-3) center / cover no-repeat;
+}
+.problem-panel.missed{ background-image:url("assets/monetisation/Bg_Problem_1.png"); }
+.problem-panel.reached{ background-image:url("assets/monetisation/Bg_Problem_2.png"); }
+.problem-panel__eyebrow{ margin:0; font-size:14px; font-weight:500; opacity:.67; }
+.problem-panel h3{ margin:0; font-size:32px; font-weight:900; letter-spacing:-.03em; line-height:1.05; }
+.problem-panel h3 span{ display:block; color:rgba(255,255,255,.48); }
+.problem-panel__desc{ margin:0; font-size:16px; line-height:1.5; }
+/* Board holding the exported sticky notes for a problem's hypotheses */
+.hyp-board{
+  flex:1 1 0; min-width:0; position:relative; overflow:hidden;
+  background:var(--surface); border-radius:var(--radius-lg); padding:16px;
+  display:flex; align-items:center; justify-content:center; gap:16px;
+}
+.hyp-board__label{ position:absolute; top:16px; left:16px; margin:0; color:var(--muted); font-size:14px; font-weight:500; }
+.hyp-board__notes{ display:flex; align-items:center; justify-content:center; gap:16px; width:100%; padding-top:32px; }
+.hyp-board__notes img{ flex:1 1 0; min-width:0; max-width:440px; height:auto; object-fit:contain; }
+.hyp-board__notes img:first-child{ transform:rotate(-4deg); }
+.hyp-board__notes img:last-child:not(:first-child){ transform:rotate(5deg); }
+@media (max-width:1024px){
+  .problem-row{ flex-direction:column; }
+  .problem-panel{ flex:1 1 auto; }
+  .problem-panel h3{ font-size:26px; }
+}
+
+/* CJM figure — four labelled steps over the case background */
+.cjm{
+  position:relative; border-radius:var(--radius-lg); overflow:hidden;
+  padding:16px 16px 40px; color:#fff;
+  background:var(--dark-3) url("assets/monetisation/Bg_CJM.png") center / cover no-repeat;
+}
+.cjm__label{ margin:0 0 32px; font-size:14px; font-weight:500; opacity:.67; }
+.cjm__steps{ display:flex; gap:8px; }
+.cjm__step{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
+.cjm__step img{ width:100%; max-width:256px; height:auto; display:block; }
+.cjm__step span{ font-size:18px; font-weight:500; }
+@media (max-width:720px){
+  .cjm__steps{ flex-wrap:wrap; }
+  .cjm__step{ flex:1 1 calc(50% - 4px); }
+  .cjm__step span{ font-size:15px; }
+}
+
+/* Headline metric tiles — big number plus caption, light or noise-backed */
+.result-grid{ display:flex; flex-direction:column; gap:8px; }
+.result-grid__row{ display:flex; gap:8px; }
+.result-tile{
+  flex:1 1 0; min-width:0; border-radius:var(--radius-lg); padding:24px;
+  background:var(--surface); color:var(--ink);
+  display:flex; flex-direction:column; gap:10px; overflow:hidden;
+}
+.result-tile b{ font-size:48px; font-weight:900; letter-spacing:-.03em; line-height:1; }
+.result-tile b small{ font-size:32px; font-weight:900; }
+.result-tile span{ font-size:18px; font-weight:500; opacity:.5; }
+.result-tile.dark{ color:#fff; background:var(--dark-3) url("assets/monetisation/Result_noise.png") center / cover no-repeat; }
+.result-tile.glass{ background:rgba(255,255,255,.08); color:#fff; }
+@media (max-width:720px){
+  .result-grid__row{ flex-direction:column; }
+  .result-tile b{ font-size:36px; }
+  .result-tile b small{ font-size:24px; }
+}
+
+/* Badge marking the option that won a test */
+.phone-item.is-winner{ position:relative; }
+.phone-item__badge{ position:absolute; top:-12px; right:-12px; width:64px; height:64px; border-radius:0 !important; }
+
 /* Release comparison — two dark columns of stacked metric tiles (monetization.html "Результаты") */
 .release-compare{ display:flex; gap:8px; }
 .release-compare__col{
-  flex:1 1 0; border-radius:var(--radius-lg); padding:24px;
-  display:flex; flex-direction:column; gap:24px;
-  background: var(--dark) url("assets/Result_noise.png") left top / cover no-repeat;
+  flex:1 1 0; min-width:0; border-radius:var(--radius-lg); padding:24px;
+  display:flex; flex-direction:column; gap:8px;
+  background: var(--dark-3) url("assets/monetisation/Result2_noise.png") center / cover no-repeat;
 }
-.release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0; }
-.release-compare .stat-row.tiles{ flex-direction:column; }
-.release-compare .stat-row.tiles .stat{ background:rgba(255,255,255,.14); color:#fff; }
-.release-compare .stat-row.tiles .stat span{ color:rgba(255,255,255,.72); }
+.release-compare__col h3{ color:#fff; font-weight:900; font-size:32px; letter-spacing:-.03em; margin:0 0 16px; }
+.release-compare__top{ display:flex; gap:8px; }
+/* The column is a flex column, so the tiles' default flex-basis:0 would
+   collapse their height — let them size to their own content instead */
+.release-compare__col > .result-tile{ flex:none; }
+/* Inside a column the tiles sit tighter than the standalone headline ones */
+.release-compare .result-tile b{ font-size:24px; letter-spacing:-.03em; }
+@media (max-width:720px){ .release-compare__top{ flex-direction:column; } }
 @media (max-width:720px){ .release-compare{ flex-direction:column; } }
 
 /* ==========================================================================
@@ -1249,6 +1328,9 @@ body.lang-switching{ opacity:0; }
   padding:16px 16px 40px;
 }
 .shot-card__label{ color:var(--muted); font-size:14px; margin:0 0 32px; }
+/* Non-phone artwork inside a shot-card (diagrams, charts) */
+.shot-card__figure{ display:flex; align-items:center; justify-content:center; }
+.shot-card__figure img{ width:100%; height:auto; display:block; border-radius:var(--radius-sm); }
 /* Row of labeled screen groups shown side by side (the mockup splits screens
    into separate labeled columns rather than one wide scroller) */
 .shot-row{ display:flex; gap:8px; }
