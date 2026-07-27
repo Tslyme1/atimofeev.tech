@@ -607,9 +607,11 @@ body.lang-switching{ opacity:0; }
 .stat-row.about-stats .stat b small{ font-size:16px; font-weight:900; letter-spacing:-.02em; }
 
 /* Problem + hypotheses pair: dark statement panel beside a board of sticky notes */
-.problem-row{ display:flex; gap:8px; align-items:stretch; height:800px; }
+/* Sized by ratio rather than in pixels, so the panel and the board keep the
+   mockup's 397 : 1013 split (and the notes their placement) at any width */
+.problem-row{ display:flex; gap:8px; align-items:stretch; aspect-ratio:1418 / 800; }
 .problem-panel{
-  flex:0 0 397px; border-radius:var(--radius-lg); padding:16px;
+  flex:0 0 28%; border-radius:var(--radius-lg); padding:16px;
   display:flex; flex-direction:column; gap:32px;
   color:#fff; background:var(--dark-3) center / cover no-repeat;
 }
@@ -628,13 +630,13 @@ body.lang-switching{ opacity:0; }
   background:var(--surface); border-radius:var(--radius-lg); padding:16px;
   display:flex; align-items:center; justify-content:center; gap:16px;
 }
-.hyp-board__label{ position:absolute; top:16px; left:16px; margin:0; color:var(--muted); font-size:14px; font-weight:500; }
-.hyp-board__notes{ display:flex; align-items:center; justify-content:center; gap:16px; width:100%; padding-top:32px; }
-.hyp-board__notes img{ flex:1 1 0; min-width:0; max-width:440px; height:auto; object-fit:contain; }
-.hyp-board__notes img:first-child{ transform:rotate(-4deg); }
-.hyp-board__notes img:last-child:not(:first-child){ transform:rotate(5deg); }
+.hyp-board__label{ position:absolute; top:16px; left:16px; z-index:1; margin:0; color:var(--muted); font-size:14px; font-weight:500; }
+/* Notes are laid out at the coordinates the mockup gives them, as a share of the
+   board. The exports already carry each note's rotation, so none is applied here. */
+.hyp-board__notes{ position:absolute; inset:0; }
+.hyp-board__notes img{ position:absolute; left:var(--l); top:var(--t); width:var(--w); height:auto; }
 @media (max-width:1024px){
-  .problem-row{ flex-direction:column; height:auto; }
+  .problem-row{ flex-direction:column; aspect-ratio:auto; }
   .problem-panel{ flex:1 1 auto; }
   .problem-panel h3{ font-size:26px; }
   .hyp-board{ min-height:420px; }
@@ -1314,6 +1316,10 @@ body.lang-switching{ opacity:0; }
 .content > .card + .flow-cards,
 .content > .card + .release-compare,
 .content > .card + .media-duo,
+.content > .card + .cjm,
+.content > .card + .graph-card,
+.content > .card + .problem-row,
+.content > .card + .result-grid,
 .content > .card + img{ margin-top:40px; }
 .card h2 .dim{ color:#b9b9b9; }
 
@@ -1380,11 +1386,16 @@ body.lang-switching{ opacity:0; }
 /* Non-phone artwork inside a shot-card (diagrams, charts) */
 .shot-card__figure{ display:flex; align-items:center; justify-content:center; }
 .shot-card__figure img{ width:100%; height:auto; display:block; border-radius:var(--radius-sm); }
-/* The monetization mockup runs its screens and figures larger than the other cases */
-.monetization .shot-card .phone-item img:not(.phone-item__badge){ height:606px; }
-.monetization .shot-card__figure img{ width:auto; max-width:100%; max-height:704px; }
-@media (max-width:1024px){ .monetization .shot-card .phone-item img:not(.phone-item__badge){ height:420px; } }
-@media (max-width:720px){ .monetization .shot-card .phone-item img:not(.phone-item__badge){ height:340px; } }
+/* The monetization mockup draws its screens 606px tall against a 1418px content
+   width. Sizing them against the real content width keeps that proportion, so a
+   screen never crowds its column on narrower viewports. */
+.monetization{ container-type:inline-size; }
+.monetization .shot-card .phone-item img:not(.phone-item__badge){ height:clamp(300px, 42.7cqw, 606px); }
+.monetization .shot-card__figure img{ width:auto; max-width:100%; max-height:clamp(340px, 49.6cqw, 704px); }
+/* Room for the winner pill, which sits above the screen inside a scroller that
+   would otherwise clip it (overflow-x also clips vertically) */
+.monetization .phone-scroll:has(.is-winner){ padding-top:52px; }
+@media (max-width:720px){ .monetization .phone-scroll:has(.is-winner){ padding-top:44px; } }
 /* Row of labeled screen groups shown side by side (the mockup splits screens
    into separate labeled columns rather than one wide scroller) */
 .shot-row{ display:flex; gap:8px; }
