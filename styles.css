@@ -711,6 +711,12 @@ body.lang-switching{ opacity:0; }
 .result-tile.glass{ background:rgba(255,255,255,.08); color:#fff; }
 @media (max-width:720px){
   .result-grid__row{ flex-direction:column; }
+  /* In a row, flex:1 1 0 divides the tiles evenly by width. Once the row
+     turns into a column, the same flex-basis:0 divides them by HEIGHT
+     instead — and because .result-tile sets overflow:hidden, its automatic
+     min-height is 0 (not its content size), so tiles collapse to a sliver
+     and clip their own caption. Switch to sizing by content in this axis. */
+  .result-grid__row > .result-tile{ flex:none; }
   .result-tile b{ font-size:36px; }
   .result-tile b small{ font-size:24px; }
 }
@@ -739,7 +745,11 @@ body.lang-switching{ opacity:0; }
 .release-compare__col > .result-tile{ flex:none; }
 /* Inside a column the tiles sit tighter than the standalone headline ones */
 .release-compare .result-tile b{ font-size:24px; letter-spacing:-.03em; }
-@media (max-width:720px){ .release-compare__top{ flex-direction:column; } }
+/* Same column-collapse as .result-grid__row above, once this row stacks */
+@media (max-width:720px){
+  .release-compare__top{ flex-direction:column; }
+  .release-compare__top > .result-tile{ flex:none; }
+}
 @media (max-width:720px){ .release-compare{ flex-direction:column; } }
 
 /* ==========================================================================
